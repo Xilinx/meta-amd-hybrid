@@ -24,7 +24,7 @@ INITSCRIPT_PARAMS = "start 99 S ."
 
 SYSTEMD_PACKAGES = "${PN}"
 SYSTEMD_SERVICE:${PN} = "soft-kernel-daemon.service"
-SYSTEMD_AUTO_ENABLE:${PN}="enable"
+SYSTEMD_AUTO_ENABLE:${PN} = "enable"
 
 do_install() {
         if ${@bb.utils.contains('DISTRO_FEATURES', 'sysvinit', 'true', 'false', d)}; then
