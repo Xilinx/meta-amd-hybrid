@@ -11,7 +11,7 @@ SRC_URI = " \
     file://soft-kernel-daemon.service \
     "
 
-S = "${WORKDIR}"
+S = "${UNPACKDIR}"
 
 FILESEXTRAPATHS:prepend := "${THISDIR}/files:"
 
@@ -29,13 +29,13 @@ SYSTEMD_AUTO_ENABLE:${PN}="enable"
 do_install() {
         if ${@bb.utils.contains('DISTRO_FEATURES', 'sysvinit', 'true', 'false', d)}; then
                 install -d ${D}${sysconfdir}/init.d/
-                install -m 0755 ${WORKDIR}/soft-kernel-daemon.sh ${D}${sysconfdir}/init.d/
+                install -m 0755 ${UNPACKDIR}/soft-kernel-daemon.sh ${D}${sysconfdir}/init.d/
         fi
 
     install -d ${D}${bindir}
-    install -m 0755 ${WORKDIR}/soft-kernel-daemon.sh ${D}${bindir}
+    install -m 0755 ${UNPACKDIR}/soft-kernel-daemon.sh ${D}${bindir}
         install -d ${D}${systemd_system_unitdir}
-        install -m 0644 ${WORKDIR}/soft-kernel-daemon.service ${D}${systemd_system_unitdir}
+        install -m 0644 ${UNPACKDIR}/soft-kernel-daemon.service ${D}${systemd_system_unitdir}
 }
 
 FILES:${PN} += "${@bb.utils.contains('DISTRO_FEATURES','sysvinit','${sysconfdir}/*', '', d)}"
