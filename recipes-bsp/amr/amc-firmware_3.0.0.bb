@@ -15,8 +15,8 @@ COMPATIBLE_MACHINE:alveo-v80-amr = "${MACHINE}"
 
 DEPENDS += "libxil xilstandalone xiltimer freertos10-xilinx xilmailbox xilloader xilplmi xilpm"
 
-S = "${WORKDIR}/git/fw/AMC"
-B = "${WORKDIR}/build"
+S = "${UNPACKDIR}/${BP}/fw/AMC"
+
 OECMAKE_SOURCEPATH = "${S}"
 
 CFLAGS:append = " -specs=${PKG_CONFIG_SYSROOT_DIR}/usr/include/Xilinx.spec -DSDT "
