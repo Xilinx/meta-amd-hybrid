@@ -13,9 +13,6 @@ PROVIDES = "virtual/fpt"
 COMPATIBLE_MACHINE = "^$"
 COMPATIBLE_MACHINE:emb-plus-ve2302-xrt = "${MACHINE}"
 
-S = "${WORKDIR}/git"
-
-
 do_compile () {
     ${PYTHON} ${S}/gen_fpt_bin.py --fpt ${S}/metadata/rave_ivh/main_fpt.json --output ${WORKDIR}/${PN}.bin
 }

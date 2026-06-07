@@ -9,8 +9,6 @@ COMPATIBLE_MACHINE:emb-plus-ve2302-xrt = "${MACHINE}"
 
 DEPENDS += "python3"
 
-S = "${WORKDIR}/git"
-
 inherit deploy image-artifact-names
 
 do_compile () {
