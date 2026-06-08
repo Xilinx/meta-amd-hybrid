@@ -1,7 +1,7 @@
 DESCRIPTION = "Generate Alveo and Embedded-Plus Adaptive Management Controller (AMC) application image"
 SUMMARY = "Adaptive Management Runtime(AMR) component"
 
-inherit python3native ccmake cmake deploy
+inherit pkgconfig python3native ccmake cmake deploy
 
 require amr.inc
 
