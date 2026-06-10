@@ -17,7 +17,7 @@ do_configure[noexec] = "1"
 do_compile[noexec] = "1"
 
 do_install() {
-    install -Dm 0644 ${WORKDIR}/vmr.elf ${D}/boot/vmr.elf
+    install -Dm 0644 ${UNPACKDIR}/vmr.elf ${D}/boot/vmr.elf
 }
 
 INSANE_SKIP:${PN} = "arch"
@@ -27,7 +27,7 @@ SYSROOT_DIRS += "/boot"
 FILES:${PN} = "/boot/vmr.elf"
 
 do_deploy() {
-    install -m 0644 ${WORKDIR}/vmr.elf ${DEPLOYDIR}/vmr.elf
+    install -m 0644 ${UNPACKDIR}/vmr.elf ${DEPLOYDIR}/vmr.elf
 }
 
 addtask do_deploy after do_unpack
