@@ -21,6 +21,14 @@ OECMAKE_SOURCEPATH = "${S}"
 
 CFLAGS:append = " -specs=${PKG_CONFIG_SYSROOT_DIR}/usr/include/Xilinx.spec -DSDT "
 
+# Bare-metal FreeRTOS firmware must not inherit Linux dynamic-linking or
+# hardening linker flags.  arm-xilinx-eabi-gcc 15.x also enables PIE by
+# default, which binutils 2.46 rejects for ARM R5 static firmware links.
+TARGET_LINK_HASH_STYLE = ""
+SECURITY_LDFLAGS = ""
+CFLAGS:append = " -fno-pie"
+LDFLAGS = "-no-pie"
+
 EXTRA_OECMAKE += " \
     -DCMAKE_LIBRARY_PATH=${PKG_CONFIG_SYSROOT_DIR}/usr/lib/ \
     -DYOCTO=ON \
