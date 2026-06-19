@@ -6302,7 +6302,7 @@
 
         chosen {
                 stdout-path = "serial1:115200n8";
-                bootargs = "console=ttyAMA1 earlycon=pl011,mmio32,0xFF010000,115200n8";
+                bootargs = "console=ttyAMA1 earlycon=pl011,mmio32,0xFF010000,115200n8 fw_devlink=permissive";
         };
 
         aliases {
@@ -6737,7 +6737,7 @@
 
                         chosen {
                                 stdout-path = "serial1:115200n8";
-                                bootargs = "console=ttyAMA1 earlycon=pl011,mmio32,0xFF010000,115200n8";
+                                bootargs = "console=ttyAMA1 earlycon=pl011,mmio32,0xFF010000,115200n8 fw_devlink=permissive";
                         };
                 };
         };
