@@ -27,6 +27,7 @@ IMAGE_INSTALL = " \
     libgpiod \
     libgpiod-tools \
     i2c-tools \
+    net-tools \
 "
 
 # Adding fpgautil as a workaround until the AMR stack solution is available 
