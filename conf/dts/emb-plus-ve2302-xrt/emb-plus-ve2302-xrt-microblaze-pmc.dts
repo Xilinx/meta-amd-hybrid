@@ -1862,15 +1862,9 @@
         };
 
         aliases {
-                serial4 = "/amba_pl/serial@20102020000";
                 serial0 = "/axi/serial@ff000000";
                 spi0 = "/axi/spi@f1010000";
-                serial5 = "/amba_pl/serial@80021000";
                 serial1 = "/axi/serial@ff010000";
-                serial6 = "/axi/coresight@f0800000";
-                serial2 = "/amba_pl/serial@402020000";
-                serial3 = "/amba_pl/serial@20102021000";
-                i2c0 = "/axi/i2c@ff020000";
         };
 
         onewire {

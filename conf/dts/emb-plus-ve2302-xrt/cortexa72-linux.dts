@@ -2697,14 +2697,12 @@
         };
 
         aliases {
-                serial4 = "/amba_pl/serial@20102020000";
                 serial0 = "/axi/serial@ff000000";
                 spi0 = "/axi/spi@f1010000";
                 serial5 = "/amba_pl/serial@80021000";
                 serial1 = "/axi/serial@ff010000";
                 serial6 = "/axi/coresight@f0800000";
                 serial2 = "/amba_pl/serial@402020000";
-                serial3 = "/amba_pl/serial@20102021000";
                 i2c0 = "/axi/i2c@ff020000";
         };
 
@@ -2714,10 +2712,6 @@
         };
 
         __symbols__ {
-                cpus_a72 = "/cpus-a72@0";
-                psv_cortexa72_0 = "/cpus-a72@0/cpu@0";
-                psv_cortexa72_1 = "/cpus-a72@0/cpu@1";
-                CPU_SLEEP_0 = "/cpus-a72@0/idle-states/cpu-sleep-0";
                 l2 = "/l2-cache";
                 cpu_opp_table = "/opp-table-cpu";
                 dcc = "/dcc";
@@ -2732,10 +2726,8 @@
                 versal_thermal_aie = "/thermal-zones/versal-aie-thermal";
                 temp_alert_aie = "/thermal-zones/versal-aie-thermal/trips/temp-alert-aie";
                 ot_crit_aie = "/thermal-zones/versal-aie-thermal/trips/ot-crit-aie";
-                amba_apu = "/apu-bus";
                 gic_its = "/axi/interrupt-controller@f9000000/msi-controller@f9020000";
                 amba = "/axi";
-                imux = "/axi/interrupt-multiplex";
                 can0 = "/axi/can@ff060000";
                 can1 = "/axi/can@ff070000";
                 cci = "/axi/cci@fd000000";
@@ -2928,6 +2920,10 @@
                 cma_reserved = "/reserved-memory/cma_reserved@50000000000";
                 zocl_versal_region0 = "/reserved-memory/buffer@50040000000";
                 gic = "/axi/interrupt-controller@f9000000";
+                cpus_a72 = "/cpus";
+                psv_cortexa72_0 = "/cpus/cpu@0";
+                psv_cortexa72_1 = "/cpus/cpu@1";
+                CPU_SLEEP_0 = "/cpus/idle-states/cpu-sleep-0";
                 aie_core_ref_clk = "/amba_pl/aie_core_ref_clk";
                 fpga_PRulp = "/fpga-PRulp";
                 misc_clk_0 = "/misc_clk_0";
@@ -2938,7 +2934,7 @@
                 APU_Linux {
                         compatible = "openamp,domain-v1";
                         reserved-memory = <0x1ad 0x1ae 0x1af 0x1b0 0x1b1 0x1b2>;
-                        cpus = <&cpus_a72 0xf 0x80000003>;
+                        cpus = <&cpus_a72 0x0 0x80000003>;
                         os,type = "linux";
 
                         chosen {
