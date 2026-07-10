@@ -10,7 +10,6 @@
 /* Workaround deleting the HBM memory nodes which is causing the kernel hangs */
 
 / {
-        /delete-node/ memory@4000000000;
         /delete-node/ memory@60000000000;
 };
 
