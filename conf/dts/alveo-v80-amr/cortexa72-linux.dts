@@ -2328,6 +2328,15 @@
                 memory_type = "memory";
         };
 
+        axi_noc_cips_hbm_memory: memory@4000000000 {
+                phandle = <0x3>;
+                compatible = "xlnx,axi-noc-1.1";
+                xlnx,ip-name = "axi_noc";
+                device_type = "memory";
+                reg = <0x40 0x0 0x8 0x0>;
+                memory_type = "memory";
+        };
+
         chosen {
                 stdout-path = "serial1:115200n8";
                 bootargs = "console=ttyAMA1 earlycon=pl011,mmio32,0xFF010000,115200n8";
@@ -2522,9 +2531,12 @@
                 user_key6 = "/firmware/versal-firmware/versal-sec-cfg/nvmem-layout/user-key@1d0";
                 user_key7 = "/firmware/versal-firmware/versal-sec-cfg/nvmem-layout/user-key@1f0";
                 axi_noc_mc_ddr4_0_ddr_memory = "/memory@00000000";
+                axi_noc_cips_hbm_memory = "/memory@4000000000";
                 rpu0_runtime_region = "/reserved-memory/rpu0_runtime_region@0";
                 rpu0_shared_region = "/reserved-memory/rpu0_shared_region@10000000";
                 rpu1_runtime_region = "/reserved-memory/rpu1_runtime_region@10800000";
+                hbm_reserved = "/reserved-memory/hbm_reserved@4000000000";
+                ddr4_1_reserved = "/reserved-memory/ddr4_1_reserved@60000000000";
                 gic = "/axi/interrupt-controller@f9000000";
                 cpus_a72 = "/cpus";
                 psv_cortexa72_0 = "/cpus/cpu@0";
@@ -2536,7 +2548,7 @@
 
                 APU_Linux {
                         compatible = "openamp,domain-v1";
-                        reserved-memory = <0x17f 0x180 0x181>;
+                        reserved-memory = <0x17f 0x180 0x181 0x182 0x183>;
                         cpus = <&cpus_a72 0x0 0x80000003>;
                         os,type = "linux";
 
@@ -2571,6 +2583,20 @@
                         label = "rpu1_runtime_region";
                         no-map;
                         reg = <0x0 0x10800000 0x0 0x4000000>;
+                };
+
+                hbm_reserved: hbm_reserved@4000000000 {
+                        phandle = <0x182>;
+                        label = "hbm_reserved";
+                        no-map;
+                        reg = <0x40 0x0 0x8 0x0>;
+                };
+
+                ddr4_1_reserved: ddr4_1_reserved@60000000000 {
+                        phandle = <0x183>;
+                        label = "ddr4_1_reserved";
+                        no-map;
+                        reg = <0x600 0x0 0x8 0x0>;
                 };
         };
 };
