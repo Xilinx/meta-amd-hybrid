@@ -1,6 +1,6 @@
 SUMMARY = "Combined APU boot image (TF-A + U-Boot + boot.scr + Linux + \
 rootfs) for AMD Embedded+ boards."
-DESCRIPTION = "Boot image for RAVE containing ATF, u-boot, boot.scr, \
+DESCRIPTION = "Boot image for RAVE containing TF-A, u-boot, boot.scr, \
 Linux and rootfs"
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/MIT;md5=0835ade698e0bcf8506ecda2f7b4f302"
@@ -19,7 +19,7 @@ DEPENDS += "\
     bootgen-native \
     ${BIF_ROOTFS} \
     ${UBOOT_BOOT_SCRIPT} \
-    virtual/arm-trusted-firmware \
+    trusted-firmware-a \
     virtual/bootloader \
     virtual/dtb \
     virtual/kernel \
@@ -50,16 +50,16 @@ EMB_PLUS_APU_SUBSYSTEM_ID:emb-plus-ve2302-xrt = "0x1c000000"
 EMB_PLUS_APU_SUBSYSTEM_ID:emb-plus-ve2302-amr = "0x1c000008"
 EMB_PLUS_APU_SUBSYSTEM_ID:alveo-v80-amr = "0x1c000008"
 
-BIF_PARTITION_ATTR = "atf uboot rootfs bootscr kernel dtb"
+BIF_PARTITION_ATTR = "tfa uboot rootfs bootscr kernel dtb"
 BIF_PARTITION_NAME[0x1c000000] = "apu_subsystem"
 BIF_PARTITION_NAME[0x1c000008] = "apu_subsystem"
 
-BIF_PARTITION_ATTR[atf] = "core=a72-0, exception_level=el-3, trustzone"
-BIF_PARTITION_IMAGE[atf] = "${DEPLOY_DIR_IMAGE}/arm-trusted-firmware.elf"
-BIF_PARTITION_ID[atf] = "${EMB_PLUS_APU_SUBSYSTEM_ID}"
+BIF_PARTITION_ATTR[tfa] = "core=a72-0, exception_level=el-3, trustzone"
+BIF_PARTITION_IMAGE[tfa] = "${RECIPE_SYSROOT}/firmware/trusted-firmware-a/bl31.elf"
+BIF_PARTITION_ID[tfa] = "${EMB_PLUS_APU_SUBSYSTEM_ID}"
 
 BIF_PARTITION_ATTR[uboot] = "core=a72-0, exception_level=el-2"
-BIF_PARTITION_IMAGE[uboot] = "${DEPLOY_DIR_IMAGE}/u-boot.elf"
+BIF_PARTITION_IMAGE[uboot] = "${RECIPE_SYSROOT}/boot/u-boot.elf"
 BIF_PARTITION_ID[uboot] = "${EMB_PLUS_APU_SUBSYSTEM_ID}"
 
 BIF_PARTITION_ATTR[rootfs] = "load=${EMB_PLUS_ROOTFS_ADDR}"
@@ -119,7 +119,7 @@ do_generate_bif[vardeps] += "\
 
 do_generate_bif[depends] += " \
     virtual/bootloader:do_deploy \
-    virtual/arm-trusted-firmware:do_deploy \
+    trusted-firmware-a:do_deploy \
     ${BIF_ROOTFS}:do_image_complete \
     ${UBOOT_BOOT_SCRIPT}:do_deploy \
     virtual/kernel:do_deploy \
