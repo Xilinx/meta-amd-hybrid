@@ -2,7 +2,7 @@ args:
     - --hw-description https://edf.amd.com/sswreleases/rel-v2026.2/sdt/2026.2/2026.2_0721_1_07210642/external/alveo-v80-amr/alveo-v80-amr_2026.2_0721_1_07210642.tar.gz
     - --machine-name alveo-v80-amr
     - -g full
-    - -O alveo-amr
+    - -O amd-amr
     - --domain-file ${LAYER_PATH_xilinx-standalone-sdt}/conf/domainyaml/versal-linux-only-base.yaml \
                     ${LAYER_PATH_embedded-plus-layer}/conf/domainyaml/alveo-v80-amr-linux-overlay.yaml
 kconfig:
