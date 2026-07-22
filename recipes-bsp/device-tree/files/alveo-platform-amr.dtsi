@@ -7,7 +7,7 @@
  *
  */
 
-/* Workaround deleting the HBM memory nodes which is causing the kernel hangs */
+/* Workaround deleting the DIMM(ddr4_1) memory node which is causing the kernel hangs */
 
 / {
         /delete-node/ memory@60000000000;
