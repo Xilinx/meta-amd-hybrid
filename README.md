@@ -4,6 +4,20 @@ This layer enables AMD Embedded Plus platform.
 
 For detailed steps on setting up the EDF Yocto environment, including host requirements, layer configuration, and build instructions, refer to the [AMD EDF Documentation](https://edf.docs.amd.com/).
 
+## Layer structure
+
+This repository is split into two sub-layers, following Yocto layer guidelines:
+
+- `meta-embedded-plus-bsp` (collection `embedded-plus-bsp`): board support - machine `.conf`, machine/domain YAML, device trees, multiconfigs and `recipes-bsp`.
+- `meta-embedded-plus-core` (collection `embedded-plus-core`): machine-independent content - image, kernel, library and utility recipes/bbappends (`recipes-core`, `recipes-kernel`, `recipes-libraries`, `recipes-utils`).
+
+Add both to `bblayers.conf` (core before bsp):
+
+```
+  ##OEROOT##/../meta-embedded-plus/meta-embedded-plus-core \
+  ##OEROOT##/../meta-embedded-plus/meta-embedded-plus-bsp \
+```
+
 ## Embedded Plus buildable machines and images
 
 The following MACHINE and build target combinations are possible to build artifacts in SDT flow for
@@ -80,22 +94,22 @@ This layer depends on:
 
 	URI: https://git.yoctoproject.org/poky
 	layers: meta, meta-poky
-	branch: scarthgap
+	branch: wrynose
 
 	URI: https://git.openembedded.org/meta-openembedded
-	layers: meta-oe
-	branch: scarthgap
+	layers: meta-oe, meta-python, meta-networking
+	branch: wrynose
 
 	URI:
         https://git.yoctoproject.org/meta-xilinx (official version)
         https://github.com/Xilinx/meta-xilinx (development and amd xilinx release)
 	layers: meta-xilinx-microblaze, meta-xilinx-core, meta-xilinx-standalone, meta-xilinx-standalone-sdt
-	branch: scarthgap or amd xilinx release version (e.g. rel-v2026.1)
+	branch: wrynose or amd xilinx release version (e.g. rel-v2026.1)
 
 	URI:
         https://git.yoctoproject.org/meta-xilinx-tools (official version)
         https://github.com/Xilinx/meta-xilinx-tools (development and amd xilinx release)
-	branch: scarthgap or amd xilinx release version (e.g. rel-v2026.1)
+	branch: wrynose or amd xilinx release version (e.g. rel-v2026.1)
 
 	URI: https://github.com/Xilinx/meta-amd-adaptive-socs
 	layers: meta-amd-adaptive-socs-core 
