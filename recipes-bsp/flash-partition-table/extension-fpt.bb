@@ -11,6 +11,9 @@ DEPENDS += "python3"
 
 inherit deploy image-artifact-names
 
+inherit shared-manifest
+MANIFEST_COMPONENT_NAME = "extension-fpt"
+
 do_compile () {
     ${S}/gen_fpt_bin.py --fpt ${S}/metadata/rave_ivh/ext_fpt.json --output ${WORKDIR}/${PN}.bin
 }

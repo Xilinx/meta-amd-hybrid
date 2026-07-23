@@ -5,6 +5,10 @@ inherit pkgconfig python3native ccmake cmake deploy
 
 require amr.inc
 
+inherit shared-manifest
+MANIFEST_COMPONENT_NAME = "amcfw"
+MANIFEST_DEPLOY_BAREMETAL = "do_shared_manifest_deploy"
+
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 
 COMPATIBLE_HOST:arm = "[^-]*-[^-]*-eabi"

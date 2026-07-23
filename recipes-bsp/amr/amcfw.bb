@@ -35,9 +35,13 @@ AMC_FILE[vardepsexclude] = "AMC_DEPLOY_DIR"
 AMC_CDO_FILE ??= "${AMC_DEPLOY_DIR}/${AMC_IMAGE_NAME}.cdo"
 AMC_CDO_FILE[vardepsexclude] = "AMC_DEPLOY_DIR"
 
+FW_MANIFEST_SRC = "${AMC_DEPLOY_DIR}/amcfw"
+FW_MANIFEST_SRC[vardepsexclude] = "AMC_DEPLOY_DIR"
+FW_MANIFEST_NAME = "amcfw"
+
 do_fetch[mcdepends] += "${AMC_MCDEPENDS}"
 
-inherit deploy
+inherit deploy firmware-copy-manifest
 
 do_install() {
     if [ ! -e ${AMC_FILE}.elf ]; then

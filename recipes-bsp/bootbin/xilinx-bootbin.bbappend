@@ -91,6 +91,12 @@ do_amr_overlay_cdo() {
 do_amr_overlay_cdo[depends] += "${ADDN_COMPILE_DEPENDS}"
 addtask amr_overlay_cdo after do_prepare_recipe_sysroot before do_configure
 
+# The aggregate manifest hashes BIF_PARTITION_IMAGE[base-pdi], which on AMR is
+# the overlay PDI generated above, so aggregation must run after it.
+# It also hashes the deploy-path partition images, so depend on their deploy.
+do_manifest_aggregate[depends] += "${ADDN_COMPILE_DEPENDS}"
+addtask manifest_aggregate after do_amr_overlay_cdo
+
 do_compile:append:emb-plus-ve2302-xrt() {
     xclbinutil --force --input ${DEPLOY_DIR_IMAGE}/partition-metadata-${MACHINE}.xsabin \
         --add-section PDI:RAW:${B}/BOOT.bin --output ${B}/BOOT.xsabin
