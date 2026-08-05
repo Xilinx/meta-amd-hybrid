@@ -30,6 +30,10 @@
         status = "disabled";
 };
 
+&serial1 {
+	/delete-property/ power-domains;
+};
+
 &amba {
         aie_core_ref_clk: aie_core_ref_clk {
                 #clock-cells = <0x00>;
