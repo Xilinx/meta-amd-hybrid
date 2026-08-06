@@ -694,7 +694,6 @@
                         bootph-all;
                         clocks = <&versal_clk 0x5d>,
                          <&versal_clk 0x52>;
-                        power-domains = <&versal_firmware 0x18224022>;
                         xlnx,has-modem = <0x0>;
                         xlnx,uart-clk-freq-hz = <0x5f5e0a4>;
                         port-number = <0x0>;
