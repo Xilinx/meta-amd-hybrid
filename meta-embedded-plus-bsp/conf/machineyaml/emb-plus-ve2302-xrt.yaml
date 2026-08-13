@@ -8,6 +8,7 @@ kconfig:
     CONFIG_YOCTO_BBMC_LINUX_DTSI: \
         ${LAYER_PATH_embedded-plus-bsp-layer}/recipes-bsp/device-tree/files/emb-plus-platform.dtsi
     CONFIG_SUBSYSTEM_BOOTMODE_5: y
+    CONFIG_SUBSYSTEM_SERIAL_SERIAL1_SELECT: y
 
 machine:
     description: >-

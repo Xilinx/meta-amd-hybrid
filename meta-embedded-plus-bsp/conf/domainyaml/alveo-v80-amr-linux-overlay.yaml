@@ -25,9 +25,6 @@ reserved-memory:
 domains:
   APU_Linux:
     compatible: openamp,domain-v1
-    chosen:
-      stdout-path: "serial1:115200n8"
-      bootargs: "console=ttyAMA1 earlycon=pl011,mmio32,0xFF010000,115200n8"
     reserved-memory:
       - rpu0_runtime_region@0
       - rpu0_shared_region@10000000
