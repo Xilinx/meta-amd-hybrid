@@ -5,6 +5,7 @@
         #size-cells = <0x2>;
         model = "Xilinx Versal Embedded+ VE2302 revA";
         board = "v80";
+        vivado-version = "2026.2.0";
         device_id = "xcv80";
         slrcount = <0x3>;
         family = "Versal";
