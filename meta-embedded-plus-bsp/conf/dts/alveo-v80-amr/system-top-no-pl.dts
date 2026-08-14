@@ -6302,7 +6302,7 @@
 
         chosen {
                 stdout-path = "serial1:115200n8";
-                bootargs = "console=ttyAMA1 earlycon=pl011,mmio32,0xFF010000,115200n8";
+                bootargs = "earlycon=pl011,mmio32,0xff010000 console=ttyAMA1,115200";
         };
 
         aliases {
@@ -6712,11 +6712,6 @@
                         reserved-memory = <0x17f 0x180 0x181 0x182>;
                         cpus = <&cpus_a72 0x0 0x80000003>;
                         os,type = "linux";
-
-                        chosen {
-                                stdout-path = "serial1:115200n8";
-                                bootargs = "console=ttyAMA1 earlycon=pl011,mmio32,0xFF010000,115200n8";
-                        };
                 };
         };
 
