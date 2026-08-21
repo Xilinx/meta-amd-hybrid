@@ -4,7 +4,7 @@ args:
     - -g full
     - -O amd-amr
     - --domain-file ${LAYER_PATH_xilinx-standalone-sdt}/conf/domainyaml/versal-linux-only-base.yaml \
-                    ${LAYER_PATH_embedded-plus-bsp-layer}/conf/domainyaml/emb-plus-ve2302-amr-linux-overlay.yaml
+                    ${LAYER_PATH_amd-hybrid-bsp-layer}/conf/domainyaml/emb-plus-ve2302-amr-linux-overlay.yaml
 
 kconfig:
     CONFIG_YOCTO_BBMC_CORTEXR5_0_FREERTOS: y
@@ -12,7 +12,7 @@ kconfig:
     CONFIG_SUBSYSTEM_SERIAL_SERIAL1_SELECT: y
     CONFIG_SUBSYSTEM_BOOTMODE_5: y
     CONFIG_YOCTO_BBMC_LINUX_DTSI: \
-      ${LAYER_PATH_embedded-plus-bsp-layer}/recipes-bsp/device-tree/files/emb-plus-platform-amr.dtsi
+      ${LAYER_PATH_amd-hybrid-bsp-layer}/recipes-bsp/device-tree/files/emb-plus-platform-amr.dtsi
 
 machine:
     description: >-

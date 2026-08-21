@@ -1,6 +1,6 @@
-# meta-embedded-plus
+# meta-amd-hybrid
 
-This layer enables AMD Embedded Plus platform.
+This layer enables AMD x86 and FPGA hybrid platforms.
 
 For detailed steps on setting up the EDF Yocto environment, including host requirements, layer configuration, and build instructions, refer to the [AMD EDF Documentation](https://edf.docs.amd.com/).
 
@@ -8,20 +8,20 @@ For detailed steps on setting up the EDF Yocto environment, including host requi
 
 This repository is split into two sub-layers, following Yocto layer guidelines:
 
-- `meta-embedded-plus-bsp` (collection `embedded-plus-bsp`): board support - machine `.conf`, machine/domain YAML, device trees, multiconfigs and `recipes-bsp`.
-- `meta-embedded-plus-core` (collection `embedded-plus-core`): machine-independent content - image, kernel, library and utility recipes/bbappends (`recipes-core`, `recipes-kernel`, `recipes-libraries`, `recipes-utils`).
+- `meta-amd-hybrid-bsp` (collection `amd-hybrid-bsp`): board support - machine `.conf`, machine/domain YAML, device trees, multiconfigs and `recipes-bsp`.
+- `meta-amd-hybrid-core` (collection `amd-hybrid-core`): machine-independent content - image, kernel and library recipes/bbappends (`recipes-core`, `recipes-kernel`, `recipes-libraries`).
 
 Add both to `bblayers.conf` (core before bsp):
 
 ```
-  ##OEROOT##/../meta-embedded-plus/meta-embedded-plus-core \
-  ##OEROOT##/../meta-embedded-plus/meta-embedded-plus-bsp \
+  ##OEROOT##/../meta-amd-hybrid/meta-amd-hybrid-core \
+  ##OEROOT##/../meta-amd-hybrid/meta-amd-hybrid-bsp \
 ```
 
-## Embedded Plus buildable machines and images
+## Buildable machines and images
 
 The following MACHINE and build target combinations are possible to build artifacts in SDT flow for
-the Embedded Plus platform:
+the hybrid platforms:
 
 | Machine             | Target             | Description            | DISTRO         |
 |---------------------|--------------------|------------------------|----------------|
@@ -58,7 +58,7 @@ the [meta-xilinx mailing list](https://lists.yoctoproject.org/g/meta-xilinx):
 	meta-xilinx@lists.yoctoproject.org
 
 When sending patches, please make sure the email subject line includes
-`[meta-embedded-plus][<BRANCH_NAME>][PATCH]` and cc'ing the maintainers.
+`[meta-amd-hybrid][<BRANCH_NAME>][PATCH]` and cc'ing the maintainers.
 
 For more details follow the OE community patch submission guidelines, as described in:
 
@@ -73,10 +73,10 @@ https://www.openembedded.org/wiki/How_to_submit_a_patch_to_OpenEmbedded
 > body as appropriate.
 
 **Syntax:**
-`git format-patch -s --subject "meta-embedded-plus][<BRANCH_NAME>][PATCH" -1`
+`git format-patch -s --subject "meta-amd-hybrid][<BRANCH_NAME>][PATCH" -1`
 
 **Example:**
-`git format-patch -s --subject "meta-embedded-plus][rel-v2026.1][PATCH" -1`
+`git format-patch -s --subject "meta-amd-hybrid][rel-v2026.1][PATCH" -1`
 
 **Maintainers:**
 
