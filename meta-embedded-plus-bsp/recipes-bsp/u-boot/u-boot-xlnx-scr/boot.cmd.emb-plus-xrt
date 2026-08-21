@@ -1,4 +1,0 @@
-kernel_addr=0x200000
-rootfs_addr=0x4000000
-booti ${kernel_addr} ${rootfs_addr} $fdtcontroladdr
-

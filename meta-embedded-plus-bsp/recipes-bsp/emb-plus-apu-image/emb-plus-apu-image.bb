@@ -11,8 +11,6 @@ BIF_ROOTFS_TYPE = "cpio.gz.u-boot"
 
 BIF_ROOTFS_TYPE:emb-plus-ve2302-amr = "cpio.lzma.u-boot"
 
-BIF_ROOTFS_TYPE:emb-plus-ve2302-xrt = "cpio.lzma.u-boot"
-
 BIF_ROOTFS_NAME = "${BIF_ROOTFS}-${MACHINE}.rootfs.${BIF_ROOTFS_TYPE}"
 
 DEPENDS += "\
@@ -29,7 +27,6 @@ DEPENDS += "\
 inherit deploy image-artifact-names bootgen-bif
 
 COMPATIBLE_MACHINE = "^$"
-COMPATIBLE_MACHINE:emb-plus-ve2302-xrt = "emb-plus-ve2302-xrt"
 COMPATIBLE_MACHINE:emb-plus-ve2302-amr = "emb-plus-ve2302-amr"
 COMPATIBLE_MACHINE:alveo-v80-amr = "alveo-v80-amr"
 
@@ -40,18 +37,15 @@ BIF_TOPLEVEL_ATTR[id_code] = "${EMB_PLUS_ID_CODE}"
 BIF_TOPLEVEL_ATTR[extended_id_code] = "0x01"
 
 EMB_PLUS_ID_CODE ?= ""
-EMB_PLUS_ID_CODE:emb-plus-ve2302-xrt = "0x14cc8093"
 EMB_PLUS_ID_CODE:emb-plus-ve2302-amr = "0x14cc8093"
 EMB_PLUS_ID_CODE:alveo-v80-amr = "0x14d2f093"
 
 # Subsystem ID for APU partitions (overlay CDO redefines for AMR)
 EMB_PLUS_APU_SUBSYSTEM_ID ?= ""
-EMB_PLUS_APU_SUBSYSTEM_ID:emb-plus-ve2302-xrt = "0x1c000000"
 EMB_PLUS_APU_SUBSYSTEM_ID:emb-plus-ve2302-amr = "0x1c000008"
 EMB_PLUS_APU_SUBSYSTEM_ID:alveo-v80-amr = "0x1c000008"
 
 BIF_PARTITION_ATTR = "tfa uboot rootfs bootscr kernel dtb"
-BIF_PARTITION_NAME[0x1c000000] = "apu_subsystem"
 BIF_PARTITION_NAME[0x1c000008] = "apu_subsystem"
 
 BIF_PARTITION_ATTR[tfa] = "core=a72-0, exception_level=el-3, trustzone"
@@ -79,19 +73,16 @@ BIF_PARTITION_IMAGE[dtb] = "${DEPLOY_DIR_IMAGE}/system.dtb"
 BIF_PARTITION_ID[dtb] = "${EMB_PLUS_APU_SUBSYSTEM_ID}"
 
 EMB_PLUS_ROOTFS_ADDR ?= ""
-EMB_PLUS_ROOTFS_ADDR:emb-plus-ve2302-xrt = "0x4000000"
 EMB_PLUS_ROOTFS_ADDR:emb-plus-ve2302-amr = "0x20800000"
 EMB_PLUS_ROOTFS_ADDR:alveo-v80-amr = "0x20800000"
 
 EMB_PLUS_BOOTSCR_ADDR ?= "0x20000000"
 
 EMB_PLUS_KERNEL_ADDR ?= ""
-EMB_PLUS_KERNEL_ADDR:emb-plus-ve2302-xrt = "0x200000"
 EMB_PLUS_KERNEL_ADDR:emb-plus-ve2302-amr = "0x19000000"
 EMB_PLUS_KERNEL_ADDR:alveo-v80-amr = "0x19000000"
 
 EMB_PLUS_DTB_ADDR ?= ""
-EMB_PLUS_DTB_ADDR:emb-plus-ve2302-xrt = "0x1000"
 EMB_PLUS_DTB_ADDR:emb-plus-ve2302-amr = "0x1F400000"
 EMB_PLUS_DTB_ADDR:alveo-v80-amr = "0x1F400000"
 

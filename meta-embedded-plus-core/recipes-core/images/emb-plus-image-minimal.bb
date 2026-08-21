@@ -4,7 +4,6 @@ DESCRIPTION = "A minimal image for Embedded Plus."
 inherit core-image
 
 COMPATIBLE_MACHINE = "^$"
-COMPATIBLE_MACHINE:emb-plus-ve2302-xrt = "${MACHINE}"
 COMPATIBLE_MACHINE:emb-plus-ve2302-amr = "${MACHINE}"
 COMPATIBLE_MACHINE:alveo-v80-amr = "${MACHINE}"
 
@@ -35,15 +34,5 @@ IMAGE_INSTALL:append:emb-plus-ve2302-amr = " \
     fpga-manager-script \
 "
 
-XRT_INSTALL = " \
-     xrt \
-     zocl \
-     apu-boot \
-     init-apu \
-     soft-kernel-daemon \
-"
-IMAGE_INSTALL:append:emb-plus-ve2302-xrt = " ${XRT_INSTALL}"
-
 IMAGE_FSTYPES:emb-plus-ve2302-amr = "cpio.lzma cpio.lzma.u-boot"
-IMAGE_FSTYPES:emb-plus-ve2302-xrt = "cpio.lzma cpio.lzma.u-boot"
 

@@ -27,8 +27,6 @@ the Embedded Plus platform:
 |---------------------|--------------------|------------------------|----------------|
 | emb-plus-ve2302-amr | emb-plus-apu-image | APU image              | amd-edf-small  |
 | emb-plus-ve2302-amr | emb-plus-ospi-amr  | OSPI image             | amd-edf        |
-| emb-plus-ve2302-xrt | emb-plus-apu-image | APU image              | amd-edf        |
-| emb-plus-ve2302-xrt | emb-plus-ospi-vmr  | OSPI image             | amd-edf        |
 | alveo-v80-amr       | emb-plus-apu-image | APU image              | amd-edf        |
 | alveo-v80-amr       | emb-plus-ospi-amr  | OSPI image             | amd-edf        |
 
@@ -41,9 +39,8 @@ For AMR APU Image (requires `amd-edf-small` distro):
 DISTRO=amd-edf-small MACHINE=emb-plus-ve2302-amr bitbake emb-plus-apu-image
 ```
 
-For XRT/V80 APU Image (uses default `amd-edf` distro):
+For V80 APU Image (uses default `amd-edf` distro):
 ```
-MACHINE=emb-plus-ve2302-xrt bitbake emb-plus-apu-image
 MACHINE=alveo-v80-amr bitbake emb-plus-apu-image
 ```
 

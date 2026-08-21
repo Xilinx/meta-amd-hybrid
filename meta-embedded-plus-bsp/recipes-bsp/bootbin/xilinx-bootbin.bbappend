@@ -1,32 +1,9 @@
-BIF_FSBL_ATTR:emb-plus-ve2302-xrt = "base-pdi plmfw"
-BIF_VMR_ATTR:emb-plus-ve2302-xrt = "vmr-deploy"
-
-BIF_FPT_ATTR:emb-plus-ve2302-xrt = "extension-fpt"
-BIF_META_ATTR:emb-plus-ve2302-xrt = "partition-metadata"
-
-# specify BIF partition attributes for VMR
-BIF_PARTITION_ATTR[vmr-deploy] = "core=r5-0"
-BIF_PARTITION_IMAGE[vmr-deploy] = "${DEPLOY_DIR_IMAGE}/vmr.elf"
-BIF_PARTITION_ID[vmr-deploy] = "0x1c000000, name=rpu_subsystem, delay_handoff"
-
-# specify BIF partition attributes for ext_fpt
-BIF_PARTITION_ATTR[extension-fpt] = "type=raw, load=0x5FBF0000"
-BIF_PARTITION_IMAGE[extension-fpt] = "${DEPLOY_DIR_IMAGE}/extension-fpt-${MACHINE}.bin"
-BIF_PARTITION_ID[extension-fpt] = "0x1c000000, name=rpu_subsystem, delay_handoff"
-
-# specify BIF partition attributes for ext_fpt
-BIF_PARTITION_ATTR[partition-metadata] = "type=raw, load=0x5FBF2000"
-BIF_PARTITION_IMAGE[partition-metadata] = "${DEPLOY_DIR_IMAGE}/partition-metadata-${MACHINE}.xsabin"
-BIF_PARTITION_ID[partition-metadata] = "0x1c000000, name=rpu_subsystem, delay_handoff"
-
-BIF_PARTITION_ATTR:emb-plus-ve2302-xrt = "${BIF_FSBL_ATTR} ${BIF_VMR_ATTR} ${BIF_FPT_ATTR} ${BIF_META_ATTR}"
-
 BIF_FSBL_ATTR:emb-plus-ve2302-amr = "base-pdi"
 BIF_AMC_ATTR:emb-plus-ve2302-amr = "amcfw"
 BIF_FSBL_ATTR:alveo-v80-amr = "base-pdi"
 BIF_AMC_ATTR:alveo-v80-amr = "amcfw"
 
-# specify BIF partition attributes for VMR
+# specify BIF partition attributes for AMC
 BIF_PARTITION_ATTR[amcfw] = "core=r5-0"
 BIF_PARTITION_IMAGE[amcfw] = "${DEPLOY_DIR_IMAGE}/amc-firmware-${MACHINE}.elf"
 BIF_PARTITION_ID[amcfw] = "0x1c000006"
@@ -35,18 +12,13 @@ BIF_PARTITION_ATTR:alveo-v80-amr = "${BIF_FSBL_ATTR} ${BIF_AMC_ATTR}"
 
 BIF_PARTITION_ATTR:emb-plus-ve2302-amr = "${BIF_FSBL_ATTR} ${BIF_AMC_ATTR}"
 
-DEPENDS:append:emb-plus-ve2302-xrt = " xclbinutil-native"
-
 ADDN_COMPILE_DEPENDS = ""
-ADDN_COMPILE_DEPENDS:emb-plus-ve2302-xrt = "vmr-deploy:do_deploy extension-fpt:do_deploy partition-metadata:do_deploy"
 ADDN_COMPILE_DEPENDS:emb-plus-ve2302-amr = "amcfw:do_deploy"
 ADDN_COMPILE_DEPENDS:alveo-v80-amr = "amcfw:do_deploy"
 
 # Build hello-world for R5-1
 HELLOWORLD_MCDEPENDS = ""
 HELLOWORLD_MCDEPENDS:emb-plus-ve2302-amr = "mc::emb-plus-ve2302-amr-cortexr5-1-baremetal:hello-world:do_deploy"
-
-require xilinx-bootbin-version.inc
 
 do_compile[depends] += "${ADDN_COMPILE_DEPENDS}"
 do_compile[mcdepends] += "${HELLOWORLD_MCDEPENDS}"
@@ -96,16 +68,3 @@ addtask amr_overlay_cdo after do_prepare_recipe_sysroot before do_configure
 # It also hashes the deploy-path partition images, so depend on their deploy.
 do_manifest_aggregate[depends] += "${ADDN_COMPILE_DEPENDS}"
 addtask manifest_aggregate after do_amr_overlay_cdo
-
-do_compile:append:emb-plus-ve2302-xrt() {
-    xclbinutil --force --input ${DEPLOY_DIR_IMAGE}/partition-metadata-${MACHINE}.xsabin \
-        --add-section PDI:RAW:${B}/BOOT.bin --output ${B}/BOOT.xsabin
-}
-
-do_deploy:append:emb-plus-ve2302-xrt() {
-    install -m 0644 ${B}/BOOT.xsabin ${DEPLOYDIR}/${BOOTBIN_BASE_NAME}.xsabin
-    ln -sf ${BOOTBIN_BASE_NAME}.xsabin ${DEPLOYDIR}/BOOT-${MACHINE}.xsabin
-    ln -sf ${BOOTBIN_BASE_NAME}.xsabin ${DEPLOYDIR}/boot.xsabin
-
-    ln -sf ${BOOTBIN_BASE_NAME}.xsabin ${DEPLOYDIR}/${@d.getVar("MACHINE")}-${BOOTBIN_VER_MAIN}${IMAGE_VERSION_SUFFIX}.xsabin
-}
