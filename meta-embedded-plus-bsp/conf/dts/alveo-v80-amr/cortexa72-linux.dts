@@ -1749,10 +1749,13 @@
 
                 cips_pspmc_0_psv_cpm: cips_pspmc_0_psv_cpm@0 {
                         phandle = <0x59>;
+                        xlnx,cpm5-slcr-addr = <0xfcdd0000>;
                         compatible = "xlnx,psv-cpm-1.0";
                         status = "okay";
                         xlnx,ip-name = "psv_cpm";
                         reg = <0x0 0xfc000000 0x0 0x1000000>;
+                        xlnx,cpm-slcr = <0xfca10000>;
+                        xlnx,cpm5-dma0-csr-addr = <0xfce20000>;
                 };
 
                 cips_pspmc_0_psv_pmc_analog_0: cips_pspmc_0_psv_pmc_analog_0@f1160000 {
