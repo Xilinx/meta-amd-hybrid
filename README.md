@@ -103,11 +103,6 @@ This layer depends on:
 	layers: meta-xilinx-microblaze, meta-xilinx-core, meta-xilinx-standalone, meta-xilinx-standalone-sdt
 	branch: wrynose or amd xilinx release version (e.g. rel-v2026.1)
 
-	URI:
-        https://git.yoctoproject.org/meta-xilinx-tools (official version)
-        https://github.com/Xilinx/meta-xilinx-tools (development and amd xilinx release)
-	branch: wrynose or amd xilinx release version (e.g. rel-v2026.1)
-
 	URI: https://github.com/Xilinx/meta-amd-adaptive-socs
 	layers: meta-amd-adaptive-socs-core 
 	branch: amd xilinx release version (e.g. rel-v2026.1)
