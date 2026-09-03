@@ -2069,7 +2069,7 @@
                         xlnx,name = "STATIC_DESIGN_cips_pspmc_0_psv_r5_0_instruction_cache";
                 };
 
-                STATIC_DESIGN_cips_pspmc_0_psv_r5_1_atcm: STATIC_DESIGN_cips_pspmc_0_psv_r5_1_atcm@0 {
+                STATIC_DESIGN_cips_pspmc_0_psv_r5_1_atcm: psv_r5_1_atcm@0 {
                         phandle = <0xa8>;
                         xlnx,power-domain = <0x1831800d>;
                         compatible = "xlnx,psv-r5-tcm-1.0";
@@ -2080,7 +2080,7 @@
                         xlnx,name = "STATIC_DESIGN_cips_pspmc_0_psv_r5_1_atcm";
                 };
 
-                STATIC_DESIGN_cips_pspmc_0_psv_r5_1_btcm: STATIC_DESIGN_cips_pspmc_0_psv_r5_1_btcm@20000 {
+                STATIC_DESIGN_cips_pspmc_0_psv_r5_1_btcm: psv_r5_1_btcm@20000 {
                         phandle = <0xa9>;
                         xlnx,power-domain = <0x1831800e>;
                         compatible = "xlnx,psv-r5-tcm-1.0";
@@ -2687,8 +2687,8 @@
                 STATIC_DESIGN_cips_pspmc_0_psv_psm_global_reg = "/axi/STATIC_DESIGN_cips_pspmc_0_psv_psm_global_reg@ffc90000";
                 STATIC_DESIGN_cips_pspmc_0_psv_r5_0_data_cache = "/axi/STATIC_DESIGN_cips_pspmc_0_psv_r5_0_data_cache@ffe50000";
                 STATIC_DESIGN_cips_pspmc_0_psv_r5_0_instruction_cache = "/axi/STATIC_DESIGN_cips_pspmc_0_psv_r5_0_instruction_cache@ffe40000";
-                STATIC_DESIGN_cips_pspmc_0_psv_r5_1_atcm = "/axi/STATIC_DESIGN_cips_pspmc_0_psv_r5_1_atcm@0";
-                STATIC_DESIGN_cips_pspmc_0_psv_r5_1_btcm = "/axi/STATIC_DESIGN_cips_pspmc_0_psv_r5_1_btcm@20000";
+                STATIC_DESIGN_cips_pspmc_0_psv_r5_1_atcm = "/axi/psv_r5_1_atcm@0";
+                STATIC_DESIGN_cips_pspmc_0_psv_r5_1_btcm = "/axi/psv_r5_1_btcm@20000";
                 STATIC_DESIGN_cips_pspmc_0_psv_r5_1_data_cache = "/axi/STATIC_DESIGN_cips_pspmc_0_psv_r5_1_data_cache@ffed0000";
                 STATIC_DESIGN_cips_pspmc_0_psv_r5_1_instruction_cache = "/axi/STATIC_DESIGN_cips_pspmc_0_psv_r5_1_instruction_cache@ffec0000";
                 STATIC_DESIGN_cips_pspmc_0_psv_r5_tcm_ram_0 = "/axi/STATIC_DESIGN_cips_pspmc_0_psv_r5_tcm_ram_0@0";
