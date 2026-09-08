@@ -2548,16 +2548,6 @@
                 CPU_SLEEP_0 = "/cpus/idle-states/cpu-sleep-0";
         };
 
-        domains {
-
-                APU_Linux {
-                        compatible = "openamp,domain-v1";
-                        reserved-memory = <0x17f 0x180 0x181 0x182>;
-                        cpus = <&cpus_a72 0xf 0x80000003>;
-                        os,type = "linux";
-                };
-        };
-
         reserved-memory {
                 #size-cells = <0x2>;
                 #address-cells = <0x2>;
