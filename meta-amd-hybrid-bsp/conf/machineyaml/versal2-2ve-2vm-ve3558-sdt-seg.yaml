@@ -1,0 +1,11 @@
+args:
+    - --hw-description https://xcoartifactory.xilinx.com/artifactory/petalinux-hwproj-dev-local/edf_files/2026.2/07300346/internal/rave2-ecp-test/rave2_sdt_2026.2.tar.gz
+    - --machine-name versal2-2ve-2vm-ve3558-sdt-seg
+    - -g full
+kconfig:
+    CONFIG_SUBSYSTEM_BOOTMODE_8: y
+
+machine:
+    description: >-
+        Segmented SDT machine for the AMD Versal Gen 2 VE3558 evaluation
+        kit: Cortex-A78 Linux plus MicroBlaze PMC firmware sub-machine.
