@@ -1,5 +1,7 @@
 FILESEXTRAPATHS:prepend := "${THISDIR}/files:"
 
-SRC_URI:append:emb-plus-ve2302-amr = " file://emb-plus-amr.cfg"
-SRC_URI:append:alveo-v80-amr = " file://emb-plus-amr.cfg"
+EMB_PLUS_UBOOT_CFG = ""
+EMB_PLUS_UBOOT_CFG:emb-plus-ve2302-amr = "file://emb-plus-amr.cfg"
+EMB_PLUS_UBOOT_CFG:alveo-v80-amr = "file://emb-plus-amr.cfg"
 
+SRC_URI += "${EMB_PLUS_UBOOT_CFG}"
