@@ -20,7 +20,7 @@
 
 &amba {
 
-        STATIC_DESIGN_xdma_bypass_addr_mask: axi_addr_mask@0 {
+        STATIC_DESIGN_xdma_bypass_addr_mask: axi-addr-mask@0 {
                 xlnx,name = "STATIC_DESIGN_xdma_bypass_addr_mask";
                 xlnx,data-width = <0x100>;
                 xlnx,aruser-width = <0x8>;
@@ -36,7 +36,7 @@
                 compatible = "xlnx,axi-addr-mask-1.0";
         };
 
-        STATIC_DESIGN_xdma_lite_addr_mask: STATIC_DESIGN_xdma_lite_addr_mask@0 {
+        STATIC_DESIGN_xdma_lite_addr_mask: STATIC-DESIGN-xdma-lite-addr-mask@0 {
                 xlnx,name = "STATIC_DESIGN_xdma_lite_addr_mask";
                 xlnx,data-width = <0x20>;
                 xlnx,aruser-width = <0x0>;

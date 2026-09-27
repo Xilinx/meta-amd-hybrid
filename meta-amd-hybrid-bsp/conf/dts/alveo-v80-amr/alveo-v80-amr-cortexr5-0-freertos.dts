@@ -31,7 +31,7 @@
         };
 
         cpus_r5_0: cpus-r5@0 {
-                phandle = <0xc8>;
+                phandle = <0xca>;
                 #address-cells = <0x1>;
                 #size-cells = <0x0>;
                 compatible = "cpus,cluster";
@@ -171,8 +171,18 @@
                 #ranges-address-cells = <0x1>;
                 #ranges-size-cells = <0x1>;
 
+                cpu-map {
+
+                        cluster0 {
+
+                                core0 {
+                                        cpu = <&psv_cortexr5_0>;
+                                };
+                        };
+                };
+
                 psv_cortexr5_0: cpu@0 {
-                        phandle = <0xc9>;
+                        phandle = <0xa4>;
                         compatible = "arm,cortex-r5";
                         device_type = "cpu";
                         reg = <0x0>;
@@ -246,12 +256,12 @@
         };
 
         versal_fpga: versal-fpga {
-                phandle = <0xa8>;
+                phandle = <0xaa>;
                 compatible = "xlnx,versal-fpga";
         };
 
         sensor0: versal-thermal-sensor {
-                phandle = <0xaa>;
+                phandle = <0xac>;
                 compatible = "xlnx,versal-thermal";
                 #thermal-sensor-cells = <0x1>;
                 io-channels = <&sysmon0 0x16>;
@@ -1545,7 +1555,7 @@
                         xlnx,name = "cips_pspmc_0_psv_coresight_0";
                 };
 
-                cips_pspmc_0_psv_apu_0: cips_pspmc_0_psv_apu_0@fd5c0000 {
+                cips_pspmc_0_psv_apu_0: cips-pspmc-0-psv-apu-0@fd5c0000 {
                         phandle = <0x5f>;
                         compatible = "xlnx,psv-apu-1.0";
                         status = "okay";
@@ -1554,7 +1564,7 @@
                         xlnx,name = "cips_pspmc_0_psv_apu_0";
                 };
 
-                cips_pspmc_0_psv_coresight_a720_cti: cips_pspmc_0_psv_coresight_a720_cti@f0d10000 {
+                cips_pspmc_0_psv_coresight_a720_cti: cips-pspmc-0-psv-coresight-a720-cti@f0d10000 {
                         phandle = <0x1e>;
                         compatible = "xlnx,psv-coresight-a720-cti-1.0";
                         status = "okay";
@@ -1563,7 +1573,7 @@
                         xlnx,name = "cips_pspmc_0_psv_coresight_a720_cti";
                 };
 
-                cips_pspmc_0_psv_coresight_a720_dbg: cips_pspmc_0_psv_coresight_a720_dbg@f0d00000 {
+                cips_pspmc_0_psv_coresight_a720_dbg: cips-pspmc-0-psv-coresight-a720-dbg@f0d00000 {
                         phandle = <0x1d>;
                         compatible = "xlnx,psv-coresight-a720-dbg-1.0";
                         status = "okay";
@@ -1572,7 +1582,7 @@
                         xlnx,name = "cips_pspmc_0_psv_coresight_a720_dbg";
                 };
 
-                cips_pspmc_0_psv_coresight_a720_etm: cips_pspmc_0_psv_coresight_a720_etm@f0d30000 {
+                cips_pspmc_0_psv_coresight_a720_etm: cips-pspmc-0-psv-coresight-a720-etm@f0d30000 {
                         phandle = <0x20>;
                         compatible = "xlnx,psv-coresight-a720-etm-1.0";
                         status = "okay";
@@ -1581,7 +1591,7 @@
                         xlnx,name = "cips_pspmc_0_psv_coresight_a720_etm";
                 };
 
-                cips_pspmc_0_psv_coresight_a720_pmu: cips_pspmc_0_psv_coresight_a720_pmu@f0d20000 {
+                cips_pspmc_0_psv_coresight_a720_pmu: cips-pspmc-0-psv-coresight-a720-pmu@f0d20000 {
                         phandle = <0x1f>;
                         compatible = "xlnx,psv-coresight-a720-pmu-1.0";
                         status = "okay";
@@ -1590,7 +1600,7 @@
                         xlnx,name = "cips_pspmc_0_psv_coresight_a720_pmu";
                 };
 
-                cips_pspmc_0_psv_coresight_a721_cti: cips_pspmc_0_psv_coresight_a721_cti@f0d50000 {
+                cips_pspmc_0_psv_coresight_a721_cti: cips-pspmc-0-psv-coresight-a721-cti@f0d50000 {
                         phandle = <0x22>;
                         compatible = "xlnx,psv-coresight-a721-cti-1.0";
                         status = "okay";
@@ -1599,7 +1609,7 @@
                         xlnx,name = "cips_pspmc_0_psv_coresight_a721_cti";
                 };
 
-                cips_pspmc_0_psv_coresight_a721_dbg: cips_pspmc_0_psv_coresight_a721_dbg@f0d40000 {
+                cips_pspmc_0_psv_coresight_a721_dbg: cips-pspmc-0-psv-coresight-a721-dbg@f0d40000 {
                         phandle = <0x21>;
                         compatible = "xlnx,psv-coresight-a721-dbg-1.0";
                         status = "okay";
@@ -1608,7 +1618,7 @@
                         xlnx,name = "cips_pspmc_0_psv_coresight_a721_dbg";
                 };
 
-                cips_pspmc_0_psv_coresight_a721_etm: cips_pspmc_0_psv_coresight_a721_etm@f0d70000 {
+                cips_pspmc_0_psv_coresight_a721_etm: cips-pspmc-0-psv-coresight-a721-etm@f0d70000 {
                         phandle = <0x24>;
                         compatible = "xlnx,psv-coresight-a721-etm-1.0";
                         status = "okay";
@@ -1617,7 +1627,7 @@
                         xlnx,name = "cips_pspmc_0_psv_coresight_a721_etm";
                 };
 
-                cips_pspmc_0_psv_coresight_a721_pmu: cips_pspmc_0_psv_coresight_a721_pmu@f0d60000 {
+                cips_pspmc_0_psv_coresight_a721_pmu: cips-pspmc-0-psv-coresight-a721-pmu@f0d60000 {
                         phandle = <0x23>;
                         compatible = "xlnx,psv-coresight-a721-pmu-1.0";
                         status = "okay";
@@ -1626,7 +1636,7 @@
                         xlnx,name = "cips_pspmc_0_psv_coresight_a721_pmu";
                 };
 
-                cips_pspmc_0_psv_coresight_apu_cti: cips_pspmc_0_psv_coresight_apu_cti@f0ca0000 {
+                cips_pspmc_0_psv_coresight_apu_cti: cips-pspmc-0-psv-coresight-apu-cti@f0ca0000 {
                         phandle = <0x1c>;
                         compatible = "xlnx,psv-coresight-apu-cti-1.0";
                         status = "okay";
@@ -1635,7 +1645,7 @@
                         xlnx,name = "cips_pspmc_0_psv_coresight_apu_cti";
                 };
 
-                cips_pspmc_0_psv_coresight_apu_ela: cips_pspmc_0_psv_coresight_apu_ela@f0c60000 {
+                cips_pspmc_0_psv_coresight_apu_ela: cips-pspmc-0-psv-coresight-apu-ela@f0c60000 {
                         phandle = <0x1b>;
                         compatible = "xlnx,psv-coresight-apu-ela-1.0";
                         status = "okay";
@@ -1644,7 +1654,7 @@
                         xlnx,name = "cips_pspmc_0_psv_coresight_apu_ela";
                 };
 
-                cips_pspmc_0_psv_coresight_apu_etf: cips_pspmc_0_psv_coresight_apu_etf@f0c30000 {
+                cips_pspmc_0_psv_coresight_apu_etf: cips-pspmc-0-psv-coresight-apu-etf@f0c30000 {
                         phandle = <0x1a>;
                         compatible = "xlnx,psv-coresight-apu-etf-1.0";
                         status = "okay";
@@ -1653,7 +1663,7 @@
                         xlnx,name = "cips_pspmc_0_psv_coresight_apu_etf";
                 };
 
-                cips_pspmc_0_psv_coresight_apu_fun: cips_pspmc_0_psv_coresight_apu_fun@f0c20000 {
+                cips_pspmc_0_psv_coresight_apu_fun: cips-pspmc-0-psv-coresight-apu-fun@f0c20000 {
                         phandle = <0x19>;
                         compatible = "xlnx,psv-coresight-apu-fun-1.0";
                         status = "okay";
@@ -1662,7 +1672,7 @@
                         xlnx,name = "cips_pspmc_0_psv_coresight_apu_fun";
                 };
 
-                cips_pspmc_0_psv_coresight_cpm_atm: cips_pspmc_0_psv_coresight_cpm_atm@f0f80000 {
+                cips_pspmc_0_psv_coresight_cpm_atm: cips-pspmc-0-psv-coresight-cpm-atm@f0f80000 {
                         phandle = <0x2b>;
                         compatible = "xlnx,psv-coresight-cpm-atm-1.0";
                         status = "okay";
@@ -1671,7 +1681,7 @@
                         xlnx,name = "cips_pspmc_0_psv_coresight_cpm_atm";
                 };
 
-                cips_pspmc_0_psv_coresight_cpm_cti2a: cips_pspmc_0_psv_coresight_cpm_cti2a@f0fa0000 {
+                cips_pspmc_0_psv_coresight_cpm_cti2a: cips-pspmc-0-psv-coresight-cpm-cti2a@f0fa0000 {
                         phandle = <0x2c>;
                         compatible = "xlnx,psv-coresight-cpm-cti2a-1.0";
                         status = "okay";
@@ -1680,7 +1690,7 @@
                         xlnx,name = "cips_pspmc_0_psv_coresight_cpm_cti2a";
                 };
 
-                cips_pspmc_0_psv_coresight_cpm_cti2d: cips_pspmc_0_psv_coresight_cpm_cti2d@f0fd0000 {
+                cips_pspmc_0_psv_coresight_cpm_cti2d: cips-pspmc-0-psv-coresight-cpm-cti2d@f0fd0000 {
                         phandle = <0x2d>;
                         compatible = "xlnx,psv-coresight-cpm-cti2d-1.0";
                         status = "okay";
@@ -1689,7 +1699,7 @@
                         xlnx,name = "cips_pspmc_0_psv_coresight_cpm_cti2d";
                 };
 
-                cips_pspmc_0_psv_coresight_cpm_ela2a: cips_pspmc_0_psv_coresight_cpm_ela2a@f0f40000 {
+                cips_pspmc_0_psv_coresight_cpm_ela2a: cips-pspmc-0-psv-coresight-cpm-ela2a@f0f40000 {
                         phandle = <0x27>;
                         compatible = "xlnx,psv-coresight-cpm-ela2a-1.0";
                         status = "okay";
@@ -1698,7 +1708,7 @@
                         xlnx,name = "cips_pspmc_0_psv_coresight_cpm_ela2a";
                 };
 
-                cips_pspmc_0_psv_coresight_cpm_ela2b: cips_pspmc_0_psv_coresight_cpm_ela2b@f0f50000 {
+                cips_pspmc_0_psv_coresight_cpm_ela2b: cips-pspmc-0-psv-coresight-cpm-ela2b@f0f50000 {
                         phandle = <0x28>;
                         compatible = "xlnx,psv-coresight-cpm-ela2b-1.0";
                         status = "okay";
@@ -1707,7 +1717,7 @@
                         xlnx,name = "cips_pspmc_0_psv_coresight_cpm_ela2b";
                 };
 
-                cips_pspmc_0_psv_coresight_cpm_ela2c: cips_pspmc_0_psv_coresight_cpm_ela2c@f0f60000 {
+                cips_pspmc_0_psv_coresight_cpm_ela2c: cips-pspmc-0-psv-coresight-cpm-ela2c@f0f60000 {
                         phandle = <0x29>;
                         compatible = "xlnx,psv-coresight-cpm-ela2c-1.0";
                         status = "okay";
@@ -1716,7 +1726,7 @@
                         xlnx,name = "cips_pspmc_0_psv_coresight_cpm_ela2c";
                 };
 
-                cips_pspmc_0_psv_coresight_cpm_ela2d: cips_pspmc_0_psv_coresight_cpm_ela2d@f0f70000 {
+                cips_pspmc_0_psv_coresight_cpm_ela2d: cips-pspmc-0-psv-coresight-cpm-ela2d@f0f70000 {
                         phandle = <0x2a>;
                         compatible = "xlnx,psv-coresight-cpm-ela2d-1.0";
                         status = "okay";
@@ -1725,7 +1735,7 @@
                         xlnx,name = "cips_pspmc_0_psv_coresight_cpm_ela2d";
                 };
 
-                cips_pspmc_0_psv_coresight_cpm_fun: cips_pspmc_0_psv_coresight_cpm_fun@f0f20000 {
+                cips_pspmc_0_psv_coresight_cpm_fun: cips-pspmc-0-psv-coresight-cpm-fun@f0f20000 {
                         phandle = <0x26>;
                         compatible = "xlnx,psv-coresight-cpm-fun-1.0";
                         status = "okay";
@@ -1734,7 +1744,7 @@
                         xlnx,name = "cips_pspmc_0_psv_coresight_cpm_fun";
                 };
 
-                cips_pspmc_0_psv_coresight_cpm_rom: cips_pspmc_0_psv_coresight_cpm_rom@f0f00000 {
+                cips_pspmc_0_psv_coresight_cpm_rom: cips-pspmc-0-psv-coresight-cpm-rom@f0f00000 {
                         phandle = <0x25>;
                         compatible = "xlnx,psv-coresight-cpm-rom-1.0";
                         status = "okay";
@@ -1743,7 +1753,7 @@
                         xlnx,name = "cips_pspmc_0_psv_coresight_cpm_rom";
                 };
 
-                cips_pspmc_0_psv_coresight_fpd_atm: cips_pspmc_0_psv_coresight_fpd_atm@f0b80000 {
+                cips_pspmc_0_psv_coresight_fpd_atm: cips-pspmc-0-psv-coresight-fpd-atm@f0b80000 {
                         phandle = <0x15>;
                         compatible = "xlnx,psv-coresight-fpd-atm-1.0";
                         status = "okay";
@@ -1752,7 +1762,7 @@
                         xlnx,name = "cips_pspmc_0_psv_coresight_fpd_atm";
                 };
 
-                cips_pspmc_0_psv_coresight_fpd_cti1b: cips_pspmc_0_psv_coresight_fpd_cti1b@f0bb0000 {
+                cips_pspmc_0_psv_coresight_fpd_cti1b: cips-pspmc-0-psv-coresight-fpd-cti1b@f0bb0000 {
                         phandle = <0x16>;
                         compatible = "xlnx,psv-coresight-fpd-cti1b-1.0";
                         status = "okay";
@@ -1761,7 +1771,7 @@
                         xlnx,name = "cips_pspmc_0_psv_coresight_fpd_cti1b";
                 };
 
-                cips_pspmc_0_psv_coresight_fpd_cti1c: cips_pspmc_0_psv_coresight_fpd_cti1c@f0bc0000 {
+                cips_pspmc_0_psv_coresight_fpd_cti1c: cips-pspmc-0-psv-coresight-fpd-cti1c@f0bc0000 {
                         phandle = <0x17>;
                         compatible = "xlnx,psv-coresight-fpd-cti1c-1.0";
                         status = "okay";
@@ -1770,7 +1780,7 @@
                         xlnx,name = "cips_pspmc_0_psv_coresight_fpd_cti1c";
                 };
 
-                cips_pspmc_0_psv_coresight_fpd_cti1d: cips_pspmc_0_psv_coresight_fpd_cti1d@f0bd0000 {
+                cips_pspmc_0_psv_coresight_fpd_cti1d: cips-pspmc-0-psv-coresight-fpd-cti1d@f0bd0000 {
                         phandle = <0x18>;
                         compatible = "xlnx,psv-coresight-fpd-cti1d-1.0";
                         status = "okay";
@@ -1779,7 +1789,7 @@
                         xlnx,name = "cips_pspmc_0_psv_coresight_fpd_cti1d";
                 };
 
-                cips_pspmc_0_psv_coresight_fpd_stm: cips_pspmc_0_psv_coresight_fpd_stm@f0b70000 {
+                cips_pspmc_0_psv_coresight_fpd_stm: cips-pspmc-0-psv-coresight-fpd-stm@f0b70000 {
                         phandle = <0x14>;
                         compatible = "xlnx,psv-coresight-fpd-stm-1.0";
                         status = "okay";
@@ -1788,7 +1798,7 @@
                         xlnx,name = "cips_pspmc_0_psv_coresight_fpd_stm";
                 };
 
-                cips_pspmc_0_psv_coresight_lpd_atm: cips_pspmc_0_psv_coresight_lpd_atm@f0980000 {
+                cips_pspmc_0_psv_coresight_lpd_atm: cips-pspmc-0-psv-coresight-lpd-atm@f0980000 {
                         phandle = <0x10>;
                         compatible = "xlnx,psv-coresight-lpd-atm-1.0";
                         status = "okay";
@@ -1797,7 +1807,7 @@
                         xlnx,name = "cips_pspmc_0_psv_coresight_lpd_atm";
                 };
 
-                cips_pspmc_0_psv_coresight_lpd_cti: cips_pspmc_0_psv_coresight_lpd_cti@f09d0000 {
+                cips_pspmc_0_psv_coresight_lpd_cti: cips-pspmc-0-psv-coresight-lpd-cti@f09d0000 {
                         phandle = <0x11>;
                         compatible = "xlnx,psv-coresight-lpd-cti-1.0";
                         status = "okay";
@@ -1806,7 +1816,7 @@
                         xlnx,name = "cips_pspmc_0_psv_coresight_lpd_cti";
                 };
 
-                cips_pspmc_0_psv_coresight_pmc_cti: cips_pspmc_0_psv_coresight_pmc_cti@f08d0000 {
+                cips_pspmc_0_psv_coresight_pmc_cti: cips-pspmc-0-psv-coresight-pmc-cti@f08d0000 {
                         phandle = <0xf>;
                         compatible = "xlnx,psv-coresight-pmc-cti-1.0";
                         status = "okay";
@@ -1815,7 +1825,7 @@
                         xlnx,name = "cips_pspmc_0_psv_coresight_pmc_cti";
                 };
 
-                cips_pspmc_0_psv_coresight_r50_cti: cips_pspmc_0_psv_coresight_r50_cti@f0a10000 {
+                cips_pspmc_0_psv_coresight_r50_cti: cips-pspmc-0-psv-coresight-r50-cti@f0a10000 {
                         phandle = <0x12>;
                         compatible = "xlnx,psv-coresight-r50-cti-1.0";
                         status = "okay";
@@ -1824,7 +1834,7 @@
                         xlnx,name = "cips_pspmc_0_psv_coresight_r50_cti";
                 };
 
-                cips_pspmc_0_psv_coresight_r51_cti: cips_pspmc_0_psv_coresight_r51_cti@f0a50000 {
+                cips_pspmc_0_psv_coresight_r51_cti: cips-pspmc-0-psv-coresight-r51-cti@f0a50000 {
                         phandle = <0x13>;
                         compatible = "xlnx,psv-coresight-r51-cti-1.0";
                         status = "okay";
@@ -1833,7 +1843,7 @@
                         xlnx,name = "cips_pspmc_0_psv_coresight_r51_cti";
                 };
 
-                cips_pspmc_0_psv_crf_0: cips_pspmc_0_psv_crf_0@fd1a0000 {
+                cips_pspmc_0_psv_crf_0: cips-pspmc-0-psv-crf-0@fd1a0000 {
                         phandle = <0x5b>;
                         compatible = "xlnx,psv-crf-1.0";
                         status = "okay";
@@ -1842,7 +1852,7 @@
                         xlnx,name = "cips_pspmc_0_psv_crf_0";
                 };
 
-                cips_pspmc_0_psv_crl_0: cips_pspmc_0_psv_crl_0@ff5e0000 {
+                cips_pspmc_0_psv_crl_0: cips-pspmc-0-psv-crl-0@ff5e0000 {
                         phandle = <0x76>;
                         compatible = "xlnx,psv-crl-1.0";
                         status = "okay";
@@ -1851,7 +1861,7 @@
                         xlnx,name = "cips_pspmc_0_psv_crl_0";
                 };
 
-                cips_pspmc_0_psv_crp_0: cips_pspmc_0_psv_crp_0@f1260000 {
+                cips_pspmc_0_psv_crp_0: cips-pspmc-0-psv-crp-0@f1260000 {
                         phandle = <0x3f>;
                         compatible = "xlnx,psv-crp-1.0";
                         status = "okay";
@@ -1860,7 +1870,7 @@
                         xlnx,name = "cips_pspmc_0_psv_crp_0";
                 };
 
-                cips_pspmc_0_psv_fpd_afi_0: cips_pspmc_0_psv_fpd_afi_0@fd360000 {
+                cips_pspmc_0_psv_fpd_afi_0: cips-pspmc-0-psv-fpd-afi-0@fd360000 {
                         phandle = <0x5c>;
                         compatible = "xlnx,psv-fpd-afi-1.0";
                         status = "okay";
@@ -1869,7 +1879,7 @@
                         xlnx,name = "cips_pspmc_0_psv_fpd_afi_0";
                 };
 
-                cips_pspmc_0_psv_fpd_afi_2: cips_pspmc_0_psv_fpd_afi_2@fd380000 {
+                cips_pspmc_0_psv_fpd_afi_2: cips-pspmc-0-psv-fpd-afi-2@fd380000 {
                         phandle = <0x5d>;
                         compatible = "xlnx,psv-fpd-afi-1.0";
                         status = "okay";
@@ -1878,7 +1888,7 @@
                         xlnx,name = "cips_pspmc_0_psv_fpd_afi_2";
                 };
 
-                cips_pspmc_0_psv_fpd_cci_0: cips_pspmc_0_psv_fpd_cci_0@fd5e0000 {
+                cips_pspmc_0_psv_fpd_cci_0: cips-pspmc-0-psv-fpd-cci-0@fd5e0000 {
                         phandle = <0x60>;
                         compatible = "xlnx,psv-fpd-cci-1.0";
                         status = "okay";
@@ -1887,7 +1897,7 @@
                         xlnx,name = "cips_pspmc_0_psv_fpd_cci_0";
                 };
 
-                cips_pspmc_0_psv_fpd_gpv_0: cips_pspmc_0_psv_fpd_gpv_0@fd700000 {
+                cips_pspmc_0_psv_fpd_gpv_0: cips-pspmc-0-psv-fpd-gpv-0@fd700000 {
                         phandle = <0x64>;
                         compatible = "xlnx,psv-fpd-gpv-1.0";
                         status = "okay";
@@ -1896,7 +1906,7 @@
                         xlnx,name = "cips_pspmc_0_psv_fpd_gpv_0";
                 };
 
-                cips_pspmc_0_psv_fpd_slcr_0: cips_pspmc_0_psv_fpd_slcr_0@fd610000 {
+                cips_pspmc_0_psv_fpd_slcr_0: cips-pspmc-0-psv-fpd-slcr-0@fd610000 {
                         phandle = <0x62>;
                         compatible = "xlnx,psv-fpd-slcr-1.0";
                         status = "okay";
@@ -1905,7 +1915,7 @@
                         xlnx,name = "cips_pspmc_0_psv_fpd_slcr_0";
                 };
 
-                cips_pspmc_0_psv_fpd_slcr_secure_0: cips_pspmc_0_psv_fpd_slcr_secure_0@fd690000 {
+                cips_pspmc_0_psv_fpd_slcr_secure_0: cips-pspmc-0-psv-fpd-slcr-secure-0@fd690000 {
                         phandle = <0x63>;
                         compatible = "xlnx,psv-fpd-slcr-secure-1.0";
                         status = "okay";
@@ -1914,7 +1924,7 @@
                         xlnx,name = "cips_pspmc_0_psv_fpd_slcr_secure_0";
                 };
 
-                cips_pspmc_0_psv_fpd_smmu_0: cips_pspmc_0_psv_fpd_smmu_0@fd5f0000 {
+                cips_pspmc_0_psv_fpd_smmu_0: cips-pspmc-0-psv-fpd-smmu-0@fd5f0000 {
                         phandle = <0x61>;
                         compatible = "xlnx,psv-fpd-smmu-1.0";
                         status = "okay";
@@ -1923,7 +1933,7 @@
                         xlnx,name = "cips_pspmc_0_psv_fpd_smmu_0";
                 };
 
-                cips_pspmc_0_psv_lpd_afi_0: cips_pspmc_0_psv_lpd_afi_0@ff9b0000 {
+                cips_pspmc_0_psv_lpd_afi_0: cips-pspmc-0-psv-lpd-afi-0@ff9b0000 {
                         phandle = <0x7b>;
                         compatible = "xlnx,psv-lpd-afi-1.0";
                         status = "okay";
@@ -1932,7 +1942,7 @@
                         xlnx,name = "cips_pspmc_0_psv_lpd_afi_0";
                 };
 
-                cips_pspmc_0_psv_lpd_iou_secure_slcr_0: cips_pspmc_0_psv_lpd_iou_secure_slcr_0@ff0a0000 {
+                cips_pspmc_0_psv_lpd_iou_secure_slcr_0: cips-pspmc-0-psv-lpd-iou-secure-slcr-0@ff0a0000 {
                         phandle = <0x6c>;
                         compatible = "xlnx,psv-lpd-iou-secure-slcr-1.0";
                         status = "okay";
@@ -1941,7 +1951,7 @@
                         xlnx,name = "cips_pspmc_0_psv_lpd_iou_secure_slcr_0";
                 };
 
-                cips_pspmc_0_psv_lpd_iou_slcr_0: cips_pspmc_0_psv_lpd_iou_slcr_0@ff080000 {
+                cips_pspmc_0_psv_lpd_iou_slcr_0: cips-pspmc-0-psv-lpd-iou-slcr-0@ff080000 {
                         phandle = <0x6b>;
                         compatible = "xlnx,psv-lpd-iou-slcr-1.0";
                         status = "okay";
@@ -1950,7 +1960,7 @@
                         xlnx,name = "cips_pspmc_0_psv_lpd_iou_slcr_0";
                 };
 
-                cips_pspmc_0_psv_lpd_slcr_0: cips_pspmc_0_psv_lpd_slcr_0@ff410000 {
+                cips_pspmc_0_psv_lpd_slcr_0: cips-pspmc-0-psv-lpd-slcr-0@ff410000 {
                         phandle = <0x74>;
                         compatible = "xlnx,psv-lpd-slcr-1.0";
                         status = "okay";
@@ -1959,7 +1969,7 @@
                         xlnx,name = "cips_pspmc_0_psv_lpd_slcr_0";
                 };
 
-                cips_pspmc_0_psv_lpd_slcr_secure_0: cips_pspmc_0_psv_lpd_slcr_secure_0@ff510000 {
+                cips_pspmc_0_psv_lpd_slcr_secure_0: cips-pspmc-0-psv-lpd-slcr-secure-0@ff510000 {
                         phandle = <0x75>;
                         compatible = "xlnx,psv-lpd-slcr-secure-1.0";
                         status = "okay";
@@ -1968,7 +1978,7 @@
                         xlnx,name = "cips_pspmc_0_psv_lpd_slcr_secure_0";
                 };
 
-                cips_pspmc_0_psv_ocm_ctrl: cips_pspmc_0_psv_ocm_ctrl@ff960000 {
+                cips_pspmc_0_psv_ocm_ctrl: cips-pspmc-0-psv-ocm-ctrl@ff960000 {
                         phandle = <0x77>;
                         compatible = "xlnx,psv-ocm-1.0";
                         status = "okay";
@@ -1978,7 +1988,7 @@
                         xlnx,name = "cips_pspmc_0_psv_ocm_ctrl";
                 };
 
-                cips_pspmc_0_psv_pmc_aes: cips_pspmc_0_psv_pmc_aes@f11e0000 {
+                cips_pspmc_0_psv_pmc_aes: cips-pspmc-0-psv-pmc-aes@f11e0000 {
                         phandle = <0x37>;
                         compatible = "xlnx,psv-pmc-aes-1.0";
                         status = "okay";
@@ -1987,7 +1997,7 @@
                         xlnx,name = "cips_pspmc_0_psv_pmc_aes";
                 };
 
-                cips_pspmc_0_psv_pmc_analog_0: cips_pspmc_0_psv_pmc_analog_0@f1160000 {
+                cips_pspmc_0_psv_pmc_analog_0: cips-pspmc-0-psv-pmc-analog-0@f1160000 {
                         phandle = <0x33>;
                         compatible = "xlnx,psv-pmc-analog-1.0";
                         status = "okay";
@@ -1999,7 +2009,7 @@
                         xlnx,name = "cips_pspmc_0_psv_pmc_analog_0";
                 };
 
-                cips_pspmc_0_psv_pmc_bbram_ctrl: cips_pspmc_0_psv_pmc_bbram_ctrl@f11f0000 {
+                cips_pspmc_0_psv_pmc_bbram_ctrl: cips-pspmc-0-psv-pmc-bbram-ctrl@f11f0000 {
                         phandle = <0x38>;
                         compatible = "xlnx,psv-pmc-bbram-ctrl-1.0";
                         status = "okay";
@@ -2008,7 +2018,7 @@
                         xlnx,name = "cips_pspmc_0_psv_pmc_bbram_ctrl";
                 };
 
-                cips_pspmc_0_psv_pmc_cfi_cframe_1: cips_pspmc_0_psv_pmc_cfi_cframe_1@f12d2000 {
+                cips_pspmc_0_psv_pmc_cfi_cframe_1: cips-pspmc-0-psv-pmc-cfi-cframe-1@f12d2000 {
                         phandle = <0x44>;
                         compatible = "xlnx,psv-pmc-cfi-cframe-1.0";
                         status = "okay";
@@ -2017,7 +2027,7 @@
                         xlnx,name = "cips_pspmc_0_psv_pmc_cfi_cframe_1";
                 };
 
-                cips_pspmc_0_psv_pmc_cfi_cframe_10: cips_pspmc_0_psv_pmc_cfi_cframe_10@f12e4000 {
+                cips_pspmc_0_psv_pmc_cfi_cframe_10: cips-pspmc-0-psv-pmc-cfi-cframe-10@f12e4000 {
                         phandle = <0x4d>;
                         compatible = "xlnx,psv-pmc-cfi-cframe-1.0";
                         status = "okay";
@@ -2026,7 +2036,7 @@
                         xlnx,name = "cips_pspmc_0_psv_pmc_cfi_cframe_10";
                 };
 
-                cips_pspmc_0_psv_pmc_cfi_cframe_11: cips_pspmc_0_psv_pmc_cfi_cframe_11@f12e6000 {
+                cips_pspmc_0_psv_pmc_cfi_cframe_11: cips-pspmc-0-psv-pmc-cfi-cframe-11@f12e6000 {
                         phandle = <0x4e>;
                         compatible = "xlnx,psv-pmc-cfi-cframe-1.0";
                         status = "okay";
@@ -2035,7 +2045,7 @@
                         xlnx,name = "cips_pspmc_0_psv_pmc_cfi_cframe_11";
                 };
 
-                cips_pspmc_0_psv_pmc_cfi_cframe_12: cips_pspmc_0_psv_pmc_cfi_cframe_12@f12e8000 {
+                cips_pspmc_0_psv_pmc_cfi_cframe_12: cips-pspmc-0-psv-pmc-cfi-cframe-12@f12e8000 {
                         phandle = <0x4f>;
                         compatible = "xlnx,psv-pmc-cfi-cframe-1.0";
                         status = "okay";
@@ -2044,7 +2054,7 @@
                         xlnx,name = "cips_pspmc_0_psv_pmc_cfi_cframe_12";
                 };
 
-                cips_pspmc_0_psv_pmc_cfi_cframe_13: cips_pspmc_0_psv_pmc_cfi_cframe_13@f12ea000 {
+                cips_pspmc_0_psv_pmc_cfi_cframe_13: cips-pspmc-0-psv-pmc-cfi-cframe-13@f12ea000 {
                         phandle = <0x50>;
                         compatible = "xlnx,psv-pmc-cfi-cframe-1.0";
                         status = "okay";
@@ -2053,7 +2063,7 @@
                         xlnx,name = "cips_pspmc_0_psv_pmc_cfi_cframe_13";
                 };
 
-                cips_pspmc_0_psv_pmc_cfi_cframe_14: cips_pspmc_0_psv_pmc_cfi_cframe_14@f12ec000 {
+                cips_pspmc_0_psv_pmc_cfi_cframe_14: cips-pspmc-0-psv-pmc-cfi-cframe-14@f12ec000 {
                         phandle = <0x51>;
                         compatible = "xlnx,psv-pmc-cfi-cframe-1.0";
                         status = "okay";
@@ -2062,7 +2072,7 @@
                         xlnx,name = "cips_pspmc_0_psv_pmc_cfi_cframe_14";
                 };
 
-                cips_pspmc_0_psv_pmc_cfi_cframe_2: cips_pspmc_0_psv_pmc_cfi_cframe_2@f12d4000 {
+                cips_pspmc_0_psv_pmc_cfi_cframe_2: cips-pspmc-0-psv-pmc-cfi-cframe-2@f12d4000 {
                         phandle = <0x45>;
                         compatible = "xlnx,psv-pmc-cfi-cframe-1.0";
                         status = "okay";
@@ -2071,7 +2081,7 @@
                         xlnx,name = "cips_pspmc_0_psv_pmc_cfi_cframe_2";
                 };
 
-                cips_pspmc_0_psv_pmc_cfi_cframe_3: cips_pspmc_0_psv_pmc_cfi_cframe_3@f12d6000 {
+                cips_pspmc_0_psv_pmc_cfi_cframe_3: cips-pspmc-0-psv-pmc-cfi-cframe-3@f12d6000 {
                         phandle = <0x46>;
                         compatible = "xlnx,psv-pmc-cfi-cframe-1.0";
                         status = "okay";
@@ -2080,7 +2090,7 @@
                         xlnx,name = "cips_pspmc_0_psv_pmc_cfi_cframe_3";
                 };
 
-                cips_pspmc_0_psv_pmc_cfi_cframe_4: cips_pspmc_0_psv_pmc_cfi_cframe_4@f12d8000 {
+                cips_pspmc_0_psv_pmc_cfi_cframe_4: cips-pspmc-0-psv-pmc-cfi-cframe-4@f12d8000 {
                         phandle = <0x47>;
                         compatible = "xlnx,psv-pmc-cfi-cframe-1.0";
                         status = "okay";
@@ -2089,7 +2099,7 @@
                         xlnx,name = "cips_pspmc_0_psv_pmc_cfi_cframe_4";
                 };
 
-                cips_pspmc_0_psv_pmc_cfi_cframe_5: cips_pspmc_0_psv_pmc_cfi_cframe_5@f12da000 {
+                cips_pspmc_0_psv_pmc_cfi_cframe_5: cips-pspmc-0-psv-pmc-cfi-cframe-5@f12da000 {
                         phandle = <0x48>;
                         compatible = "xlnx,psv-pmc-cfi-cframe-1.0";
                         status = "okay";
@@ -2098,7 +2108,7 @@
                         xlnx,name = "cips_pspmc_0_psv_pmc_cfi_cframe_5";
                 };
 
-                cips_pspmc_0_psv_pmc_cfi_cframe_6: cips_pspmc_0_psv_pmc_cfi_cframe_6@f12dc000 {
+                cips_pspmc_0_psv_pmc_cfi_cframe_6: cips-pspmc-0-psv-pmc-cfi-cframe-6@f12dc000 {
                         phandle = <0x49>;
                         compatible = "xlnx,psv-pmc-cfi-cframe-1.0";
                         status = "okay";
@@ -2107,7 +2117,7 @@
                         xlnx,name = "cips_pspmc_0_psv_pmc_cfi_cframe_6";
                 };
 
-                cips_pspmc_0_psv_pmc_cfi_cframe_7: cips_pspmc_0_psv_pmc_cfi_cframe_7@f12de000 {
+                cips_pspmc_0_psv_pmc_cfi_cframe_7: cips-pspmc-0-psv-pmc-cfi-cframe-7@f12de000 {
                         phandle = <0x4a>;
                         compatible = "xlnx,psv-pmc-cfi-cframe-1.0";
                         status = "okay";
@@ -2116,7 +2126,7 @@
                         xlnx,name = "cips_pspmc_0_psv_pmc_cfi_cframe_7";
                 };
 
-                cips_pspmc_0_psv_pmc_cfi_cframe_8: cips_pspmc_0_psv_pmc_cfi_cframe_8@f12e0000 {
+                cips_pspmc_0_psv_pmc_cfi_cframe_8: cips-pspmc-0-psv-pmc-cfi-cframe-8@f12e0000 {
                         phandle = <0x4b>;
                         compatible = "xlnx,psv-pmc-cfi-cframe-1.0";
                         status = "okay";
@@ -2125,7 +2135,7 @@
                         xlnx,name = "cips_pspmc_0_psv_pmc_cfi_cframe_8";
                 };
 
-                cips_pspmc_0_psv_pmc_cfi_cframe_9: cips_pspmc_0_psv_pmc_cfi_cframe_9@f12e2000 {
+                cips_pspmc_0_psv_pmc_cfi_cframe_9: cips-pspmc-0-psv-pmc-cfi-cframe-9@f12e2000 {
                         phandle = <0x4c>;
                         compatible = "xlnx,psv-pmc-cfi-cframe-1.0";
                         status = "okay";
@@ -2134,7 +2144,7 @@
                         xlnx,name = "cips_pspmc_0_psv_pmc_cfi_cframe_9";
                 };
 
-                cips_pspmc_0_psv_pmc_cfi_cframe_bcast: cips_pspmc_0_psv_pmc_cfi_cframe_bcast@f12ee000 {
+                cips_pspmc_0_psv_pmc_cfi_cframe_bcast: cips-pspmc-0-psv-pmc-cfi-cframe-bcast@f12ee000 {
                         phandle = <0x52>;
                         compatible = "xlnx,psv-pmc-cfi-cframe-1.0";
                         status = "okay";
@@ -2143,7 +2153,7 @@
                         xlnx,name = "cips_pspmc_0_psv_pmc_cfi_cframe_bcast";
                 };
 
-                cips_pspmc_0_psv_pmc_efuse_cache: cips_pspmc_0_psv_pmc_efuse_cache@f1250000 {
+                cips_pspmc_0_psv_pmc_efuse_cache: cips-pspmc-0-psv-pmc-efuse-cache@f1250000 {
                         phandle = <0x3e>;
                         compatible = "xlnx,psv-pmc-efuse-cache-1.0";
                         status = "okay";
@@ -2152,7 +2162,7 @@
                         xlnx,name = "cips_pspmc_0_psv_pmc_efuse_cache";
                 };
 
-                cips_pspmc_0_psv_pmc_efuse_ctrl: cips_pspmc_0_psv_pmc_efuse_ctrl@f1240000 {
+                cips_pspmc_0_psv_pmc_efuse_ctrl: cips-pspmc-0-psv-pmc-efuse-ctrl@f1240000 {
                         phandle = <0x3d>;
                         compatible = "xlnx,psv-pmc-efuse-ctrl-1.0";
                         status = "okay";
@@ -2161,7 +2171,7 @@
                         xlnx,name = "cips_pspmc_0_psv_pmc_efuse_ctrl";
                 };
 
-                cips_pspmc_0_psv_pmc_global_0: cips_pspmc_0_psv_pmc_global_0@f1110000 {
+                cips_pspmc_0_psv_pmc_global_0: cips-pspmc-0-psv-pmc-global-0@f1110000 {
                         phandle = <0x32>;
                         compatible = "xlnx,psv-pmc-global-1.0";
                         status = "okay";
@@ -2173,7 +2183,7 @@
                         xlnx,name = "cips_pspmc_0_psv_pmc_global_0";
                 };
 
-                cips_pspmc_0_psv_pmc_iou_slcr_0: cips_pspmc_0_psv_pmc_iou_slcr_0@f1060000 {
+                cips_pspmc_0_psv_pmc_iou_slcr_0: cips-pspmc-0-psv-pmc-iou-slcr-0@f1060000 {
                         phandle = <0x31>;
                         compatible = "xlnx,psv-pmc-iou-slcr-1.0";
                         status = "okay";
@@ -2182,7 +2192,7 @@
                         xlnx,name = "cips_pspmc_0_psv_pmc_iou_slcr_0";
                 };
 
-                cips_pspmc_0_psv_pmc_ram_npi: cips_pspmc_0_psv_pmc_ram_npi@f6000000 {
+                cips_pspmc_0_psv_pmc_ram_npi: cips-pspmc-0-psv-pmc-ram-npi@f6000000 {
                         phandle = <0x57>;
                         compatible = "xlnx,psv-pmc-ram-npi-1.0";
                         status = "okay";
@@ -2191,7 +2201,7 @@
                         xlnx,name = "cips_pspmc_0_psv_pmc_ram_npi";
                 };
 
-                cips_pspmc_0_psv_pmc_rsa: cips_pspmc_0_psv_pmc_rsa@f1200000 {
+                cips_pspmc_0_psv_pmc_rsa: cips-pspmc-0-psv-pmc-rsa@f1200000 {
                         phandle = <0x39>;
                         compatible = "xlnx,psv-pmc-rsa-1.0";
                         status = "okay";
@@ -2200,7 +2210,7 @@
                         xlnx,name = "cips_pspmc_0_psv_pmc_rsa";
                 };
 
-                cips_pspmc_0_psv_pmc_sha: cips_pspmc_0_psv_pmc_sha@f1210000 {
+                cips_pspmc_0_psv_pmc_sha: cips-pspmc-0-psv-pmc-sha@f1210000 {
                         phandle = <0x3a>;
                         compatible = "xlnx,psv-pmc-sha-1.0";
                         status = "okay";
@@ -2209,7 +2219,7 @@
                         xlnx,name = "cips_pspmc_0_psv_pmc_sha";
                 };
 
-                cips_pspmc_0_psv_pmc_slave_boot: cips_pspmc_0_psv_pmc_slave_boot@f1220000 {
+                cips_pspmc_0_psv_pmc_slave_boot: cips-pspmc-0-psv-pmc-slave-boot@f1220000 {
                         phandle = <0x3b>;
                         xlnx,device-id = <0x0>;
                         compatible = "xlnx,psv-pmc-slave-boot-1.0";
@@ -2219,7 +2229,7 @@
                         xlnx,name = "cips_pspmc_0_psv_pmc_slave_boot";
                 };
 
-                cips_pspmc_0_psv_pmc_slave_boot_stream: cips_pspmc_0_psv_pmc_slave_boot_stream@f2100000 {
+                cips_pspmc_0_psv_pmc_slave_boot_stream: cips-pspmc-0-psv-pmc-slave-boot-stream@f2100000 {
                         phandle = <0x56>;
                         xlnx,device-id = <0x0>;
                         compatible = "xlnx,psv-pmc-slave-boot-stream-1.0";
@@ -2229,7 +2239,7 @@
                         xlnx,name = "cips_pspmc_0_psv_pmc_slave_boot_stream";
                 };
 
-                cips_pspmc_0_psv_pmc_tap: cips_pspmc_0_psv_pmc_tap@f11a0000 {
+                cips_pspmc_0_psv_pmc_tap: cips-pspmc-0-psv-pmc-tap@f11a0000 {
                         phandle = <0x34>;
                         compatible = "xlnx,psv-pmc-tap-1.0";
                         status = "okay";
@@ -2238,7 +2248,7 @@
                         xlnx,name = "cips_pspmc_0_psv_pmc_tap";
                 };
 
-                cips_pspmc_0_psv_psm_global_reg: cips_pspmc_0_psv_psm_global_reg@ffc90000 {
+                cips_pspmc_0_psv_psm_global_reg: cips-pspmc-0-psv-psm-global-reg@ffc90000 {
                         phandle = <0x84>;
                         compatible = "xlnx,psv-psm-global-reg-1.0";
                         status = "okay";
@@ -2247,7 +2257,7 @@
                         xlnx,name = "cips_pspmc_0_psv_psm_global_reg";
                 };
 
-                cips_pspmc_0_psv_r5_0_atcm: psv_r5_0_atcm@0 {
+                cips_pspmc_0_psv_r5_0_atcm: psv-r5-0-atcm@0 {
                         phandle = <0x9c>;
                         xlnx,power-domain = <0x1831800b>;
                         compatible = "xlnx,psv-r5-tcm-1.0";
@@ -2258,7 +2268,7 @@
                         xlnx,name = "cips_pspmc_0_psv_r5_0_atcm";
                 };
 
-                cips_pspmc_0_psv_r5_0_btcm: psv_r5_0_btcm@20000 {
+                cips_pspmc_0_psv_r5_0_btcm: psv-r5-0-btcm@20000 {
                         phandle = <0x9e>;
                         xlnx,power-domain = <0x1831800c>;
                         compatible = "xlnx,psv-r5-tcm-1.0";
@@ -2269,7 +2279,7 @@
                         xlnx,name = "cips_pspmc_0_psv_r5_0_btcm";
                 };
 
-                cips_pspmc_0_psv_r5_0_data_cache: cips_pspmc_0_psv_r5_0_data_cache@ffe50000 {
+                cips_pspmc_0_psv_r5_0_data_cache: cips-pspmc-0-psv-r5-0-data-cache@ffe50000 {
                         phandle = <0xa1>;
                         compatible = "xlnx,psv-r5-0-data-cache-1.0";
                         status = "okay";
@@ -2278,7 +2288,7 @@
                         xlnx,name = "cips_pspmc_0_psv_r5_0_data_cache";
                 };
 
-                cips_pspmc_0_psv_r5_0_instruction_cache: cips_pspmc_0_psv_r5_0_instruction_cache@ffe40000 {
+                cips_pspmc_0_psv_r5_0_instruction_cache: cips-pspmc-0-psv-r5-0-instruction-cache@ffe40000 {
                         phandle = <0xa0>;
                         compatible = "xlnx,psv-r5-0-instruction-cache-1.0";
                         status = "okay";
@@ -2287,7 +2297,7 @@
                         xlnx,name = "cips_pspmc_0_psv_r5_0_instruction_cache";
                 };
 
-                cips_pspmc_0_psv_r5_1_data_cache: cips_pspmc_0_psv_r5_1_data_cache@ffed0000 {
+                cips_pspmc_0_psv_r5_1_data_cache: cips-pspmc-0-psv-r5-1-data-cache@ffed0000 {
                         phandle = <0xa3>;
                         compatible = "xlnx,psv-r5-1-data-cache-1.0";
                         status = "okay";
@@ -2296,7 +2306,7 @@
                         xlnx,name = "cips_pspmc_0_psv_r5_1_data_cache";
                 };
 
-                cips_pspmc_0_psv_r5_1_instruction_cache: cips_pspmc_0_psv_r5_1_instruction_cache@ffec0000 {
+                cips_pspmc_0_psv_r5_1_instruction_cache: cips-pspmc-0-psv-r5-1-instruction-cache@ffec0000 {
                         phandle = <0xa2>;
                         compatible = "xlnx,psv-r5-1-instruction-cache-1.0";
                         status = "okay";
@@ -2305,7 +2315,7 @@
                         xlnx,name = "cips_pspmc_0_psv_r5_1_instruction_cache";
                 };
 
-                cips_pspmc_0_psv_r5_tcm_ram_0: cips_pspmc_0_psv_r5_tcm_ram_0@0 {
+                cips_pspmc_0_psv_r5_tcm_ram_0: cips-pspmc-0-psv-r5-tcm-ram-0@0 {
                         phandle = <0x9d>;
                         compatible = "xlnx,psv-r5-tcm-1.0";
                         status = "okay";
@@ -2314,7 +2324,7 @@
                         xlnx,name = "cips_pspmc_0_psv_r5_tcm_ram_0";
                 };
 
-                cips_pspmc_0_psv_rpu_0: cips_pspmc_0_psv_rpu_0@ff9a0000 {
+                cips_pspmc_0_psv_rpu_0: cips-pspmc-0-psv-rpu-0@ff9a0000 {
                         phandle = <0x7a>;
                         compatible = "xlnx,psv-rpu-1.0";
                         status = "okay";
@@ -2323,7 +2333,7 @@
                         xlnx,name = "cips_pspmc_0_psv_rpu_0";
                 };
 
-                cips_pspmc_0_psv_scntr_0: cips_pspmc_0_psv_scntr_0@ff130000 {
+                cips_pspmc_0_psv_scntr_0: cips-pspmc-0-psv-scntr-0@ff130000 {
                         phandle = <0x72>;
                         compatible = "xlnx,psv-scntr-1.0";
                         status = "okay";
@@ -2332,7 +2342,7 @@
                         xlnx,name = "cips_pspmc_0_psv_scntr_0";
                 };
 
-                cips_pspmc_0_psv_scntrs_0: cips_pspmc_0_psv_scntrs_0@ff140000 {
+                cips_pspmc_0_psv_scntrs_0: cips-pspmc-0-psv-scntrs-0@ff140000 {
                         phandle = <0x73>;
                         compatible = "xlnx,psv-scntrs-1.0";
                         status = "okay";
@@ -2417,7 +2427,7 @@
         };
 
         pl_alt_ref: pl-alt-ref {
-                phandle = <0xc2>;
+                phandle = <0xc4>;
                 bootph-all;
                 compatible = "fixed-clock";
                 #clock-cells = <0x0>;
@@ -2426,7 +2436,7 @@
         };
 
         ref: ref {
-                phandle = <0xc1>;
+                phandle = <0xc3>;
                 bootph-all;
                 compatible = "fixed-clock";
                 #clock-cells = <0x0>;
@@ -2435,7 +2445,7 @@
         };
 
         rtc_clk: rtc-clk {
-                phandle = <0xad>;
+                phandle = <0xaf>;
                 bootph-all;
                 compatible = "fixed-clock";
                 #clock-cells = <0x0>;
@@ -2444,7 +2454,7 @@
         };
 
         can0_clk: can0-clk {
-                phandle = <0xab>;
+                phandle = <0xad>;
                 #clock-cells = <0x0>;
                 compatible = "fixed-factor-clock";
                 clocks = <&versal_clk 0x60>;
@@ -2454,7 +2464,7 @@
         };
 
         can1_clk: can1-clk {
-                phandle = <0xac>;
+                phandle = <0xae>;
                 #clock-cells = <0x0>;
                 compatible = "fixed-factor-clock";
                 clocks = <&versal_clk 0x61>;
@@ -2489,7 +2499,7 @@
                         };
 
                         versal_reset: reset-controller {
-                                phandle = <0xae>;
+                                phandle = <0xb0>;
                                 compatible = "xlnx,versal-reset";
                                 #reset-cells = <0x1>;
                         };
@@ -2717,93 +2727,93 @@
                 ipi_4_to_ipi_pmc_nobuf = "/axi/mailbox@ff370000/child@ff390000";
                 ipi_4_to_ipi_psm = "/axi/mailbox@ff370000/child@ff310000";
                 coresight = "/axi/coresight@f0800000";
-                cips_pspmc_0_psv_apu_0 = "/axi/cips_pspmc_0_psv_apu_0@fd5c0000";
-                cips_pspmc_0_psv_coresight_a720_cti = "/axi/cips_pspmc_0_psv_coresight_a720_cti@f0d10000";
-                cips_pspmc_0_psv_coresight_a720_dbg = "/axi/cips_pspmc_0_psv_coresight_a720_dbg@f0d00000";
-                cips_pspmc_0_psv_coresight_a720_etm = "/axi/cips_pspmc_0_psv_coresight_a720_etm@f0d30000";
-                cips_pspmc_0_psv_coresight_a720_pmu = "/axi/cips_pspmc_0_psv_coresight_a720_pmu@f0d20000";
-                cips_pspmc_0_psv_coresight_a721_cti = "/axi/cips_pspmc_0_psv_coresight_a721_cti@f0d50000";
-                cips_pspmc_0_psv_coresight_a721_dbg = "/axi/cips_pspmc_0_psv_coresight_a721_dbg@f0d40000";
-                cips_pspmc_0_psv_coresight_a721_etm = "/axi/cips_pspmc_0_psv_coresight_a721_etm@f0d70000";
-                cips_pspmc_0_psv_coresight_a721_pmu = "/axi/cips_pspmc_0_psv_coresight_a721_pmu@f0d60000";
-                cips_pspmc_0_psv_coresight_apu_cti = "/axi/cips_pspmc_0_psv_coresight_apu_cti@f0ca0000";
-                cips_pspmc_0_psv_coresight_apu_ela = "/axi/cips_pspmc_0_psv_coresight_apu_ela@f0c60000";
-                cips_pspmc_0_psv_coresight_apu_etf = "/axi/cips_pspmc_0_psv_coresight_apu_etf@f0c30000";
-                cips_pspmc_0_psv_coresight_apu_fun = "/axi/cips_pspmc_0_psv_coresight_apu_fun@f0c20000";
-                cips_pspmc_0_psv_coresight_cpm_atm = "/axi/cips_pspmc_0_psv_coresight_cpm_atm@f0f80000";
-                cips_pspmc_0_psv_coresight_cpm_cti2a = "/axi/cips_pspmc_0_psv_coresight_cpm_cti2a@f0fa0000";
-                cips_pspmc_0_psv_coresight_cpm_cti2d = "/axi/cips_pspmc_0_psv_coresight_cpm_cti2d@f0fd0000";
-                cips_pspmc_0_psv_coresight_cpm_ela2a = "/axi/cips_pspmc_0_psv_coresight_cpm_ela2a@f0f40000";
-                cips_pspmc_0_psv_coresight_cpm_ela2b = "/axi/cips_pspmc_0_psv_coresight_cpm_ela2b@f0f50000";
-                cips_pspmc_0_psv_coresight_cpm_ela2c = "/axi/cips_pspmc_0_psv_coresight_cpm_ela2c@f0f60000";
-                cips_pspmc_0_psv_coresight_cpm_ela2d = "/axi/cips_pspmc_0_psv_coresight_cpm_ela2d@f0f70000";
-                cips_pspmc_0_psv_coresight_cpm_fun = "/axi/cips_pspmc_0_psv_coresight_cpm_fun@f0f20000";
-                cips_pspmc_0_psv_coresight_cpm_rom = "/axi/cips_pspmc_0_psv_coresight_cpm_rom@f0f00000";
-                cips_pspmc_0_psv_coresight_fpd_atm = "/axi/cips_pspmc_0_psv_coresight_fpd_atm@f0b80000";
-                cips_pspmc_0_psv_coresight_fpd_cti1b = "/axi/cips_pspmc_0_psv_coresight_fpd_cti1b@f0bb0000";
-                cips_pspmc_0_psv_coresight_fpd_cti1c = "/axi/cips_pspmc_0_psv_coresight_fpd_cti1c@f0bc0000";
-                cips_pspmc_0_psv_coresight_fpd_cti1d = "/axi/cips_pspmc_0_psv_coresight_fpd_cti1d@f0bd0000";
-                cips_pspmc_0_psv_coresight_fpd_stm = "/axi/cips_pspmc_0_psv_coresight_fpd_stm@f0b70000";
-                cips_pspmc_0_psv_coresight_lpd_atm = "/axi/cips_pspmc_0_psv_coresight_lpd_atm@f0980000";
-                cips_pspmc_0_psv_coresight_lpd_cti = "/axi/cips_pspmc_0_psv_coresight_lpd_cti@f09d0000";
-                cips_pspmc_0_psv_coresight_pmc_cti = "/axi/cips_pspmc_0_psv_coresight_pmc_cti@f08d0000";
-                cips_pspmc_0_psv_coresight_r50_cti = "/axi/cips_pspmc_0_psv_coresight_r50_cti@f0a10000";
-                cips_pspmc_0_psv_coresight_r51_cti = "/axi/cips_pspmc_0_psv_coresight_r51_cti@f0a50000";
-                cips_pspmc_0_psv_crf_0 = "/axi/cips_pspmc_0_psv_crf_0@fd1a0000";
-                cips_pspmc_0_psv_crl_0 = "/axi/cips_pspmc_0_psv_crl_0@ff5e0000";
-                cips_pspmc_0_psv_crp_0 = "/axi/cips_pspmc_0_psv_crp_0@f1260000";
-                cips_pspmc_0_psv_fpd_afi_0 = "/axi/cips_pspmc_0_psv_fpd_afi_0@fd360000";
-                cips_pspmc_0_psv_fpd_afi_2 = "/axi/cips_pspmc_0_psv_fpd_afi_2@fd380000";
-                cips_pspmc_0_psv_fpd_cci_0 = "/axi/cips_pspmc_0_psv_fpd_cci_0@fd5e0000";
-                cips_pspmc_0_psv_fpd_gpv_0 = "/axi/cips_pspmc_0_psv_fpd_gpv_0@fd700000";
-                cips_pspmc_0_psv_fpd_slcr_0 = "/axi/cips_pspmc_0_psv_fpd_slcr_0@fd610000";
-                cips_pspmc_0_psv_fpd_slcr_secure_0 = "/axi/cips_pspmc_0_psv_fpd_slcr_secure_0@fd690000";
-                cips_pspmc_0_psv_fpd_smmu_0 = "/axi/cips_pspmc_0_psv_fpd_smmu_0@fd5f0000";
-                cips_pspmc_0_psv_lpd_afi_0 = "/axi/cips_pspmc_0_psv_lpd_afi_0@ff9b0000";
-                cips_pspmc_0_psv_lpd_iou_secure_slcr_0 = "/axi/cips_pspmc_0_psv_lpd_iou_secure_slcr_0@ff0a0000";
-                cips_pspmc_0_psv_lpd_iou_slcr_0 = "/axi/cips_pspmc_0_psv_lpd_iou_slcr_0@ff080000";
-                cips_pspmc_0_psv_lpd_slcr_0 = "/axi/cips_pspmc_0_psv_lpd_slcr_0@ff410000";
-                cips_pspmc_0_psv_lpd_slcr_secure_0 = "/axi/cips_pspmc_0_psv_lpd_slcr_secure_0@ff510000";
-                cips_pspmc_0_psv_ocm_ctrl = "/axi/cips_pspmc_0_psv_ocm_ctrl@ff960000";
-                cips_pspmc_0_psv_pmc_aes = "/axi/cips_pspmc_0_psv_pmc_aes@f11e0000";
-                cips_pspmc_0_psv_pmc_analog_0 = "/axi/cips_pspmc_0_psv_pmc_analog_0@f1160000";
-                cips_pspmc_0_psv_pmc_bbram_ctrl = "/axi/cips_pspmc_0_psv_pmc_bbram_ctrl@f11f0000";
-                cips_pspmc_0_psv_pmc_cfi_cframe_1 = "/axi/cips_pspmc_0_psv_pmc_cfi_cframe_1@f12d2000";
-                cips_pspmc_0_psv_pmc_cfi_cframe_10 = "/axi/cips_pspmc_0_psv_pmc_cfi_cframe_10@f12e4000";
-                cips_pspmc_0_psv_pmc_cfi_cframe_11 = "/axi/cips_pspmc_0_psv_pmc_cfi_cframe_11@f12e6000";
-                cips_pspmc_0_psv_pmc_cfi_cframe_12 = "/axi/cips_pspmc_0_psv_pmc_cfi_cframe_12@f12e8000";
-                cips_pspmc_0_psv_pmc_cfi_cframe_13 = "/axi/cips_pspmc_0_psv_pmc_cfi_cframe_13@f12ea000";
-                cips_pspmc_0_psv_pmc_cfi_cframe_14 = "/axi/cips_pspmc_0_psv_pmc_cfi_cframe_14@f12ec000";
-                cips_pspmc_0_psv_pmc_cfi_cframe_2 = "/axi/cips_pspmc_0_psv_pmc_cfi_cframe_2@f12d4000";
-                cips_pspmc_0_psv_pmc_cfi_cframe_3 = "/axi/cips_pspmc_0_psv_pmc_cfi_cframe_3@f12d6000";
-                cips_pspmc_0_psv_pmc_cfi_cframe_4 = "/axi/cips_pspmc_0_psv_pmc_cfi_cframe_4@f12d8000";
-                cips_pspmc_0_psv_pmc_cfi_cframe_5 = "/axi/cips_pspmc_0_psv_pmc_cfi_cframe_5@f12da000";
-                cips_pspmc_0_psv_pmc_cfi_cframe_6 = "/axi/cips_pspmc_0_psv_pmc_cfi_cframe_6@f12dc000";
-                cips_pspmc_0_psv_pmc_cfi_cframe_7 = "/axi/cips_pspmc_0_psv_pmc_cfi_cframe_7@f12de000";
-                cips_pspmc_0_psv_pmc_cfi_cframe_8 = "/axi/cips_pspmc_0_psv_pmc_cfi_cframe_8@f12e0000";
-                cips_pspmc_0_psv_pmc_cfi_cframe_9 = "/axi/cips_pspmc_0_psv_pmc_cfi_cframe_9@f12e2000";
-                cips_pspmc_0_psv_pmc_cfi_cframe_bcast = "/axi/cips_pspmc_0_psv_pmc_cfi_cframe_bcast@f12ee000";
-                cips_pspmc_0_psv_pmc_efuse_cache = "/axi/cips_pspmc_0_psv_pmc_efuse_cache@f1250000";
-                cips_pspmc_0_psv_pmc_efuse_ctrl = "/axi/cips_pspmc_0_psv_pmc_efuse_ctrl@f1240000";
-                cips_pspmc_0_psv_pmc_global_0 = "/axi/cips_pspmc_0_psv_pmc_global_0@f1110000";
-                cips_pspmc_0_psv_pmc_iou_slcr_0 = "/axi/cips_pspmc_0_psv_pmc_iou_slcr_0@f1060000";
-                cips_pspmc_0_psv_pmc_ram_npi = "/axi/cips_pspmc_0_psv_pmc_ram_npi@f6000000";
-                cips_pspmc_0_psv_pmc_rsa = "/axi/cips_pspmc_0_psv_pmc_rsa@f1200000";
-                cips_pspmc_0_psv_pmc_sha = "/axi/cips_pspmc_0_psv_pmc_sha@f1210000";
-                cips_pspmc_0_psv_pmc_slave_boot = "/axi/cips_pspmc_0_psv_pmc_slave_boot@f1220000";
-                cips_pspmc_0_psv_pmc_slave_boot_stream = "/axi/cips_pspmc_0_psv_pmc_slave_boot_stream@f2100000";
-                cips_pspmc_0_psv_pmc_tap = "/axi/cips_pspmc_0_psv_pmc_tap@f11a0000";
-                cips_pspmc_0_psv_psm_global_reg = "/axi/cips_pspmc_0_psv_psm_global_reg@ffc90000";
-                cips_pspmc_0_psv_r5_0_atcm = "/axi/psv_r5_0_atcm@0";
-                cips_pspmc_0_psv_r5_0_btcm = "/axi/psv_r5_0_btcm@20000";
-                cips_pspmc_0_psv_r5_0_data_cache = "/axi/cips_pspmc_0_psv_r5_0_data_cache@ffe50000";
-                cips_pspmc_0_psv_r5_0_instruction_cache = "/axi/cips_pspmc_0_psv_r5_0_instruction_cache@ffe40000";
-                cips_pspmc_0_psv_r5_1_data_cache = "/axi/cips_pspmc_0_psv_r5_1_data_cache@ffed0000";
-                cips_pspmc_0_psv_r5_1_instruction_cache = "/axi/cips_pspmc_0_psv_r5_1_instruction_cache@ffec0000";
-                cips_pspmc_0_psv_r5_tcm_ram_0 = "/axi/cips_pspmc_0_psv_r5_tcm_ram_0@0";
-                cips_pspmc_0_psv_rpu_0 = "/axi/cips_pspmc_0_psv_rpu_0@ff9a0000";
-                cips_pspmc_0_psv_scntr_0 = "/axi/cips_pspmc_0_psv_scntr_0@ff130000";
-                cips_pspmc_0_psv_scntrs_0 = "/axi/cips_pspmc_0_psv_scntrs_0@ff140000";
+                cips_pspmc_0_psv_apu_0 = "/axi/cips-pspmc-0-psv-apu-0@fd5c0000";
+                cips_pspmc_0_psv_coresight_a720_cti = "/axi/cips-pspmc-0-psv-coresight-a720-cti@f0d10000";
+                cips_pspmc_0_psv_coresight_a720_dbg = "/axi/cips-pspmc-0-psv-coresight-a720-dbg@f0d00000";
+                cips_pspmc_0_psv_coresight_a720_etm = "/axi/cips-pspmc-0-psv-coresight-a720-etm@f0d30000";
+                cips_pspmc_0_psv_coresight_a720_pmu = "/axi/cips-pspmc-0-psv-coresight-a720-pmu@f0d20000";
+                cips_pspmc_0_psv_coresight_a721_cti = "/axi/cips-pspmc-0-psv-coresight-a721-cti@f0d50000";
+                cips_pspmc_0_psv_coresight_a721_dbg = "/axi/cips-pspmc-0-psv-coresight-a721-dbg@f0d40000";
+                cips_pspmc_0_psv_coresight_a721_etm = "/axi/cips-pspmc-0-psv-coresight-a721-etm@f0d70000";
+                cips_pspmc_0_psv_coresight_a721_pmu = "/axi/cips-pspmc-0-psv-coresight-a721-pmu@f0d60000";
+                cips_pspmc_0_psv_coresight_apu_cti = "/axi/cips-pspmc-0-psv-coresight-apu-cti@f0ca0000";
+                cips_pspmc_0_psv_coresight_apu_ela = "/axi/cips-pspmc-0-psv-coresight-apu-ela@f0c60000";
+                cips_pspmc_0_psv_coresight_apu_etf = "/axi/cips-pspmc-0-psv-coresight-apu-etf@f0c30000";
+                cips_pspmc_0_psv_coresight_apu_fun = "/axi/cips-pspmc-0-psv-coresight-apu-fun@f0c20000";
+                cips_pspmc_0_psv_coresight_cpm_atm = "/axi/cips-pspmc-0-psv-coresight-cpm-atm@f0f80000";
+                cips_pspmc_0_psv_coresight_cpm_cti2a = "/axi/cips-pspmc-0-psv-coresight-cpm-cti2a@f0fa0000";
+                cips_pspmc_0_psv_coresight_cpm_cti2d = "/axi/cips-pspmc-0-psv-coresight-cpm-cti2d@f0fd0000";
+                cips_pspmc_0_psv_coresight_cpm_ela2a = "/axi/cips-pspmc-0-psv-coresight-cpm-ela2a@f0f40000";
+                cips_pspmc_0_psv_coresight_cpm_ela2b = "/axi/cips-pspmc-0-psv-coresight-cpm-ela2b@f0f50000";
+                cips_pspmc_0_psv_coresight_cpm_ela2c = "/axi/cips-pspmc-0-psv-coresight-cpm-ela2c@f0f60000";
+                cips_pspmc_0_psv_coresight_cpm_ela2d = "/axi/cips-pspmc-0-psv-coresight-cpm-ela2d@f0f70000";
+                cips_pspmc_0_psv_coresight_cpm_fun = "/axi/cips-pspmc-0-psv-coresight-cpm-fun@f0f20000";
+                cips_pspmc_0_psv_coresight_cpm_rom = "/axi/cips-pspmc-0-psv-coresight-cpm-rom@f0f00000";
+                cips_pspmc_0_psv_coresight_fpd_atm = "/axi/cips-pspmc-0-psv-coresight-fpd-atm@f0b80000";
+                cips_pspmc_0_psv_coresight_fpd_cti1b = "/axi/cips-pspmc-0-psv-coresight-fpd-cti1b@f0bb0000";
+                cips_pspmc_0_psv_coresight_fpd_cti1c = "/axi/cips-pspmc-0-psv-coresight-fpd-cti1c@f0bc0000";
+                cips_pspmc_0_psv_coresight_fpd_cti1d = "/axi/cips-pspmc-0-psv-coresight-fpd-cti1d@f0bd0000";
+                cips_pspmc_0_psv_coresight_fpd_stm = "/axi/cips-pspmc-0-psv-coresight-fpd-stm@f0b70000";
+                cips_pspmc_0_psv_coresight_lpd_atm = "/axi/cips-pspmc-0-psv-coresight-lpd-atm@f0980000";
+                cips_pspmc_0_psv_coresight_lpd_cti = "/axi/cips-pspmc-0-psv-coresight-lpd-cti@f09d0000";
+                cips_pspmc_0_psv_coresight_pmc_cti = "/axi/cips-pspmc-0-psv-coresight-pmc-cti@f08d0000";
+                cips_pspmc_0_psv_coresight_r50_cti = "/axi/cips-pspmc-0-psv-coresight-r50-cti@f0a10000";
+                cips_pspmc_0_psv_coresight_r51_cti = "/axi/cips-pspmc-0-psv-coresight-r51-cti@f0a50000";
+                cips_pspmc_0_psv_crf_0 = "/axi/cips-pspmc-0-psv-crf-0@fd1a0000";
+                cips_pspmc_0_psv_crl_0 = "/axi/cips-pspmc-0-psv-crl-0@ff5e0000";
+                cips_pspmc_0_psv_crp_0 = "/axi/cips-pspmc-0-psv-crp-0@f1260000";
+                cips_pspmc_0_psv_fpd_afi_0 = "/axi/cips-pspmc-0-psv-fpd-afi-0@fd360000";
+                cips_pspmc_0_psv_fpd_afi_2 = "/axi/cips-pspmc-0-psv-fpd-afi-2@fd380000";
+                cips_pspmc_0_psv_fpd_cci_0 = "/axi/cips-pspmc-0-psv-fpd-cci-0@fd5e0000";
+                cips_pspmc_0_psv_fpd_gpv_0 = "/axi/cips-pspmc-0-psv-fpd-gpv-0@fd700000";
+                cips_pspmc_0_psv_fpd_slcr_0 = "/axi/cips-pspmc-0-psv-fpd-slcr-0@fd610000";
+                cips_pspmc_0_psv_fpd_slcr_secure_0 = "/axi/cips-pspmc-0-psv-fpd-slcr-secure-0@fd690000";
+                cips_pspmc_0_psv_fpd_smmu_0 = "/axi/cips-pspmc-0-psv-fpd-smmu-0@fd5f0000";
+                cips_pspmc_0_psv_lpd_afi_0 = "/axi/cips-pspmc-0-psv-lpd-afi-0@ff9b0000";
+                cips_pspmc_0_psv_lpd_iou_secure_slcr_0 = "/axi/cips-pspmc-0-psv-lpd-iou-secure-slcr-0@ff0a0000";
+                cips_pspmc_0_psv_lpd_iou_slcr_0 = "/axi/cips-pspmc-0-psv-lpd-iou-slcr-0@ff080000";
+                cips_pspmc_0_psv_lpd_slcr_0 = "/axi/cips-pspmc-0-psv-lpd-slcr-0@ff410000";
+                cips_pspmc_0_psv_lpd_slcr_secure_0 = "/axi/cips-pspmc-0-psv-lpd-slcr-secure-0@ff510000";
+                cips_pspmc_0_psv_ocm_ctrl = "/axi/cips-pspmc-0-psv-ocm-ctrl@ff960000";
+                cips_pspmc_0_psv_pmc_aes = "/axi/cips-pspmc-0-psv-pmc-aes@f11e0000";
+                cips_pspmc_0_psv_pmc_analog_0 = "/axi/cips-pspmc-0-psv-pmc-analog-0@f1160000";
+                cips_pspmc_0_psv_pmc_bbram_ctrl = "/axi/cips-pspmc-0-psv-pmc-bbram-ctrl@f11f0000";
+                cips_pspmc_0_psv_pmc_cfi_cframe_1 = "/axi/cips-pspmc-0-psv-pmc-cfi-cframe-1@f12d2000";
+                cips_pspmc_0_psv_pmc_cfi_cframe_10 = "/axi/cips-pspmc-0-psv-pmc-cfi-cframe-10@f12e4000";
+                cips_pspmc_0_psv_pmc_cfi_cframe_11 = "/axi/cips-pspmc-0-psv-pmc-cfi-cframe-11@f12e6000";
+                cips_pspmc_0_psv_pmc_cfi_cframe_12 = "/axi/cips-pspmc-0-psv-pmc-cfi-cframe-12@f12e8000";
+                cips_pspmc_0_psv_pmc_cfi_cframe_13 = "/axi/cips-pspmc-0-psv-pmc-cfi-cframe-13@f12ea000";
+                cips_pspmc_0_psv_pmc_cfi_cframe_14 = "/axi/cips-pspmc-0-psv-pmc-cfi-cframe-14@f12ec000";
+                cips_pspmc_0_psv_pmc_cfi_cframe_2 = "/axi/cips-pspmc-0-psv-pmc-cfi-cframe-2@f12d4000";
+                cips_pspmc_0_psv_pmc_cfi_cframe_3 = "/axi/cips-pspmc-0-psv-pmc-cfi-cframe-3@f12d6000";
+                cips_pspmc_0_psv_pmc_cfi_cframe_4 = "/axi/cips-pspmc-0-psv-pmc-cfi-cframe-4@f12d8000";
+                cips_pspmc_0_psv_pmc_cfi_cframe_5 = "/axi/cips-pspmc-0-psv-pmc-cfi-cframe-5@f12da000";
+                cips_pspmc_0_psv_pmc_cfi_cframe_6 = "/axi/cips-pspmc-0-psv-pmc-cfi-cframe-6@f12dc000";
+                cips_pspmc_0_psv_pmc_cfi_cframe_7 = "/axi/cips-pspmc-0-psv-pmc-cfi-cframe-7@f12de000";
+                cips_pspmc_0_psv_pmc_cfi_cframe_8 = "/axi/cips-pspmc-0-psv-pmc-cfi-cframe-8@f12e0000";
+                cips_pspmc_0_psv_pmc_cfi_cframe_9 = "/axi/cips-pspmc-0-psv-pmc-cfi-cframe-9@f12e2000";
+                cips_pspmc_0_psv_pmc_cfi_cframe_bcast = "/axi/cips-pspmc-0-psv-pmc-cfi-cframe-bcast@f12ee000";
+                cips_pspmc_0_psv_pmc_efuse_cache = "/axi/cips-pspmc-0-psv-pmc-efuse-cache@f1250000";
+                cips_pspmc_0_psv_pmc_efuse_ctrl = "/axi/cips-pspmc-0-psv-pmc-efuse-ctrl@f1240000";
+                cips_pspmc_0_psv_pmc_global_0 = "/axi/cips-pspmc-0-psv-pmc-global-0@f1110000";
+                cips_pspmc_0_psv_pmc_iou_slcr_0 = "/axi/cips-pspmc-0-psv-pmc-iou-slcr-0@f1060000";
+                cips_pspmc_0_psv_pmc_ram_npi = "/axi/cips-pspmc-0-psv-pmc-ram-npi@f6000000";
+                cips_pspmc_0_psv_pmc_rsa = "/axi/cips-pspmc-0-psv-pmc-rsa@f1200000";
+                cips_pspmc_0_psv_pmc_sha = "/axi/cips-pspmc-0-psv-pmc-sha@f1210000";
+                cips_pspmc_0_psv_pmc_slave_boot = "/axi/cips-pspmc-0-psv-pmc-slave-boot@f1220000";
+                cips_pspmc_0_psv_pmc_slave_boot_stream = "/axi/cips-pspmc-0-psv-pmc-slave-boot-stream@f2100000";
+                cips_pspmc_0_psv_pmc_tap = "/axi/cips-pspmc-0-psv-pmc-tap@f11a0000";
+                cips_pspmc_0_psv_psm_global_reg = "/axi/cips-pspmc-0-psv-psm-global-reg@ffc90000";
+                cips_pspmc_0_psv_r5_0_atcm = "/axi/psv-r5-0-atcm@0";
+                cips_pspmc_0_psv_r5_0_btcm = "/axi/psv-r5-0-btcm@20000";
+                cips_pspmc_0_psv_r5_0_data_cache = "/axi/cips-pspmc-0-psv-r5-0-data-cache@ffe50000";
+                cips_pspmc_0_psv_r5_0_instruction_cache = "/axi/cips-pspmc-0-psv-r5-0-instruction-cache@ffe40000";
+                cips_pspmc_0_psv_r5_1_data_cache = "/axi/cips-pspmc-0-psv-r5-1-data-cache@ffed0000";
+                cips_pspmc_0_psv_r5_1_instruction_cache = "/axi/cips-pspmc-0-psv-r5-1-instruction-cache@ffec0000";
+                cips_pspmc_0_psv_r5_tcm_ram_0 = "/axi/cips-pspmc-0-psv-r5-tcm-ram-0@0";
+                cips_pspmc_0_psv_rpu_0 = "/axi/cips-pspmc-0-psv-rpu-0@ff9a0000";
+                cips_pspmc_0_psv_scntr_0 = "/axi/cips-pspmc-0-psv-scntr-0@ff130000";
+                cips_pspmc_0_psv_scntrs_0 = "/axi/cips-pspmc-0-psv-scntrs-0@ff140000";
                 amba_xppu = "/indirect-bus@1";
                 lpd_xppu = "/indirect-bus@1/xppu@ff990000";
                 pmc_xppu = "/indirect-bus@1/xppu@f1310000";

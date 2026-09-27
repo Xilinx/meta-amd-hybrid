@@ -31,7 +31,7 @@
         };
 
         cpus_microblaze_0: cpus_microblaze@0 {
-                phandle = <0xc4>;
+                phandle = <0xc6>;
                 #address-cells = <0x1>;
                 #size-cells = <0x0>;
                 compatible = "cpus,cluster";
@@ -86,7 +86,7 @@
                 #ranges-size-cells = <0x1>;
 
                 psv_pmc_0: cpu@0 {
-                        phandle = <0xc5>;
+                        phandle = <0xc7>;
                         compatible = "pmc-microblaze";
                         device_type = "cpu";
                         reg = <0x0>;
@@ -373,12 +373,12 @@
         };
 
         versal_fpga: versal-fpga {
-                phandle = <0xa8>;
+                phandle = <0xaa>;
                 compatible = "xlnx,versal-fpga";
         };
 
         sensor0: versal-thermal-sensor {
-                phandle = <0xaa>;
+                phandle = <0xac>;
                 compatible = "xlnx,versal-thermal";
                 #thermal-sensor-cells = <0x1>;
                 io-channels = <&sysmon0 0x16>;
@@ -470,7 +470,7 @@
                 bootph-all;
 
                 imux: interrupt-multiplex {
-                        phandle = <0xa9>;
+                        phandle = <0xab>;
                         compatible = "interrupt-multiplex";
                         #address-cells = <0x0>;
                         #interrupt-cells = <0x3>;
@@ -1724,7 +1724,7 @@
                         };
                 };
 
-                cips_pspmc_0_psv_pmc_cfi_cframe_1: cips_pspmc_0_psv_pmc_cfi_cframe_1@f12d2000 {
+                cips_pspmc_0_psv_pmc_cfi_cframe_1: cips-pspmc-0-psv-pmc-cfi-cframe-1@f12d2000 {
                         phandle = <0x44>;
                         compatible = "xlnx,psv-pmc-cfi-cframe-1.0";
                         status = "okay";
@@ -1733,7 +1733,7 @@
                         xlnx,name = "cips_pspmc_0_psv_pmc_cfi_cframe_1";
                 };
 
-                cips_pspmc_0_psv_pmc_cfi_cframe_10: cips_pspmc_0_psv_pmc_cfi_cframe_10@f12e4000 {
+                cips_pspmc_0_psv_pmc_cfi_cframe_10: cips-pspmc-0-psv-pmc-cfi-cframe-10@f12e4000 {
                         phandle = <0x4d>;
                         compatible = "xlnx,psv-pmc-cfi-cframe-1.0";
                         status = "okay";
@@ -1742,7 +1742,7 @@
                         xlnx,name = "cips_pspmc_0_psv_pmc_cfi_cframe_10";
                 };
 
-                cips_pspmc_0_psv_pmc_cfi_cframe_11: cips_pspmc_0_psv_pmc_cfi_cframe_11@f12e6000 {
+                cips_pspmc_0_psv_pmc_cfi_cframe_11: cips-pspmc-0-psv-pmc-cfi-cframe-11@f12e6000 {
                         phandle = <0x4e>;
                         compatible = "xlnx,psv-pmc-cfi-cframe-1.0";
                         status = "okay";
@@ -1751,7 +1751,7 @@
                         xlnx,name = "cips_pspmc_0_psv_pmc_cfi_cframe_11";
                 };
 
-                cips_pspmc_0_psv_pmc_cfi_cframe_12: cips_pspmc_0_psv_pmc_cfi_cframe_12@f12e8000 {
+                cips_pspmc_0_psv_pmc_cfi_cframe_12: cips-pspmc-0-psv-pmc-cfi-cframe-12@f12e8000 {
                         phandle = <0x4f>;
                         compatible = "xlnx,psv-pmc-cfi-cframe-1.0";
                         status = "okay";
@@ -1760,7 +1760,7 @@
                         xlnx,name = "cips_pspmc_0_psv_pmc_cfi_cframe_12";
                 };
 
-                cips_pspmc_0_psv_pmc_cfi_cframe_13: cips_pspmc_0_psv_pmc_cfi_cframe_13@f12ea000 {
+                cips_pspmc_0_psv_pmc_cfi_cframe_13: cips-pspmc-0-psv-pmc-cfi-cframe-13@f12ea000 {
                         phandle = <0x50>;
                         compatible = "xlnx,psv-pmc-cfi-cframe-1.0";
                         status = "okay";
@@ -1769,7 +1769,7 @@
                         xlnx,name = "cips_pspmc_0_psv_pmc_cfi_cframe_13";
                 };
 
-                cips_pspmc_0_psv_pmc_cfi_cframe_14: cips_pspmc_0_psv_pmc_cfi_cframe_14@f12ec000 {
+                cips_pspmc_0_psv_pmc_cfi_cframe_14: cips-pspmc-0-psv-pmc-cfi-cframe-14@f12ec000 {
                         phandle = <0x51>;
                         compatible = "xlnx,psv-pmc-cfi-cframe-1.0";
                         status = "okay";
@@ -1778,7 +1778,7 @@
                         xlnx,name = "cips_pspmc_0_psv_pmc_cfi_cframe_14";
                 };
 
-                cips_pspmc_0_psv_pmc_cfi_cframe_2: cips_pspmc_0_psv_pmc_cfi_cframe_2@f12d4000 {
+                cips_pspmc_0_psv_pmc_cfi_cframe_2: cips-pspmc-0-psv-pmc-cfi-cframe-2@f12d4000 {
                         phandle = <0x45>;
                         compatible = "xlnx,psv-pmc-cfi-cframe-1.0";
                         status = "okay";
@@ -1787,7 +1787,7 @@
                         xlnx,name = "cips_pspmc_0_psv_pmc_cfi_cframe_2";
                 };
 
-                cips_pspmc_0_psv_pmc_cfi_cframe_3: cips_pspmc_0_psv_pmc_cfi_cframe_3@f12d6000 {
+                cips_pspmc_0_psv_pmc_cfi_cframe_3: cips-pspmc-0-psv-pmc-cfi-cframe-3@f12d6000 {
                         phandle = <0x46>;
                         compatible = "xlnx,psv-pmc-cfi-cframe-1.0";
                         status = "okay";
@@ -1796,7 +1796,7 @@
                         xlnx,name = "cips_pspmc_0_psv_pmc_cfi_cframe_3";
                 };
 
-                cips_pspmc_0_psv_pmc_cfi_cframe_4: cips_pspmc_0_psv_pmc_cfi_cframe_4@f12d8000 {
+                cips_pspmc_0_psv_pmc_cfi_cframe_4: cips-pspmc-0-psv-pmc-cfi-cframe-4@f12d8000 {
                         phandle = <0x47>;
                         compatible = "xlnx,psv-pmc-cfi-cframe-1.0";
                         status = "okay";
@@ -1805,7 +1805,7 @@
                         xlnx,name = "cips_pspmc_0_psv_pmc_cfi_cframe_4";
                 };
 
-                cips_pspmc_0_psv_pmc_cfi_cframe_5: cips_pspmc_0_psv_pmc_cfi_cframe_5@f12da000 {
+                cips_pspmc_0_psv_pmc_cfi_cframe_5: cips-pspmc-0-psv-pmc-cfi-cframe-5@f12da000 {
                         phandle = <0x48>;
                         compatible = "xlnx,psv-pmc-cfi-cframe-1.0";
                         status = "okay";
@@ -1814,7 +1814,7 @@
                         xlnx,name = "cips_pspmc_0_psv_pmc_cfi_cframe_5";
                 };
 
-                cips_pspmc_0_psv_pmc_cfi_cframe_6: cips_pspmc_0_psv_pmc_cfi_cframe_6@f12dc000 {
+                cips_pspmc_0_psv_pmc_cfi_cframe_6: cips-pspmc-0-psv-pmc-cfi-cframe-6@f12dc000 {
                         phandle = <0x49>;
                         compatible = "xlnx,psv-pmc-cfi-cframe-1.0";
                         status = "okay";
@@ -1823,7 +1823,7 @@
                         xlnx,name = "cips_pspmc_0_psv_pmc_cfi_cframe_6";
                 };
 
-                cips_pspmc_0_psv_pmc_cfi_cframe_7: cips_pspmc_0_psv_pmc_cfi_cframe_7@f12de000 {
+                cips_pspmc_0_psv_pmc_cfi_cframe_7: cips-pspmc-0-psv-pmc-cfi-cframe-7@f12de000 {
                         phandle = <0x4a>;
                         compatible = "xlnx,psv-pmc-cfi-cframe-1.0";
                         status = "okay";
@@ -1832,7 +1832,7 @@
                         xlnx,name = "cips_pspmc_0_psv_pmc_cfi_cframe_7";
                 };
 
-                cips_pspmc_0_psv_pmc_cfi_cframe_8: cips_pspmc_0_psv_pmc_cfi_cframe_8@f12e0000 {
+                cips_pspmc_0_psv_pmc_cfi_cframe_8: cips-pspmc-0-psv-pmc-cfi-cframe-8@f12e0000 {
                         phandle = <0x4b>;
                         compatible = "xlnx,psv-pmc-cfi-cframe-1.0";
                         status = "okay";
@@ -1841,7 +1841,7 @@
                         xlnx,name = "cips_pspmc_0_psv_pmc_cfi_cframe_8";
                 };
 
-                cips_pspmc_0_psv_pmc_cfi_cframe_9: cips_pspmc_0_psv_pmc_cfi_cframe_9@f12e2000 {
+                cips_pspmc_0_psv_pmc_cfi_cframe_9: cips-pspmc-0-psv-pmc-cfi-cframe-9@f12e2000 {
                         phandle = <0x4c>;
                         compatible = "xlnx,psv-pmc-cfi-cframe-1.0";
                         status = "okay";
@@ -1850,7 +1850,7 @@
                         xlnx,name = "cips_pspmc_0_psv_pmc_cfi_cframe_9";
                 };
 
-                cips_pspmc_0_psv_pmc_cfi_cframe_bcast: cips_pspmc_0_psv_pmc_cfi_cframe_bcast@f12ee000 {
+                cips_pspmc_0_psv_pmc_cfi_cframe_bcast: cips-pspmc-0-psv-pmc-cfi-cframe-bcast@f12ee000 {
                         phandle = <0x52>;
                         compatible = "xlnx,psv-pmc-cfi-cframe-1.0";
                         status = "okay";
@@ -1875,7 +1875,7 @@
         };
 
         pl_alt_ref: pl-alt-ref {
-                phandle = <0xc2>;
+                phandle = <0xc4>;
                 bootph-all;
                 compatible = "fixed-clock";
                 #clock-cells = <0x0>;
@@ -1884,7 +1884,7 @@
         };
 
         ref: ref {
-                phandle = <0xc1>;
+                phandle = <0xc3>;
                 bootph-all;
                 compatible = "fixed-clock";
                 #clock-cells = <0x0>;
@@ -1893,7 +1893,7 @@
         };
 
         rtc_clk: rtc-clk {
-                phandle = <0xad>;
+                phandle = <0xaf>;
                 bootph-all;
                 compatible = "fixed-clock";
                 #clock-cells = <0x0>;
@@ -1902,7 +1902,7 @@
         };
 
         can0_clk: can0-clk {
-                phandle = <0xab>;
+                phandle = <0xad>;
                 #clock-cells = <0x0>;
                 compatible = "fixed-factor-clock";
                 clocks = <&versal_clk 0x60>;
@@ -1912,7 +1912,7 @@
         };
 
         can1_clk: can1-clk {
-                phandle = <0xac>;
+                phandle = <0xae>;
                 #clock-cells = <0x0>;
                 compatible = "fixed-factor-clock";
                 clocks = <&versal_clk 0x61>;
@@ -1947,7 +1947,7 @@
                         };
 
                         versal_reset: reset-controller {
-                                phandle = <0xae>;
+                                phandle = <0xb0>;
                                 compatible = "xlnx,versal-reset";
                                 #reset-cells = <0x1>;
                         };
@@ -2129,21 +2129,21 @@
                 ipi_pmc_nobuf_to_ipi_pmc = "/axi/mailbox@ff390000/child@ff320000";
                 ipi_pmc_nobuf_to_ipi_pmc_nobuf = "/axi/mailbox@ff390000/child@ff390000";
                 ipi_pmc_nobuf_to_ipi_psm = "/axi/mailbox@ff390000/child@ff310000";
-                cips_pspmc_0_psv_pmc_cfi_cframe_1 = "/axi/cips_pspmc_0_psv_pmc_cfi_cframe_1@f12d2000";
-                cips_pspmc_0_psv_pmc_cfi_cframe_10 = "/axi/cips_pspmc_0_psv_pmc_cfi_cframe_10@f12e4000";
-                cips_pspmc_0_psv_pmc_cfi_cframe_11 = "/axi/cips_pspmc_0_psv_pmc_cfi_cframe_11@f12e6000";
-                cips_pspmc_0_psv_pmc_cfi_cframe_12 = "/axi/cips_pspmc_0_psv_pmc_cfi_cframe_12@f12e8000";
-                cips_pspmc_0_psv_pmc_cfi_cframe_13 = "/axi/cips_pspmc_0_psv_pmc_cfi_cframe_13@f12ea000";
-                cips_pspmc_0_psv_pmc_cfi_cframe_14 = "/axi/cips_pspmc_0_psv_pmc_cfi_cframe_14@f12ec000";
-                cips_pspmc_0_psv_pmc_cfi_cframe_2 = "/axi/cips_pspmc_0_psv_pmc_cfi_cframe_2@f12d4000";
-                cips_pspmc_0_psv_pmc_cfi_cframe_3 = "/axi/cips_pspmc_0_psv_pmc_cfi_cframe_3@f12d6000";
-                cips_pspmc_0_psv_pmc_cfi_cframe_4 = "/axi/cips_pspmc_0_psv_pmc_cfi_cframe_4@f12d8000";
-                cips_pspmc_0_psv_pmc_cfi_cframe_5 = "/axi/cips_pspmc_0_psv_pmc_cfi_cframe_5@f12da000";
-                cips_pspmc_0_psv_pmc_cfi_cframe_6 = "/axi/cips_pspmc_0_psv_pmc_cfi_cframe_6@f12dc000";
-                cips_pspmc_0_psv_pmc_cfi_cframe_7 = "/axi/cips_pspmc_0_psv_pmc_cfi_cframe_7@f12de000";
-                cips_pspmc_0_psv_pmc_cfi_cframe_8 = "/axi/cips_pspmc_0_psv_pmc_cfi_cframe_8@f12e0000";
-                cips_pspmc_0_psv_pmc_cfi_cframe_9 = "/axi/cips_pspmc_0_psv_pmc_cfi_cframe_9@f12e2000";
-                cips_pspmc_0_psv_pmc_cfi_cframe_bcast = "/axi/cips_pspmc_0_psv_pmc_cfi_cframe_bcast@f12ee000";
+                cips_pspmc_0_psv_pmc_cfi_cframe_1 = "/axi/cips-pspmc-0-psv-pmc-cfi-cframe-1@f12d2000";
+                cips_pspmc_0_psv_pmc_cfi_cframe_10 = "/axi/cips-pspmc-0-psv-pmc-cfi-cframe-10@f12e4000";
+                cips_pspmc_0_psv_pmc_cfi_cframe_11 = "/axi/cips-pspmc-0-psv-pmc-cfi-cframe-11@f12e6000";
+                cips_pspmc_0_psv_pmc_cfi_cframe_12 = "/axi/cips-pspmc-0-psv-pmc-cfi-cframe-12@f12e8000";
+                cips_pspmc_0_psv_pmc_cfi_cframe_13 = "/axi/cips-pspmc-0-psv-pmc-cfi-cframe-13@f12ea000";
+                cips_pspmc_0_psv_pmc_cfi_cframe_14 = "/axi/cips-pspmc-0-psv-pmc-cfi-cframe-14@f12ec000";
+                cips_pspmc_0_psv_pmc_cfi_cframe_2 = "/axi/cips-pspmc-0-psv-pmc-cfi-cframe-2@f12d4000";
+                cips_pspmc_0_psv_pmc_cfi_cframe_3 = "/axi/cips-pspmc-0-psv-pmc-cfi-cframe-3@f12d6000";
+                cips_pspmc_0_psv_pmc_cfi_cframe_4 = "/axi/cips-pspmc-0-psv-pmc-cfi-cframe-4@f12d8000";
+                cips_pspmc_0_psv_pmc_cfi_cframe_5 = "/axi/cips-pspmc-0-psv-pmc-cfi-cframe-5@f12da000";
+                cips_pspmc_0_psv_pmc_cfi_cframe_6 = "/axi/cips-pspmc-0-psv-pmc-cfi-cframe-6@f12dc000";
+                cips_pspmc_0_psv_pmc_cfi_cframe_7 = "/axi/cips-pspmc-0-psv-pmc-cfi-cframe-7@f12de000";
+                cips_pspmc_0_psv_pmc_cfi_cframe_8 = "/axi/cips-pspmc-0-psv-pmc-cfi-cframe-8@f12e0000";
+                cips_pspmc_0_psv_pmc_cfi_cframe_9 = "/axi/cips-pspmc-0-psv-pmc-cfi-cframe-9@f12e2000";
+                cips_pspmc_0_psv_pmc_cfi_cframe_bcast = "/axi/cips-pspmc-0-psv-pmc-cfi-cframe-bcast@f12ee000";
                 amba_xppu = "/indirect-bus@1";
                 amba_xmpu = "/indirect-bus@2";
                 pl_alt_ref = "/pl-alt-ref";

@@ -20,7 +20,7 @@
         };
 
         cpus_a72: cpus {
-                phandle = <0xc3>;
+                phandle = <0xc5>;
                 #address-cells = <0x1>;
                 #size-cells = <0x0>;
                 compatible = "cpus,cluster";
@@ -28,7 +28,7 @@
                 #ranges-size-cells = <0x2>;
 
                 psv_cortexa72_0: cpu@0 {
-                        phandle = <0xbd>;
+                        phandle = <0xbf>;
                         compatible = "arm,cortex-a72", "arm,armv8";
                         device_type = "cpu";
                         enable-method = "psci";
@@ -54,7 +54,7 @@
                 };
 
                 psv_cortexa72_1: cpu@1 {
-                        phandle = <0xbf>;
+                        phandle = <0xc1>;
                         compatible = "arm,cortex-a72", "arm,armv8";
                         device_type = "cpu";
                         enable-method = "psci";
@@ -168,12 +168,12 @@
         };
 
         versal_fpga: versal-fpga {
-                phandle = <0xa8>;
+                phandle = <0xaa>;
                 compatible = "xlnx,versal-fpga";
         };
 
         sensor0: versal-thermal-sensor {
-                phandle = <0xaa>;
+                phandle = <0xac>;
                 compatible = "xlnx,versal-thermal";
                 #thermal-sensor-cells = <0x1>;
                 io-channels = <&sysmon0 0x16>;
@@ -1280,7 +1280,7 @@
                         resets = <&versal_reset 0xc410054>;
 
                         pcie_intc_0: interrupt-controller {
-                                phandle = <0xaf>;
+                                phandle = <0xb1>;
                                 #address-cells = <0x0>;
                                 #interrupt-cells = <0x1>;
                                 interrupt-controller;
@@ -1314,7 +1314,7 @@
                         resets = <&versal_reset 0xc410054>;
 
                         pcie_intc_2: interrupt-controller {
-                                phandle = <0xb0>;
+                                phandle = <0xb2>;
                                 #address-cells = <0x0>;
                                 #interrupt-cells = <0x1>;
                                 interrupt-controller;
@@ -1693,7 +1693,7 @@
                         xlnx,ip-name = "psv_coresight";
                 };
 
-                cips_pspmc_0_psv_coresight_fpd_cti1b: cips_pspmc_0_psv_coresight_fpd_cti1b@f0bb0000 {
+                cips_pspmc_0_psv_coresight_fpd_cti1b: cips-pspmc-0-psv-coresight-fpd-cti1b@f0bb0000 {
                         phandle = <0x16>;
                         compatible = "xlnx,psv-coresight-fpd-cti1b-1.0";
                         status = "okay";
@@ -1701,7 +1701,7 @@
                         reg = <0x0 0xf0bb0000 0x0 0x10000>;
                 };
 
-                cips_pspmc_0_psv_coresight_fpd_cti1c: cips_pspmc_0_psv_coresight_fpd_cti1c@f0bc0000 {
+                cips_pspmc_0_psv_coresight_fpd_cti1c: cips-pspmc-0-psv-coresight-fpd-cti1c@f0bc0000 {
                         phandle = <0x17>;
                         compatible = "xlnx,psv-coresight-fpd-cti1c-1.0";
                         status = "okay";
@@ -1709,7 +1709,7 @@
                         reg = <0x0 0xf0bc0000 0x0 0x10000>;
                 };
 
-                cips_pspmc_0_psv_coresight_fpd_cti1d: cips_pspmc_0_psv_coresight_fpd_cti1d@f0bd0000 {
+                cips_pspmc_0_psv_coresight_fpd_cti1d: cips-pspmc-0-psv-coresight-fpd-cti1d@f0bd0000 {
                         phandle = <0x18>;
                         compatible = "xlnx,psv-coresight-fpd-cti1d-1.0";
                         status = "okay";
@@ -1717,7 +1717,7 @@
                         reg = <0x0 0xf0bd0000 0x0 0x10000>;
                 };
 
-                cips_pspmc_0_psv_coresight_lpd_cti: cips_pspmc_0_psv_coresight_lpd_cti@f09d0000 {
+                cips_pspmc_0_psv_coresight_lpd_cti: cips-pspmc-0-psv-coresight-lpd-cti@f09d0000 {
                         phandle = <0x11>;
                         compatible = "xlnx,psv-coresight-lpd-cti-1.0";
                         status = "okay";
@@ -1725,7 +1725,7 @@
                         reg = <0x0 0xf09d0000 0x0 0x10000>;
                 };
 
-                cips_pspmc_0_psv_coresight_pmc_cti: cips_pspmc_0_psv_coresight_pmc_cti@f08d0000 {
+                cips_pspmc_0_psv_coresight_pmc_cti: cips-pspmc-0-psv-coresight-pmc-cti@f08d0000 {
                         phandle = <0xf>;
                         compatible = "xlnx,psv-coresight-pmc-cti-1.0";
                         status = "okay";
@@ -1733,7 +1733,7 @@
                         reg = <0x0 0xf08d0000 0x0 0x10000>;
                 };
 
-                cips_pspmc_0_psv_coresight_r50_cti: cips_pspmc_0_psv_coresight_r50_cti@f0a10000 {
+                cips_pspmc_0_psv_coresight_r50_cti: cips-pspmc-0-psv-coresight-r50-cti@f0a10000 {
                         phandle = <0x12>;
                         compatible = "xlnx,psv-coresight-r50-cti-1.0";
                         status = "okay";
@@ -1741,7 +1741,7 @@
                         reg = <0x0 0xf0a10000 0x0 0x10000>;
                 };
 
-                cips_pspmc_0_psv_coresight_r51_cti: cips_pspmc_0_psv_coresight_r51_cti@f0a50000 {
+                cips_pspmc_0_psv_coresight_r51_cti: cips-pspmc-0-psv-coresight-r51-cti@f0a50000 {
                         phandle = <0x13>;
                         compatible = "xlnx,psv-coresight-r51-cti-1.0";
                         status = "okay";
@@ -1749,7 +1749,7 @@
                         reg = <0x0 0xf0a50000 0x0 0x10000>;
                 };
 
-                cips_pspmc_0_psv_cpm: cips_pspmc_0_psv_cpm@0 {
+                cips_pspmc_0_psv_cpm: cips-pspmc-0-psv-cpm@0 {
                         phandle = <0x59>;
                         xlnx,cpm5-slcr-addr = <0xfcdd0000>;
                         compatible = "xlnx,psv-cpm-1.0";
@@ -1760,7 +1760,7 @@
                         xlnx,cpm5-dma0-csr-addr = <0xfce20000>;
                 };
 
-                cips_pspmc_0_psv_pmc_analog_0: cips_pspmc_0_psv_pmc_analog_0@f1160000 {
+                cips_pspmc_0_psv_pmc_analog_0: cips-pspmc-0-psv-pmc-analog-0@f1160000 {
                         phandle = <0x33>;
                         compatible = "xlnx,psv-pmc-analog-1.0";
                         status = "okay";
@@ -1771,7 +1771,7 @@
                         xlnx,cram-scan = <0x0>;
                 };
 
-                cips_pspmc_0_psv_pmc_iou_slcr_0: cips_pspmc_0_psv_pmc_iou_slcr_0@f1060000 {
+                cips_pspmc_0_psv_pmc_iou_slcr_0: cips-pspmc-0-psv-pmc-iou-slcr-0@f1060000 {
                         phandle = <0x31>;
                         compatible = "xlnx,psv-pmc-iou-slcr-1.0";
                         status = "okay";
@@ -1779,7 +1779,7 @@
                         reg = <0x0 0xf1060000 0x0 0x10000>;
                 };
 
-                cips_pspmc_0_psv_pmc_tap: cips_pspmc_0_psv_pmc_tap@f11a0000 {
+                cips_pspmc_0_psv_pmc_tap: cips-pspmc-0-psv-pmc-tap@f11a0000 {
                         phandle = <0x34>;
                         compatible = "xlnx,psv-pmc-tap-1.0";
                         status = "okay";
@@ -1928,7 +1928,7 @@
                                         reg = <0x1>;
 
                                         fpd_funnel_in_port1: endpoint {
-                                                phandle = <0xbc>;
+                                                phandle = <0xbe>;
                                                 remote-endpoint = <&apu_etf_out_port>;
                                         };
                                 };
@@ -1939,7 +1939,7 @@
                                 port {
 
                                         fpd_funnel_out_port: endpoint {
-                                                phandle = <0xb3>;
+                                                phandle = <0xb5>;
                                                 remote-endpoint = <&fpd_etf_in_port>;
                                         };
                                 };
@@ -1959,7 +1959,7 @@
                                 port {
 
                                         fpd_etf_in_port: endpoint {
-                                                phandle = <0xb2>;
+                                                phandle = <0xb4>;
                                                 remote-endpoint = <&fpd_funnel_out_port>;
                                         };
                                 };
@@ -1970,7 +1970,7 @@
                                 port {
 
                                         fpd_etf_out_port: endpoint {
-                                                phandle = <0xb5>;
+                                                phandle = <0xb7>;
                                                 remote-endpoint = <&replicator_in_port>;
                                         };
                                 };
@@ -1990,7 +1990,7 @@
                                 port {
 
                                         replicator_in_port: endpoint {
-                                                phandle = <0xb4>;
+                                                phandle = <0xb6>;
                                                 remote-endpoint = <&fpd_etf_out_port>;
                                         };
                                 };
@@ -2004,7 +2004,7 @@
                                         reg = <0x0>;
 
                                         replicator_out_port0: endpoint {
-                                                phandle = <0xb7>;
+                                                phandle = <0xb9>;
                                                 remote-endpoint = <&etr_in_port>;
                                         };
                                 };
@@ -2024,7 +2024,7 @@
                                 port {
 
                                         etr_in_port: endpoint {
-                                                phandle = <0xb6>;
+                                                phandle = <0xb8>;
                                                 remote-endpoint = <&replicator_out_port0>;
                                         };
                                 };
@@ -2047,7 +2047,7 @@
                                         reg = <0x0>;
 
                                         funnel_in_port0: endpoint {
-                                                phandle = <0xbe>;
+                                                phandle = <0xc0>;
                                                 remote-endpoint = <&etm0_out_port>;
                                         };
                                 };
@@ -2056,7 +2056,7 @@
                                         reg = <0x1>;
 
                                         funnel_in_port1: endpoint {
-                                                phandle = <0xc0>;
+                                                phandle = <0xc2>;
                                                 remote-endpoint = <&etm1_out_port>;
                                         };
                                 };
@@ -2067,7 +2067,7 @@
                                 port {
 
                                         funnel_out_port: endpoint {
-                                                phandle = <0xbb>;
+                                                phandle = <0xbd>;
                                                 remote-endpoint = <&etf_in_port>;
                                         };
                                 };
@@ -2087,7 +2087,7 @@
                                 port {
 
                                         etf_in_port: endpoint {
-                                                phandle = <0xba>;
+                                                phandle = <0xbc>;
                                                 remote-endpoint = <&funnel_out_port>;
                                         };
                                 };
@@ -2098,7 +2098,7 @@
                                 port {
 
                                         apu_etf_out_port: endpoint {
-                                                phandle = <0xb1>;
+                                                phandle = <0xb3>;
                                                 remote-endpoint = <&fpd_funnel_in_port1>;
                                         };
                                 };
@@ -2129,7 +2129,7 @@
                                 port {
 
                                         etm0_out_port: endpoint {
-                                                phandle = <0xb8>;
+                                                phandle = <0xba>;
                                                 remote-endpoint = <&funnel_in_port0>;
                                         };
                                 };
@@ -2160,7 +2160,7 @@
                                 port {
 
                                         etm1_out_port: endpoint {
-                                                phandle = <0xb9>;
+                                                phandle = <0xbb>;
                                                 remote-endpoint = <&funnel_in_port1>;
                                         };
                                 };
@@ -2169,7 +2169,7 @@
         };
 
         pl_alt_ref: pl-alt-ref {
-                phandle = <0xc2>;
+                phandle = <0xc4>;
                 bootph-all;
                 compatible = "fixed-clock";
                 #clock-cells = <0x0>;
@@ -2178,7 +2178,7 @@
         };
 
         ref: ref {
-                phandle = <0xc1>;
+                phandle = <0xc3>;
                 bootph-all;
                 compatible = "fixed-clock";
                 #clock-cells = <0x0>;
@@ -2187,7 +2187,7 @@
         };
 
         rtc_clk: rtc-clk {
-                phandle = <0xad>;
+                phandle = <0xaf>;
                 bootph-all;
                 compatible = "fixed-clock";
                 #clock-cells = <0x0>;
@@ -2196,7 +2196,7 @@
         };
 
         can0_clk: can0-clk {
-                phandle = <0xab>;
+                phandle = <0xad>;
                 #clock-cells = <0x0>;
                 compatible = "fixed-factor-clock";
                 clocks = <&versal_clk 0x60>;
@@ -2206,7 +2206,7 @@
         };
 
         can1_clk: can1-clk {
-                phandle = <0xac>;
+                phandle = <0xae>;
                 #clock-cells = <0x0>;
                 compatible = "fixed-factor-clock";
                 clocks = <&versal_clk 0x61>;
@@ -2241,7 +2241,7 @@
                         };
 
                         versal_reset: reset-controller {
-                                phandle = <0xae>;
+                                phandle = <0xb0>;
                                 compatible = "xlnx,versal-reset";
                                 #reset-cells = <0x1>;
                         };
@@ -2467,17 +2467,17 @@
                 ipi_2_to_ipi_psm = "/axi/mailbox@ff350000/child@ff310000";
                 ipi2 = "/axi/mailbox@ff350000";
                 coresight = "/axi/coresight@f0800000";
-                cips_pspmc_0_psv_coresight_fpd_cti1b = "/axi/cips_pspmc_0_psv_coresight_fpd_cti1b@f0bb0000";
-                cips_pspmc_0_psv_coresight_fpd_cti1c = "/axi/cips_pspmc_0_psv_coresight_fpd_cti1c@f0bc0000";
-                cips_pspmc_0_psv_coresight_fpd_cti1d = "/axi/cips_pspmc_0_psv_coresight_fpd_cti1d@f0bd0000";
-                cips_pspmc_0_psv_coresight_lpd_cti = "/axi/cips_pspmc_0_psv_coresight_lpd_cti@f09d0000";
-                cips_pspmc_0_psv_coresight_pmc_cti = "/axi/cips_pspmc_0_psv_coresight_pmc_cti@f08d0000";
-                cips_pspmc_0_psv_coresight_r50_cti = "/axi/cips_pspmc_0_psv_coresight_r50_cti@f0a10000";
-                cips_pspmc_0_psv_coresight_r51_cti = "/axi/cips_pspmc_0_psv_coresight_r51_cti@f0a50000";
-                cips_pspmc_0_psv_cpm = "/axi/cips_pspmc_0_psv_cpm@0";
-                cips_pspmc_0_psv_pmc_analog_0 = "/axi/cips_pspmc_0_psv_pmc_analog_0@f1160000";
-                cips_pspmc_0_psv_pmc_iou_slcr_0 = "/axi/cips_pspmc_0_psv_pmc_iou_slcr_0@f1060000";
-                cips_pspmc_0_psv_pmc_tap = "/axi/cips_pspmc_0_psv_pmc_tap@f11a0000";
+                cips_pspmc_0_psv_coresight_fpd_cti1b = "/axi/cips-pspmc-0-psv-coresight-fpd-cti1b@f0bb0000";
+                cips_pspmc_0_psv_coresight_fpd_cti1c = "/axi/cips-pspmc-0-psv-coresight-fpd-cti1c@f0bc0000";
+                cips_pspmc_0_psv_coresight_fpd_cti1d = "/axi/cips-pspmc-0-psv-coresight-fpd-cti1d@f0bd0000";
+                cips_pspmc_0_psv_coresight_lpd_cti = "/axi/cips-pspmc-0-psv-coresight-lpd-cti@f09d0000";
+                cips_pspmc_0_psv_coresight_pmc_cti = "/axi/cips-pspmc-0-psv-coresight-pmc-cti@f08d0000";
+                cips_pspmc_0_psv_coresight_r50_cti = "/axi/cips-pspmc-0-psv-coresight-r50-cti@f0a10000";
+                cips_pspmc_0_psv_coresight_r51_cti = "/axi/cips-pspmc-0-psv-coresight-r51-cti@f0a50000";
+                cips_pspmc_0_psv_cpm = "/axi/cips-pspmc-0-psv-cpm@0";
+                cips_pspmc_0_psv_pmc_analog_0 = "/axi/cips-pspmc-0-psv-pmc-analog-0@f1160000";
+                cips_pspmc_0_psv_pmc_iou_slcr_0 = "/axi/cips-pspmc-0-psv-pmc-iou-slcr-0@f1060000";
+                cips_pspmc_0_psv_pmc_tap = "/axi/cips-pspmc-0-psv-pmc-tap@f11a0000";
                 gic_its = "/axi/interrupt-controller@f9000000/msi-controller@f9020000";
                 gic = "/axi/interrupt-controller@f9000000";
                 amba = "/axi";

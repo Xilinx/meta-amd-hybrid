@@ -31,7 +31,7 @@
         };
 
         cpus_microblaze_0: cpus_microblaze@0 {
-                phandle = <0xc7>;
+                phandle = <0xc9>;
                 #address-cells = <0x1>;
                 #size-cells = <0x0>;
                 compatible = "cpus,cluster";
@@ -84,7 +84,7 @@
                 #ranges-size-cells = <0x1>;
 
                 psv_pmc_0: cpu@0 {
-                        phandle = <0xc8>;
+                        phandle = <0xca>;
                         compatible = "pmc-microblaze";
                         device_type = "cpu";
                         reg = <0x0>;
@@ -371,12 +371,12 @@
         };
 
         versal_fpga: versal-fpga {
-                phandle = <0xaa>;
+                phandle = <0xac>;
                 compatible = "xlnx,versal-fpga";
         };
 
         sensor0: versal-thermal-sensor {
-                phandle = <0xac>;
+                phandle = <0xae>;
                 compatible = "xlnx,versal-thermal";
                 #thermal-sensor-cells = <0x1>;
                 io-channels = <&sysmon0 0xb>;
@@ -468,7 +468,7 @@
                 bootph-all;
 
                 imux: interrupt-multiplex {
-                        phandle = <0xab>;
+                        phandle = <0xad>;
                         compatible = "interrupt-multiplex";
                         #address-cells = <0x0>;
                         #interrupt-cells = <0x3>;
@@ -1535,7 +1535,7 @@
                         };
                 };
 
-                STATIC_DESIGN_cips_pspmc_0_psv_pmc_cfi_cframe_1: STATIC_DESIGN_cips_pspmc_0_psv_pmc_cfi_cframe_1@f12d2000 {
+                STATIC_DESIGN_cips_pspmc_0_psv_pmc_cfi_cframe_1: STATIC-DESIGN-cips-pspmc-0-psv-pmc-cfi-cframe-1@f12d2000 {
                         phandle = <0x40>;
                         compatible = "xlnx,psv-pmc-cfi-cframe-1.0";
                         status = "okay";
@@ -1544,7 +1544,7 @@
                         xlnx,name = "STATIC_DESIGN_cips_pspmc_0_psv_pmc_cfi_cframe_1";
                 };
 
-                STATIC_DESIGN_cips_pspmc_0_psv_pmc_cfi_cframe_10: STATIC_DESIGN_cips_pspmc_0_psv_pmc_cfi_cframe_10@f12e4000 {
+                STATIC_DESIGN_cips_pspmc_0_psv_pmc_cfi_cframe_10: STATIC-DESIGN-cips-pspmc-0-psv-pmc-cfi-cframe-10@f12e4000 {
                         phandle = <0x49>;
                         compatible = "xlnx,psv-pmc-cfi-cframe-1.0";
                         status = "okay";
@@ -1553,7 +1553,7 @@
                         xlnx,name = "STATIC_DESIGN_cips_pspmc_0_psv_pmc_cfi_cframe_10";
                 };
 
-                STATIC_DESIGN_cips_pspmc_0_psv_pmc_cfi_cframe_11: STATIC_DESIGN_cips_pspmc_0_psv_pmc_cfi_cframe_11@f12e6000 {
+                STATIC_DESIGN_cips_pspmc_0_psv_pmc_cfi_cframe_11: STATIC-DESIGN-cips-pspmc-0-psv-pmc-cfi-cframe-11@f12e6000 {
                         phandle = <0x4a>;
                         compatible = "xlnx,psv-pmc-cfi-cframe-1.0";
                         status = "okay";
@@ -1562,7 +1562,7 @@
                         xlnx,name = "STATIC_DESIGN_cips_pspmc_0_psv_pmc_cfi_cframe_11";
                 };
 
-                STATIC_DESIGN_cips_pspmc_0_psv_pmc_cfi_cframe_12: STATIC_DESIGN_cips_pspmc_0_psv_pmc_cfi_cframe_12@f12e8000 {
+                STATIC_DESIGN_cips_pspmc_0_psv_pmc_cfi_cframe_12: STATIC-DESIGN-cips-pspmc-0-psv-pmc-cfi-cframe-12@f12e8000 {
                         phandle = <0x4b>;
                         compatible = "xlnx,psv-pmc-cfi-cframe-1.0";
                         status = "okay";
@@ -1571,7 +1571,7 @@
                         xlnx,name = "STATIC_DESIGN_cips_pspmc_0_psv_pmc_cfi_cframe_12";
                 };
 
-                STATIC_DESIGN_cips_pspmc_0_psv_pmc_cfi_cframe_13: STATIC_DESIGN_cips_pspmc_0_psv_pmc_cfi_cframe_13@f12ea000 {
+                STATIC_DESIGN_cips_pspmc_0_psv_pmc_cfi_cframe_13: STATIC-DESIGN-cips-pspmc-0-psv-pmc-cfi-cframe-13@f12ea000 {
                         phandle = <0x4c>;
                         compatible = "xlnx,psv-pmc-cfi-cframe-1.0";
                         status = "okay";
@@ -1580,7 +1580,7 @@
                         xlnx,name = "STATIC_DESIGN_cips_pspmc_0_psv_pmc_cfi_cframe_13";
                 };
 
-                STATIC_DESIGN_cips_pspmc_0_psv_pmc_cfi_cframe_14: STATIC_DESIGN_cips_pspmc_0_psv_pmc_cfi_cframe_14@f12ec000 {
+                STATIC_DESIGN_cips_pspmc_0_psv_pmc_cfi_cframe_14: STATIC-DESIGN-cips-pspmc-0-psv-pmc-cfi-cframe-14@f12ec000 {
                         phandle = <0x4d>;
                         compatible = "xlnx,psv-pmc-cfi-cframe-1.0";
                         status = "okay";
@@ -1589,7 +1589,7 @@
                         xlnx,name = "STATIC_DESIGN_cips_pspmc_0_psv_pmc_cfi_cframe_14";
                 };
 
-                STATIC_DESIGN_cips_pspmc_0_psv_pmc_cfi_cframe_2: STATIC_DESIGN_cips_pspmc_0_psv_pmc_cfi_cframe_2@f12d4000 {
+                STATIC_DESIGN_cips_pspmc_0_psv_pmc_cfi_cframe_2: STATIC-DESIGN-cips-pspmc-0-psv-pmc-cfi-cframe-2@f12d4000 {
                         phandle = <0x41>;
                         compatible = "xlnx,psv-pmc-cfi-cframe-1.0";
                         status = "okay";
@@ -1598,7 +1598,7 @@
                         xlnx,name = "STATIC_DESIGN_cips_pspmc_0_psv_pmc_cfi_cframe_2";
                 };
 
-                STATIC_DESIGN_cips_pspmc_0_psv_pmc_cfi_cframe_3: STATIC_DESIGN_cips_pspmc_0_psv_pmc_cfi_cframe_3@f12d6000 {
+                STATIC_DESIGN_cips_pspmc_0_psv_pmc_cfi_cframe_3: STATIC-DESIGN-cips-pspmc-0-psv-pmc-cfi-cframe-3@f12d6000 {
                         phandle = <0x42>;
                         compatible = "xlnx,psv-pmc-cfi-cframe-1.0";
                         status = "okay";
@@ -1607,7 +1607,7 @@
                         xlnx,name = "STATIC_DESIGN_cips_pspmc_0_psv_pmc_cfi_cframe_3";
                 };
 
-                STATIC_DESIGN_cips_pspmc_0_psv_pmc_cfi_cframe_4: STATIC_DESIGN_cips_pspmc_0_psv_pmc_cfi_cframe_4@f12d8000 {
+                STATIC_DESIGN_cips_pspmc_0_psv_pmc_cfi_cframe_4: STATIC-DESIGN-cips-pspmc-0-psv-pmc-cfi-cframe-4@f12d8000 {
                         phandle = <0x43>;
                         compatible = "xlnx,psv-pmc-cfi-cframe-1.0";
                         status = "okay";
@@ -1616,7 +1616,7 @@
                         xlnx,name = "STATIC_DESIGN_cips_pspmc_0_psv_pmc_cfi_cframe_4";
                 };
 
-                STATIC_DESIGN_cips_pspmc_0_psv_pmc_cfi_cframe_5: STATIC_DESIGN_cips_pspmc_0_psv_pmc_cfi_cframe_5@f12da000 {
+                STATIC_DESIGN_cips_pspmc_0_psv_pmc_cfi_cframe_5: STATIC-DESIGN-cips-pspmc-0-psv-pmc-cfi-cframe-5@f12da000 {
                         phandle = <0x44>;
                         compatible = "xlnx,psv-pmc-cfi-cframe-1.0";
                         status = "okay";
@@ -1625,7 +1625,7 @@
                         xlnx,name = "STATIC_DESIGN_cips_pspmc_0_psv_pmc_cfi_cframe_5";
                 };
 
-                STATIC_DESIGN_cips_pspmc_0_psv_pmc_cfi_cframe_6: STATIC_DESIGN_cips_pspmc_0_psv_pmc_cfi_cframe_6@f12dc000 {
+                STATIC_DESIGN_cips_pspmc_0_psv_pmc_cfi_cframe_6: STATIC-DESIGN-cips-pspmc-0-psv-pmc-cfi-cframe-6@f12dc000 {
                         phandle = <0x45>;
                         compatible = "xlnx,psv-pmc-cfi-cframe-1.0";
                         status = "okay";
@@ -1634,7 +1634,7 @@
                         xlnx,name = "STATIC_DESIGN_cips_pspmc_0_psv_pmc_cfi_cframe_6";
                 };
 
-                STATIC_DESIGN_cips_pspmc_0_psv_pmc_cfi_cframe_7: STATIC_DESIGN_cips_pspmc_0_psv_pmc_cfi_cframe_7@f12de000 {
+                STATIC_DESIGN_cips_pspmc_0_psv_pmc_cfi_cframe_7: STATIC-DESIGN-cips-pspmc-0-psv-pmc-cfi-cframe-7@f12de000 {
                         phandle = <0x46>;
                         compatible = "xlnx,psv-pmc-cfi-cframe-1.0";
                         status = "okay";
@@ -1643,7 +1643,7 @@
                         xlnx,name = "STATIC_DESIGN_cips_pspmc_0_psv_pmc_cfi_cframe_7";
                 };
 
-                STATIC_DESIGN_cips_pspmc_0_psv_pmc_cfi_cframe_8: STATIC_DESIGN_cips_pspmc_0_psv_pmc_cfi_cframe_8@f12e0000 {
+                STATIC_DESIGN_cips_pspmc_0_psv_pmc_cfi_cframe_8: STATIC-DESIGN-cips-pspmc-0-psv-pmc-cfi-cframe-8@f12e0000 {
                         phandle = <0x47>;
                         compatible = "xlnx,psv-pmc-cfi-cframe-1.0";
                         status = "okay";
@@ -1652,7 +1652,7 @@
                         xlnx,name = "STATIC_DESIGN_cips_pspmc_0_psv_pmc_cfi_cframe_8";
                 };
 
-                STATIC_DESIGN_cips_pspmc_0_psv_pmc_cfi_cframe_9: STATIC_DESIGN_cips_pspmc_0_psv_pmc_cfi_cframe_9@f12e2000 {
+                STATIC_DESIGN_cips_pspmc_0_psv_pmc_cfi_cframe_9: STATIC-DESIGN-cips-pspmc-0-psv-pmc-cfi-cframe-9@f12e2000 {
                         phandle = <0x48>;
                         compatible = "xlnx,psv-pmc-cfi-cframe-1.0";
                         status = "okay";
@@ -1661,7 +1661,7 @@
                         xlnx,name = "STATIC_DESIGN_cips_pspmc_0_psv_pmc_cfi_cframe_9";
                 };
 
-                STATIC_DESIGN_cips_pspmc_0_psv_pmc_cfi_cframe_bcast: STATIC_DESIGN_cips_pspmc_0_psv_pmc_cfi_cframe_bcast@f12ee000 {
+                STATIC_DESIGN_cips_pspmc_0_psv_pmc_cfi_cframe_bcast: STATIC-DESIGN-cips-pspmc-0-psv-pmc-cfi-cframe-bcast@f12ee000 {
                         phandle = <0x4e>;
                         compatible = "xlnx,psv-pmc-cfi-cframe-1.0";
                         status = "okay";
@@ -1686,7 +1686,7 @@
         };
 
         pl_alt_ref: pl-alt-ref {
-                phandle = <0xc4>;
+                phandle = <0xc6>;
                 bootph-all;
                 compatible = "fixed-clock";
                 #clock-cells = <0x0>;
@@ -1695,7 +1695,7 @@
         };
 
         ref: ref {
-                phandle = <0xc3>;
+                phandle = <0xc5>;
                 bootph-all;
                 compatible = "fixed-clock";
                 #clock-cells = <0x0>;
@@ -1704,7 +1704,7 @@
         };
 
         rtc_clk: rtc-clk {
-                phandle = <0xaf>;
+                phandle = <0xb1>;
                 bootph-all;
                 compatible = "fixed-clock";
                 #clock-cells = <0x0>;
@@ -1713,7 +1713,7 @@
         };
 
         can0_clk: can0-clk {
-                phandle = <0xad>;
+                phandle = <0xaf>;
                 #clock-cells = <0x0>;
                 compatible = "fixed-factor-clock";
                 clocks = <&versal_clk 0x60>;
@@ -1723,7 +1723,7 @@
         };
 
         can1_clk: can1-clk {
-                phandle = <0xae>;
+                phandle = <0xb0>;
                 #clock-cells = <0x0>;
                 compatible = "fixed-factor-clock";
                 clocks = <&versal_clk 0x61>;
@@ -1758,7 +1758,7 @@
                         };
 
                         versal_reset: reset-controller {
-                                phandle = <0xb0>;
+                                phandle = <0xb2>;
                                 compatible = "xlnx,versal-reset";
                                 #reset-cells = <0x1>;
                         };
@@ -1858,7 +1858,7 @@
                 };
 
                 misc_clk_0: misc_clk_0 {
-                        phandle = <0xc5>;
+                        phandle = <0xc7>;
                         compatible = "fixed-clock";
                         clock-frequency = <0x7735940>;
                         #clock-cells = <0x0>;
@@ -1951,21 +1951,21 @@
                 ipi_pmc_nobuf_to_ipi_pmc = "/axi/mailbox@ff390000/child@ff320000";
                 ipi_pmc_nobuf_to_ipi_pmc_nobuf = "/axi/mailbox@ff390000/child@ff390000";
                 ipi_pmc_nobuf_to_ipi_psm = "/axi/mailbox@ff390000/child@ff310000";
-                STATIC_DESIGN_cips_pspmc_0_psv_pmc_cfi_cframe_1 = "/axi/STATIC_DESIGN_cips_pspmc_0_psv_pmc_cfi_cframe_1@f12d2000";
-                STATIC_DESIGN_cips_pspmc_0_psv_pmc_cfi_cframe_10 = "/axi/STATIC_DESIGN_cips_pspmc_0_psv_pmc_cfi_cframe_10@f12e4000";
-                STATIC_DESIGN_cips_pspmc_0_psv_pmc_cfi_cframe_11 = "/axi/STATIC_DESIGN_cips_pspmc_0_psv_pmc_cfi_cframe_11@f12e6000";
-                STATIC_DESIGN_cips_pspmc_0_psv_pmc_cfi_cframe_12 = "/axi/STATIC_DESIGN_cips_pspmc_0_psv_pmc_cfi_cframe_12@f12e8000";
-                STATIC_DESIGN_cips_pspmc_0_psv_pmc_cfi_cframe_13 = "/axi/STATIC_DESIGN_cips_pspmc_0_psv_pmc_cfi_cframe_13@f12ea000";
-                STATIC_DESIGN_cips_pspmc_0_psv_pmc_cfi_cframe_14 = "/axi/STATIC_DESIGN_cips_pspmc_0_psv_pmc_cfi_cframe_14@f12ec000";
-                STATIC_DESIGN_cips_pspmc_0_psv_pmc_cfi_cframe_2 = "/axi/STATIC_DESIGN_cips_pspmc_0_psv_pmc_cfi_cframe_2@f12d4000";
-                STATIC_DESIGN_cips_pspmc_0_psv_pmc_cfi_cframe_3 = "/axi/STATIC_DESIGN_cips_pspmc_0_psv_pmc_cfi_cframe_3@f12d6000";
-                STATIC_DESIGN_cips_pspmc_0_psv_pmc_cfi_cframe_4 = "/axi/STATIC_DESIGN_cips_pspmc_0_psv_pmc_cfi_cframe_4@f12d8000";
-                STATIC_DESIGN_cips_pspmc_0_psv_pmc_cfi_cframe_5 = "/axi/STATIC_DESIGN_cips_pspmc_0_psv_pmc_cfi_cframe_5@f12da000";
-                STATIC_DESIGN_cips_pspmc_0_psv_pmc_cfi_cframe_6 = "/axi/STATIC_DESIGN_cips_pspmc_0_psv_pmc_cfi_cframe_6@f12dc000";
-                STATIC_DESIGN_cips_pspmc_0_psv_pmc_cfi_cframe_7 = "/axi/STATIC_DESIGN_cips_pspmc_0_psv_pmc_cfi_cframe_7@f12de000";
-                STATIC_DESIGN_cips_pspmc_0_psv_pmc_cfi_cframe_8 = "/axi/STATIC_DESIGN_cips_pspmc_0_psv_pmc_cfi_cframe_8@f12e0000";
-                STATIC_DESIGN_cips_pspmc_0_psv_pmc_cfi_cframe_9 = "/axi/STATIC_DESIGN_cips_pspmc_0_psv_pmc_cfi_cframe_9@f12e2000";
-                STATIC_DESIGN_cips_pspmc_0_psv_pmc_cfi_cframe_bcast = "/axi/STATIC_DESIGN_cips_pspmc_0_psv_pmc_cfi_cframe_bcast@f12ee000";
+                STATIC_DESIGN_cips_pspmc_0_psv_pmc_cfi_cframe_1 = "/axi/STATIC-DESIGN-cips-pspmc-0-psv-pmc-cfi-cframe-1@f12d2000";
+                STATIC_DESIGN_cips_pspmc_0_psv_pmc_cfi_cframe_10 = "/axi/STATIC-DESIGN-cips-pspmc-0-psv-pmc-cfi-cframe-10@f12e4000";
+                STATIC_DESIGN_cips_pspmc_0_psv_pmc_cfi_cframe_11 = "/axi/STATIC-DESIGN-cips-pspmc-0-psv-pmc-cfi-cframe-11@f12e6000";
+                STATIC_DESIGN_cips_pspmc_0_psv_pmc_cfi_cframe_12 = "/axi/STATIC-DESIGN-cips-pspmc-0-psv-pmc-cfi-cframe-12@f12e8000";
+                STATIC_DESIGN_cips_pspmc_0_psv_pmc_cfi_cframe_13 = "/axi/STATIC-DESIGN-cips-pspmc-0-psv-pmc-cfi-cframe-13@f12ea000";
+                STATIC_DESIGN_cips_pspmc_0_psv_pmc_cfi_cframe_14 = "/axi/STATIC-DESIGN-cips-pspmc-0-psv-pmc-cfi-cframe-14@f12ec000";
+                STATIC_DESIGN_cips_pspmc_0_psv_pmc_cfi_cframe_2 = "/axi/STATIC-DESIGN-cips-pspmc-0-psv-pmc-cfi-cframe-2@f12d4000";
+                STATIC_DESIGN_cips_pspmc_0_psv_pmc_cfi_cframe_3 = "/axi/STATIC-DESIGN-cips-pspmc-0-psv-pmc-cfi-cframe-3@f12d6000";
+                STATIC_DESIGN_cips_pspmc_0_psv_pmc_cfi_cframe_4 = "/axi/STATIC-DESIGN-cips-pspmc-0-psv-pmc-cfi-cframe-4@f12d8000";
+                STATIC_DESIGN_cips_pspmc_0_psv_pmc_cfi_cframe_5 = "/axi/STATIC-DESIGN-cips-pspmc-0-psv-pmc-cfi-cframe-5@f12da000";
+                STATIC_DESIGN_cips_pspmc_0_psv_pmc_cfi_cframe_6 = "/axi/STATIC-DESIGN-cips-pspmc-0-psv-pmc-cfi-cframe-6@f12dc000";
+                STATIC_DESIGN_cips_pspmc_0_psv_pmc_cfi_cframe_7 = "/axi/STATIC-DESIGN-cips-pspmc-0-psv-pmc-cfi-cframe-7@f12de000";
+                STATIC_DESIGN_cips_pspmc_0_psv_pmc_cfi_cframe_8 = "/axi/STATIC-DESIGN-cips-pspmc-0-psv-pmc-cfi-cframe-8@f12e0000";
+                STATIC_DESIGN_cips_pspmc_0_psv_pmc_cfi_cframe_9 = "/axi/STATIC-DESIGN-cips-pspmc-0-psv-pmc-cfi-cframe-9@f12e2000";
+                STATIC_DESIGN_cips_pspmc_0_psv_pmc_cfi_cframe_bcast = "/axi/STATIC-DESIGN-cips-pspmc-0-psv-pmc-cfi-cframe-bcast@f12ee000";
                 amba_xppu = "/indirect-bus@1";
                 amba_xmpu = "/indirect-bus@2";
                 pl_alt_ref = "/pl-alt-ref";
