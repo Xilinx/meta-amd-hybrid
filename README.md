@@ -76,7 +76,7 @@ https://www.openembedded.org/wiki/How_to_submit_a_patch_to_OpenEmbedded
 `git format-patch -s --subject "meta-amd-hybrid][<BRANCH_NAME>][PATCH" -1`
 
 **Example:**
-`git format-patch -s --subject "meta-amd-hybrid][rel-v2026.1][PATCH" -1`
+`git format-patch -s --subject "meta-amd-hybrid][rel-v2026.2][PATCH" -1`
 
 **Maintainers:**
 
@@ -85,32 +85,6 @@ https://www.openembedded.org/wiki/How_to_submit_a_patch_to_OpenEmbedded
 	John Toomey <john.toomey@amd.com>
 	Trevor Woerner <trevor.woerner@amd.com>
 ---
-## Dependencies
-
-This layer depends on:
-
-	URI: https://git.yoctoproject.org/poky
-	layers: meta, meta-poky
-	branch: wrynose
-
-	URI: https://git.openembedded.org/meta-openembedded
-	layers: meta-oe, meta-python, meta-networking
-	branch: wrynose
-
-	URI:
-        https://git.yoctoproject.org/meta-xilinx (official version)
-        https://github.com/Xilinx/meta-xilinx (development and amd xilinx release)
-	layers: meta-xilinx-microblaze, meta-xilinx-core, meta-xilinx-standalone, meta-xilinx-standalone-sdt
-	branch: wrynose or amd xilinx release version (e.g. rel-v2026.1)
-
-	URI: https://github.com/Xilinx/meta-amd-adaptive-socs
-	layers: meta-amd-adaptive-socs-core 
-	branch: amd xilinx release version (e.g. rel-v2026.1)
-
-	URI: https://github.com/Xilinx/meta-amd-edf
-	layers: meta-amd-edf
-	branch: amd xilinx release version (e.g. rel-v2026.1)
-
 
 ## License
 
