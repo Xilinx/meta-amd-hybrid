@@ -31,10 +31,10 @@ AMC_CDO = "${DEPLOY_DIR_IMAGE}/amc-firmware-${MACHINE}.cdo"
 
 AMR_OVERLAY_PDI = "${B}/base-design-overlay.pdi"
 
-# Design BIF path within SDT sysroot (extracted from base PDI)
+# Design BIF filename its folder is found automatically at build time.
 AMR_DESIGN_BIF = ""
-AMR_DESIGN_BIF:emb-plus-ve2302-amr = "${SYSTEM_DTFILE_DIR}/extracted/ve2302_xdma_base_wrapper_1/pdi_files/ve2302_xdma_base.bif"
-AMR_DESIGN_BIF:alveo-v80-amr = "${SYSTEM_DTFILE_DIR}/extracted/v80_base_wrapper_1/pdi_files/v80_base_boot.bif"
+AMR_DESIGN_BIF:emb-plus-ve2302-amr = "ve2302_xdma_base.bif"
+AMR_DESIGN_BIF:alveo-v80-amr = "v80_base_boot.bif"
 
 # Use overlay PDI instead of original base-pdi for AMR machines.
 # Varflags can't have overrides, so use variable indirection.
@@ -49,11 +49,12 @@ amr_overlay_cdo() {
     if [ ! -f "${AMC_CDO}" ]; then
         bbfatal "AMR overlay CDO not found: ${AMC_CDO}"
     fi
-    if [ ! -f "${AMR_DESIGN_BIF}" ]; then
-        bbfatal "Design BIF not found: ${AMR_DESIGN_BIF}"
+    design_bif=$(find ${SYSTEM_DTFILE_DIR}/extracted -type f -name "${AMR_DESIGN_BIF}" 2>/dev/null | sort | head -1)
+    if [ -z "${design_bif}" ] || [ ! -f "${design_bif}" ]; then
+        bbfatal "Design BIF '${AMR_DESIGN_BIF}' not found under ${SYSTEM_DTFILE_DIR}/extracted"
     fi
-    cd $(dirname ${AMR_DESIGN_BIF})
-    bootgen -arch ${BOOTGEN_ARCH} -image $(basename ${AMR_DESIGN_BIF}) \
+    cd $(dirname ${design_bif})
+    bootgen -arch ${BOOTGEN_ARCH} -image $(basename ${design_bif}) \
         -overlay_cdo ${AMC_CDO} -w -o ${AMR_OVERLAY_PDI}
 }
 
