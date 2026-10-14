@@ -2268,6 +2268,16 @@
                         xlnx,name = "cips_pspmc_0_psv_r5_0_atcm";
                 };
 
+                cips_pspmc_0_psv_r5_0_atcm_lockstep: cips-pspmc-0-psv-r5-0-atcm-lockstep@ffe10000 {
+                        phandle = <0x15c>;
+                        compatible = "xlnx,psv-r5-0-atcm-lockstep-1.0", "mmio-sram";
+                        status = "okay";
+                        power-domains = <&versal_firmware 0x1831800b>;
+                        xlnx,ip-name = "psv_r5_0_atcm_lockstep";
+                        reg = <0x0 0xffe10000 0x0 0x10000>;
+                        xlnx,name = "cips_pspmc_0_psv_r5_0_atcm_lockstep";
+                };
+
                 cips_pspmc_0_psv_r5_0_btcm: psv-r5-0-btcm@20000 {
                         phandle = <0x9e>;
                         xlnx,power-domain = <0x1831800c>;
@@ -2277,6 +2287,16 @@
                         xlnx,bank-size = <0x10000>;
                         reg = <0x0 0x20000 0x0 0x10000>;
                         xlnx,name = "cips_pspmc_0_psv_r5_0_btcm";
+                };
+
+                cips_pspmc_0_psv_r5_0_btcm_lockstep: cips-pspmc-0-psv-r5-0-btcm-lockstep@ffe30000 {
+                        phandle = <0x15d>;
+                        compatible = "xlnx,psv-r5-0-btcm-lockstep-1.0", "mmio-sram";
+                        status = "okay";
+                        power-domains = <&versal_firmware 0x1831800c>;
+                        xlnx,ip-name = "psv_r5_0_btcm_lockstep";
+                        reg = <0x0 0xffe30000 0x0 0x10000>;
+                        xlnx,name = "cips_pspmc_0_psv_r5_0_btcm_lockstep";
                 };
 
                 cips_pspmc_0_psv_r5_0_data_cache: cips-pspmc-0-psv-r5-0-data-cache@ffe50000 {
@@ -2295,6 +2315,28 @@
                         xlnx,ip-name = "psv_r5_0_instruction_cache";
                         reg = <0x0 0xffe40000 0x0 0x10000>;
                         xlnx,name = "cips_pspmc_0_psv_r5_0_instruction_cache";
+                };
+
+                cips_pspmc_0_psv_r5_1_atcm: psv-r5-1-atcm@0 {
+                        phandle = <0xa7>;
+                        xlnx,power-domain = <0x1831800d>;
+                        compatible = "xlnx,psv-r5-tcm-1.0";
+                        status = "okay";
+                        xlnx,ip-name = "psv_r5_tcm";
+                        xlnx,bank-size = <0x10000>;
+                        reg = <0x0 0x0 0x0 0x10000>;
+                        xlnx,name = "cips_pspmc_0_psv_r5_1_atcm";
+                };
+
+                cips_pspmc_0_psv_r5_1_btcm: psv-r5-1-btcm@20000 {
+                        phandle = <0xa8>;
+                        xlnx,power-domain = <0x1831800e>;
+                        compatible = "xlnx,psv-r5-tcm-1.0";
+                        status = "okay";
+                        xlnx,ip-name = "psv_r5_tcm";
+                        xlnx,bank-size = <0x10000>;
+                        reg = <0x0 0x20000 0x0 0x10000>;
+                        xlnx,name = "cips_pspmc_0_psv_r5_1_btcm";
                 };
 
                 cips_pspmc_0_psv_r5_1_data_cache: cips-pspmc-0-psv-r5-1-data-cache@ffed0000 {
@@ -2350,6 +2392,46 @@
                         reg = <0x0 0xff140000 0x0 0x10000>;
                         xlnx,name = "cips_pspmc_0_psv_scntrs_0";
                 };
+        };
+
+        psv_r5_0_atcm_global: psv_r5_0_atcm_global@ffe00000 {
+                phandle = <0x85>;
+                compatible = "xlnx,psv-tcm-global-1.0", "mmio-sram";
+                power-domains = <&versal_firmware 0x1831800b>;
+                reg = <0x0 0xffe00000 0x0 0x10000>;
+                status = "okay";
+                xlnx,ip-name = "psv_tcm_global";
+                xlnx,name = "cips_pspmc_0_psv_r5_0_atcm_global";
+        };
+
+        psv_r5_0_btcm_global: psv_r5_0_btcm_global@ffe20000 {
+                phandle = <0x15e>;
+                compatible = "xlnx,psv-tcm-global-1.0", "mmio-sram";
+                power-domains = <&versal_firmware 0x1831800c>;
+                reg = <0x0 0xffe20000 0x0 0x10000>;
+                status = "okay";
+                xlnx,ip-name = "psv_tcm_global";
+                xlnx,name = "cips_pspmc_0_psv_r5_0_btcm_global";
+        };
+
+        psv_r5_1_atcm_global: psv_r5_1_atcm_global@ffe90000 {
+                phandle = <0x86>;
+                compatible = "xlnx,psv-tcm-global-1.0", "mmio-sram";
+                power-domains = <&versal_firmware 0x1831800d>;
+                reg = <0x0 0xffe90000 0x0 0x10000>;
+                status = "okay";
+                xlnx,ip-name = "psv_tcm_global";
+                xlnx,name = "cips_pspmc_0_psv_r5_1_atcm_global";
+        };
+
+        psv_r5_1_btcm_global: psv_r5_1_btcm_global@ffeb0000 {
+                phandle = <0x87>;
+                compatible = "xlnx,psv-tcm-global-1.0", "mmio-sram";
+                power-domains = <&versal_firmware 0x1831800e>;
+                reg = <0x0 0xffeb0000 0x0 0x10000>;
+                status = "okay";
+                xlnx,ip-name = "psv_tcm_global";
+                xlnx,name = "cips_pspmc_0_psv_r5_1_btcm_global";
         };
 
         amba_xppu: indirect-bus@1 {
@@ -2805,15 +2887,23 @@
                 cips_pspmc_0_psv_pmc_tap = "/axi/cips-pspmc-0-psv-pmc-tap@f11a0000";
                 cips_pspmc_0_psv_psm_global_reg = "/axi/cips-pspmc-0-psv-psm-global-reg@ffc90000";
                 cips_pspmc_0_psv_r5_0_atcm = "/axi/psv-r5-0-atcm@0";
+                cips_pspmc_0_psv_r5_0_atcm_lockstep = "/axi/cips-pspmc-0-psv-r5-0-atcm-lockstep@ffe10000";
                 cips_pspmc_0_psv_r5_0_btcm = "/axi/psv-r5-0-btcm@20000";
+                cips_pspmc_0_psv_r5_0_btcm_lockstep = "/axi/cips-pspmc-0-psv-r5-0-btcm-lockstep@ffe30000";
                 cips_pspmc_0_psv_r5_0_data_cache = "/axi/cips-pspmc-0-psv-r5-0-data-cache@ffe50000";
                 cips_pspmc_0_psv_r5_0_instruction_cache = "/axi/cips-pspmc-0-psv-r5-0-instruction-cache@ffe40000";
+                cips_pspmc_0_psv_r5_1_atcm = "/axi/psv-r5-1-atcm@0";
+                cips_pspmc_0_psv_r5_1_btcm = "/axi/psv-r5-1-btcm@20000";
                 cips_pspmc_0_psv_r5_1_data_cache = "/axi/cips-pspmc-0-psv-r5-1-data-cache@ffed0000";
                 cips_pspmc_0_psv_r5_1_instruction_cache = "/axi/cips-pspmc-0-psv-r5-1-instruction-cache@ffec0000";
                 cips_pspmc_0_psv_r5_tcm_ram_0 = "/axi/cips-pspmc-0-psv-r5-tcm-ram-0@0";
                 cips_pspmc_0_psv_rpu_0 = "/axi/cips-pspmc-0-psv-rpu-0@ff9a0000";
                 cips_pspmc_0_psv_scntr_0 = "/axi/cips-pspmc-0-psv-scntr-0@ff130000";
                 cips_pspmc_0_psv_scntrs_0 = "/axi/cips-pspmc-0-psv-scntrs-0@ff140000";
+                psv_r5_0_atcm_global = "/psv_r5_0_atcm_global@ffe00000";
+                psv_r5_0_btcm_global = "/psv_r5_0_btcm_global@ffe20000";
+                psv_r5_1_atcm_global = "/psv_r5_1_atcm_global@ffe90000";
+                psv_r5_1_btcm_global = "/psv_r5_1_btcm_global@ffeb0000";
                 amba_xppu = "/indirect-bus@1";
                 lpd_xppu = "/indirect-bus@1/xppu@ff990000";
                 pmc_xppu = "/indirect-bus@1/xppu@f1310000";
