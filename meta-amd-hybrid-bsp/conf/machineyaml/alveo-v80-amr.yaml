@@ -27,3 +27,16 @@ machine:
             comment: 'Use the specific boot script'
             op: '='
             val: 'u-boot-xlnx-scr'
+        UBOOT_USER_SPECIFIED_TEXT_BASE:
+            comment: 'AMC gives the APU DRAM at 0x1C800000 (size 0x63800000, ~1592MB). U-Boot must be linked (CONFIG_TEXT_BASE) at this base.'
+            op: '='
+            val: '0x1c800000'
+        TFA_BL33_LOAD:
+            op: '='
+            val: '0x1c800000'
+        UBOOT_ENTRYPOINT:
+            op: '='
+            val: '0x1e000000'
+        UBOOT_LOADADDRESS:
+            op: '='
+            val: '0x1e000000'

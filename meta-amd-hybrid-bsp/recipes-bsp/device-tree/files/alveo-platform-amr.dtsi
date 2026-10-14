@@ -7,9 +7,10 @@
  *
  */
 
-/* Workaround deleting the DIMM(ddr4_1) memory node which is causing the kernel hangs */
+/* Workaround deleting the DIMM(ddr4_1) and HBM memory nodes that are causing the kernel to hang */
 
 / {
+        /delete-node/ memory@4000000000;
         /delete-node/ memory@60000000000;
 };
 
@@ -41,8 +42,9 @@
         status = "disabled";
 };
 
+/* AMC apu_mem_dram: 0x1C800000, 1592MB, ending at 0x80000000. */
 &axi_noc_mc_ddr4_0_ddr_memory {
-        reg = <0x0 0x0 0x0 0x80000000>;
+        reg = <0x0 0x1c800000 0x0 0x63800000>;
 };
 
 &serial1 {

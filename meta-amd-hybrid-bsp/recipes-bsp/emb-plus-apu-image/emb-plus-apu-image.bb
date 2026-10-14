@@ -74,17 +74,18 @@ BIF_PARTITION_ID[dtb] = "${EMB_PLUS_APU_SUBSYSTEM_ID}"
 
 EMB_PLUS_ROOTFS_ADDR ?= ""
 EMB_PLUS_ROOTFS_ADDR:emb-plus-ve2302-amr = "0x20800000"
-EMB_PLUS_ROOTFS_ADDR:alveo-v80-amr = "0x20800000"
+EMB_PLUS_ROOTFS_ADDR:alveo-v80-amr = "0x23000000"
 
 EMB_PLUS_BOOTSCR_ADDR ?= "0x20000000"
+EMB_PLUS_BOOTSCR_ADDR:alveo-v80-amr = "0x1d800000"
 
 EMB_PLUS_KERNEL_ADDR ?= ""
 EMB_PLUS_KERNEL_ADDR:emb-plus-ve2302-amr = "0x19000000"
-EMB_PLUS_KERNEL_ADDR:alveo-v80-amr = "0x19000000"
+EMB_PLUS_KERNEL_ADDR:alveo-v80-amr = "0x1e000000"
 
 EMB_PLUS_DTB_ADDR ?= ""
 EMB_PLUS_DTB_ADDR:emb-plus-ve2302-amr = "0x1F400000"
-EMB_PLUS_DTB_ADDR:alveo-v80-amr = "0x1F400000"
+EMB_PLUS_DTB_ADDR:alveo-v80-amr = "0x1d000000"
 
 python do_generate_bif() {
     # Skip file copy for all partitions to preserve full paths in the BIF.

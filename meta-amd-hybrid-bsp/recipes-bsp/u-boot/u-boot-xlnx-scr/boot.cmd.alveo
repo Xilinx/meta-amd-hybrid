@@ -1,0 +1,4 @@
+kernel_addr=0x1e000000
+rootfs_addr=0x23000000
+
+booti ${kernel_addr} ${rootfs_addr} $fdtcontroladdr
