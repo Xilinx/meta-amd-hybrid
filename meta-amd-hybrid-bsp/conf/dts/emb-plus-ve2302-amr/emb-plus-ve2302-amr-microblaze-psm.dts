@@ -2038,6 +2038,79 @@
                         xlnx,lmb-awidth = <0x20>;
                 };
 
+                STATIC_DESIGN_cips_pspmc_0_psv_r5_0_atcm: psv-r5-0-atcm@0 {
+                        phandle = <0x9e>;
+                        xlnx,power-domain = <0x1831800b>;
+                        compatible = "xlnx,psv-r5-tcm-1.0";
+                        status = "okay";
+                        xlnx,ip-name = "psv_r5_tcm";
+                        xlnx,bank-size = <0x10000>;
+                        reg = <0x0 0x0 0x0 0x10000>;
+                        xlnx,name = "STATIC_DESIGN_cips_pspmc_0_psv_r5_0_atcm";
+                };
+
+                STATIC_DESIGN_cips_pspmc_0_psv_r5_0_atcm_lockstep: STATIC-DESIGN-cips-pspmc-0-psv-r5-0-atcm-lockstep@ffe10000 {
+                        phandle = <0x160>;
+                        compatible = "xlnx,psv-r5-0-atcm-lockstep-1.0", "mmio-sram";
+                        status = "okay";
+                        power-domains = <&versal_firmware 0x1831800b>;
+                        xlnx,ip-name = "psv_r5_0_atcm_lockstep";
+                        reg = <0x0 0xffe10000 0x0 0x10000>;
+                        xlnx,name = "STATIC_DESIGN_cips_pspmc_0_psv_r5_0_atcm_lockstep";
+                };
+
+                STATIC_DESIGN_cips_pspmc_0_psv_r5_0_btcm: psv-r5-0-btcm@20000 {
+                        phandle = <0xa0>;
+                        xlnx,power-domain = <0x1831800c>;
+                        compatible = "xlnx,psv-r5-tcm-1.0";
+                        status = "okay";
+                        xlnx,ip-name = "psv_r5_tcm";
+                        xlnx,bank-size = <0x10000>;
+                        reg = <0x0 0x20000 0x0 0x10000>;
+                        xlnx,name = "STATIC_DESIGN_cips_pspmc_0_psv_r5_0_btcm";
+                };
+
+                STATIC_DESIGN_cips_pspmc_0_psv_r5_0_btcm_lockstep: STATIC-DESIGN-cips-pspmc-0-psv-r5-0-btcm-lockstep@ffe30000 {
+                        phandle = <0x161>;
+                        compatible = "xlnx,psv-r5-0-btcm-lockstep-1.0", "mmio-sram";
+                        status = "okay";
+                        power-domains = <&versal_firmware 0x1831800c>;
+                        xlnx,ip-name = "psv_r5_0_btcm_lockstep";
+                        reg = <0x0 0xffe30000 0x0 0x10000>;
+                        xlnx,name = "STATIC_DESIGN_cips_pspmc_0_psv_r5_0_btcm_lockstep";
+                };
+
+                STATIC_DESIGN_cips_pspmc_0_psv_r5_1_atcm: psv-r5-1-atcm@0 {
+                        phandle = <0xa9>;
+                        xlnx,power-domain = <0x1831800d>;
+                        compatible = "xlnx,psv-r5-tcm-1.0";
+                        status = "okay";
+                        xlnx,ip-name = "psv_r5_tcm";
+                        xlnx,bank-size = <0x10000>;
+                        reg = <0x0 0x0 0x0 0x10000>;
+                        xlnx,name = "STATIC_DESIGN_cips_pspmc_0_psv_r5_1_atcm";
+                };
+
+                STATIC_DESIGN_cips_pspmc_0_psv_r5_1_btcm: psv-r5-1-btcm@20000 {
+                        phandle = <0xaa>;
+                        xlnx,power-domain = <0x1831800e>;
+                        compatible = "xlnx,psv-r5-tcm-1.0";
+                        status = "okay";
+                        xlnx,ip-name = "psv_r5_tcm";
+                        xlnx,bank-size = <0x10000>;
+                        reg = <0x0 0x20000 0x0 0x10000>;
+                        xlnx,name = "STATIC_DESIGN_cips_pspmc_0_psv_r5_1_btcm";
+                };
+
+                STATIC_DESIGN_cips_pspmc_0_psv_r5_tcm_ram_0: STATIC-DESIGN-cips-pspmc-0-psv-r5-tcm-ram-0@0 {
+                        phandle = <0x9f>;
+                        compatible = "xlnx,psv-r5-tcm-1.0";
+                        status = "okay";
+                        xlnx,ip-name = "psv_r5_tcm";
+                        reg = <0x0 0x0 0x0 0x40000>;
+                        xlnx,name = "STATIC_DESIGN_cips_pspmc_0_psv_r5_tcm_ram_0";
+                };
+
                 STATIC_DESIGN_cips_pspmc_0_psv_scntr_0: STATIC-DESIGN-cips-pspmc-0-psv-scntr-0@ff130000 {
                         phandle = <0x6c>;
                         compatible = "xlnx,psv-scntr-1.0";
@@ -2164,6 +2237,16 @@
                 status = "okay";
                 xlnx,ip-name = "psv_tcm_global";
                 xlnx,name = "STATIC_DESIGN_cips_pspmc_0_psv_r5_0_atcm_global";
+        };
+
+        psv_r5_0_btcm_global: psv_r5_0_btcm_global@ffe20000 {
+                phandle = <0x175>;
+                compatible = "xlnx,psv-tcm-global-1.0", "mmio-sram";
+                power-domains = <&versal_firmware 0x1831800c>;
+                reg = <0x0 0xffe20000 0x0 0x10000>;
+                status = "okay";
+                xlnx,ip-name = "psv_tcm_global";
+                xlnx,name = "STATIC_DESIGN_cips_pspmc_0_psv_r5_0_btcm_global";
         };
 
         psv_r5_1_atcm_global: psv_r5_1_atcm_global@ffe90000 {
@@ -2586,6 +2669,13 @@
                 STATIC_DESIGN_cips_pspmc_0_psv_psm_ram_instr_cntlr = "/axi/STATIC-DESIGN-cips-pspmc-0-psv-psm-ram-instr-cntlr@ffc00000";
                 STATIC_DESIGN_cips_pspmc_0_psv_psm_tmr_inject_0 = "/axi/STATIC-DESIGN-cips-pspmc-0-psv-psm-tmr-inject-0@ffcd0000";
                 STATIC_DESIGN_cips_pspmc_0_psv_psm_tmr_manager_0 = "/axi/STATIC-DESIGN-cips-pspmc-0-psv-psm-tmr-manager-0@ffcc0000";
+                STATIC_DESIGN_cips_pspmc_0_psv_r5_0_atcm = "/axi/psv-r5-0-atcm@0";
+                STATIC_DESIGN_cips_pspmc_0_psv_r5_0_atcm_lockstep = "/axi/STATIC-DESIGN-cips-pspmc-0-psv-r5-0-atcm-lockstep@ffe10000";
+                STATIC_DESIGN_cips_pspmc_0_psv_r5_0_btcm = "/axi/psv-r5-0-btcm@20000";
+                STATIC_DESIGN_cips_pspmc_0_psv_r5_0_btcm_lockstep = "/axi/STATIC-DESIGN-cips-pspmc-0-psv-r5-0-btcm-lockstep@ffe30000";
+                STATIC_DESIGN_cips_pspmc_0_psv_r5_1_atcm = "/axi/psv-r5-1-atcm@0";
+                STATIC_DESIGN_cips_pspmc_0_psv_r5_1_btcm = "/axi/psv-r5-1-btcm@20000";
+                STATIC_DESIGN_cips_pspmc_0_psv_r5_tcm_ram_0 = "/axi/STATIC-DESIGN-cips-pspmc-0-psv-r5-tcm-ram-0@0";
                 STATIC_DESIGN_cips_pspmc_0_psv_scntr_0 = "/axi/STATIC-DESIGN-cips-pspmc-0-psv-scntr-0@ff130000";
                 STATIC_DESIGN_cips_pspmc_0_psv_scntrs_0 = "/axi/STATIC-DESIGN-cips-pspmc-0-psv-scntrs-0@ff140000";
                 STATIC_DESIGN_cips_pspmc_0_psv_xram_atm = "/axi/STATIC-DESIGN-cips-pspmc-0-psv-xram-atm@ff970000";
@@ -2600,6 +2690,7 @@
                 STATIC_DESIGN_cips_pspmc_0_psv_xram_xmpu_bank_3 = "/axi/STATIC-DESIGN-cips-pspmc-0-psv-xram-xmpu-bank-3@ff938000";
                 STATIC_DESIGN_cips_pspmc_0_psv_xram_xmpu_bank_4 = "/axi/STATIC-DESIGN-cips-pspmc-0-psv-xram-xmpu-bank-4@ff93c000";
                 psv_r5_0_atcm_global = "/psv_r5_0_atcm_global@ffe00000";
+                psv_r5_0_btcm_global = "/psv_r5_0_btcm_global@ffe20000";
                 psv_r5_1_atcm_global = "/psv_r5_1_atcm_global@ffe90000";
                 psv_r5_1_btcm_global = "/psv_r5_1_btcm_global@ffeb0000";
                 amba_xppu = "/indirect-bus@1";
