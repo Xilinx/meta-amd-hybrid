@@ -27,6 +27,7 @@ IMAGE_INSTALL = " \
     libgpiod-tools \
     i2c-tools \
     net-tools \
+    ${@bb.utils.contains('MACHINE_FEATURES', 'fpga-overlay', 'dfx-mgr', '', d)} \
 "
 
 # Adding fpgautil as a workaround until the AMR stack solution is available 
