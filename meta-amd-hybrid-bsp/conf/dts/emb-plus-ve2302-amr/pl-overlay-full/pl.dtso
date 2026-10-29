@@ -45,7 +45,7 @@
                 xlnx,id-width = <0x1>;
                 clocks = <&misc_clk_0>;
                 xlnx,addr-width = <0x40>;
-                reg = <0x0 0x0 0x0 0x1000000>;
+                reg = <0x0 0x0 0x0 0x800000>;
                 xlnx,ip-name = "axi_addr_mask";
                 xlnx,s-addr-mask = <0xffffff>;
                 xlnx,awuser-width = <0x0>;
